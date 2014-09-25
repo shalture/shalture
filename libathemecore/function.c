@@ -870,6 +870,16 @@ char *combine_path(const char *parent, const char *child)
 	return sstrdup(buf);
 }
 
+void get_kline_userhost(user_t *u, const char **user, const char **host)
+{
+	if (config_options.kline_with_ident && (!config_options.kline_verified_ident || u->user[0] != '~'))
+		*user = u->user;
+	else
+		*user = "*";
+
+	*host = u->ip ? u->ip : u->host;
+}
+
 /* vim:cinoptions=>s,e0,n0,f0,{0,}0,^0,=s,ps,t0,c3,+s,(2s,us,)20,*30,gs,hs
  * vim:ts=8
  * vim:sw=8

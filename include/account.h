@@ -359,6 +359,7 @@ E void (*db_load)(const char *arg);
 
 /* function.c */
 E bool is_founder(mychan_t *mychan, myentity_t *myuser);
+E void get_kline_userhost(user_t *u, const char **user, const char **host);
 
 /* node.c */
 E mowgli_list_t klnlist;
