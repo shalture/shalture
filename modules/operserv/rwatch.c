@@ -47,6 +47,8 @@ struct rwatch_
 	atheme_regex_t *re;
 };
 
+service_t *serviceinfo;
+
 command_t os_rwatch = { "RWATCH", N_("Performs actions on connecting clients matching regexes."), PRIV_USER_AUSPEX, 2, os_cmd_rwatch, { .path = "oservice/rwatch" } };
 
 command_t os_rwatch_add = { "ADD", N_("Adds an entry to the regex watch list."), AC_NONE, 1, os_cmd_rwatch_add, { .path = "" } };
@@ -73,6 +75,8 @@ void _modinit(module_t *m)
 	hook_add_event("user_nickchange");
 	hook_add_user_nickchange(rwatch_nickchange);
 	hook_add_db_write(write_rwatchdb);
+
+	serviceinfo = service_find("operserv");
 
 	char path[BUFSIZE];
 	snprintf(path, BUFSIZE, "%s/%s", datadir, "rwatch.db");
@@ -545,15 +549,15 @@ static void rwatch_newuser(hook_user_nick_t *data)
 			if (rw->actions & RWACT_KLINE)
 			{
 				if (is_autokline_exempt(u))
-					slog(LG_INFO, "rwatch_newuser(): not klining *@%s (user %s!%s@%s is autokline exempt but matches %s %s)",
-							u->host, u->nick, u->user, u->host,
+					slog(LG_INFO, "rwatch_newuser(): not klining %s (user %s!%s@%s is autokline exempt but matches %s %s)",
+							u->nick, u->nick, u->user, u->host,
 							rw->regex, rw->reason);
 				else
 				{
-					slog(LG_VERBOSE, "rwatch_newuser(): klining *@%s (user %s!%s@%s matches %s %s)",
-							u->host, u->nick, u->user, u->host,
+					slog(LG_VERBOSE, "rwatch_newuser(): klining %s (user %s!%s@%s matches %s %s)",
+							u->nick, u->nick, u->user, u->host,
 							rw->regex, rw->reason);
-					kline_sts("*", "*", u->host, 86400, rw->reason);
+					kline_add_user(u, rw->reason, 86400, serviceinfo->nick);
 				}
 			}
 			else if (rw->actions & RWACT_QUARANTINE)
@@ -567,7 +571,7 @@ static void rwatch_newuser(hook_user_nick_t *data)
 					slog(LG_VERBOSE, "rwatch_newuser(): quaranting *@%s (user %s!%s@%s matches %s %s)",
 							u->host, u->nick, u->user, u->host,
 							rw->regex, rw->reason);
-					quarantine_sts(service_find("operserv")->me, u, 86400, rw->reason);
+					quarantine_sts(serviceinfo->me, u, 86400, rw->reason);
 				}
 			}
 		}
@@ -611,15 +615,15 @@ static void rwatch_nickchange(hook_user_nick_t *data)
 			if (rw->actions & RWACT_KLINE)
 			{
 				if (is_autokline_exempt(u))
-					slog(LG_INFO, "rwatch_nickchange(): not klining *@%s (user %s -> %s!%s@%s is autokline exempt but matches %s %s)",
-							u->host, data->oldnick, u->nick, u->user, u->host,
+					slog(LG_INFO, "rwatch_nickchange(): not klining %s (user %s -> %s!%s@%s is autokline exempt but matches %s %s)",
+							u->nick, data->oldnick, u->nick, u->user, u->host,
 							rw->regex, rw->reason);
 				else
 				{
-					slog(LG_VERBOSE, "rwatch_nickchange(): klining *@%s (user %s -> %s!%s@%s matches %s %s)",
-							u->host, data->oldnick, u->nick, u->user, u->host,
+					slog(LG_VERBOSE, "rwatch_nickchange(): klining %s (user %s -> %s!%s@%s matches %s %s)",
+							u->nick, data->oldnick, u->nick, u->user, u->host,
 							rw->regex, rw->reason);
-					kline_sts("*", "*", u->host, 86400, rw->reason);
+					kline_add_user(u, rw->reason, 86400, serviceinfo->nick);
 				}
 			}
 			else if (rw->actions & RWACT_QUARANTINE)
@@ -633,7 +637,7 @@ static void rwatch_nickchange(hook_user_nick_t *data)
 					slog(LG_VERBOSE, "rwatch_newuser(): quaranting *@%s (user %s!%s@%s matches %s %s)",
 							u->host, u->nick, u->user, u->host,
 							rw->regex, rw->reason);
-					quarantine_sts(service_find("operserv")->me, u, 86400, rw->reason);
+					quarantine_sts(serviceinfo->me, u, 86400, rw->reason);
 				}
 			}
 		}

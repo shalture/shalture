@@ -926,7 +926,7 @@ static void clones_newuser(hook_user_nick_t *data)
 		else
 		{
 			slog(LG_INFO, "CLONES: \2%d\2 clones on \2%s\2 (%s!%s@%s) (TKLINE due to excess clones)", i, u->ip, u->nick, u->user, u->host);
-			kline_sts("*", "*", u->ip, kline_duration, "Excessive clones");
+			kline_add("*", u->ip, "Excessive clones", kline_duration, serviceinfo->nick);
 		}
 
 	}
