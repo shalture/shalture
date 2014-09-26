@@ -932,8 +932,10 @@ int floodcheck(user_t *u, user_t *t)
 			if (u->offenses == 2)
 			{
 				kline_t *k;
+				service_t *opersvs = service_find("operserv");
+				const char *setby = (opersvs != NULL ? opersvs->nick : chansvs.nick);
 
-				k = kline_add_user(u, "ten minute ban - flooding services", 600, chansvs.nick);
+				k = kline_add_user(u, "ten minute ban - flooding services", 600, setby);
 
 				slog(LG_INFO, "FLOOD:KLINE: \2%s\2", u->nick);
 
