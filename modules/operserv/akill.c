@@ -118,12 +118,27 @@ static void os_cmd_akill_add(sourceinfo_t *si, int parc, char *parv[])
 	user_t *u;
 	char *target = parv[0];
 	char *token = strtok(parv[1], " ");
+	bool force = false;
 	char star[] = "*";
 	const char *kuser, *khost;
 	char *treason, reason[BUFSIZE];
 	long duration;
 	char *s;
 	kline_t *k;
+
+	if (!strcasecmp(token, "FORCE"))
+	{
+		if (has_priv(si, PRIV_AKILL_ANYMASK))
+		{
+			force = true;
+			token = strtok(NULL, " ");
+		}
+		else
+		{
+			command_fail(si, fault_noprivs, STR_NO_PRIVILEGE, PRIV_AKILL_ANYMASK);
+			return;
+		}
+	}
 
 	if (!target || !token)
 	{
@@ -268,9 +283,11 @@ static void os_cmd_akill_add(sourceinfo_t *si, int parc, char *parv[])
 			unsafe = true;
 		else if ((p = strrchr(khost, '/')) != NULL && IsDigit(p[1]) && atoi(p + 1) < 4)
 			unsafe = true;
-		if (unsafe)
+		if (unsafe && !force)
 		{
 			command_fail(si, fault_badparams, _("Invalid user@host: \2%s@%s\2. This mask is unsafe."), kuser, khost);
+			if (has_priv(si, PRIV_AKILL_ANYMASK))
+				command_fail(si, fault_badparams, _("Use AKILL ADD %s@%s FORCE to override this restriction."), kuser, khost);
 			logcommand(si, CMDLOG_ADMIN, "failed AKILL ADD \2%s@%s\2 (unsafe mask)", kuser, khost);
 			return;
 		}
