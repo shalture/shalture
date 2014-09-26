@@ -207,7 +207,11 @@ static void os_cmd_akill_add(sourceinfo_t *si, int parc, char *parv[])
 		}
 
 		if (is_internal_client(u) || u == si->su)
+		{
+			command_fail(si, fault_badparams, _("Invalid user: \2%s\2. Refusing to AKILL to prevent accidents;"
+			            " place an AKILL on their user@host manually if you are sure you want to do this."), target);
 			return;
+		}
 
 		get_kline_userhost(u, &kuser, &khost);
 	}
