@@ -209,8 +209,7 @@ static void os_cmd_akill_add(sourceinfo_t *si, int parc, char *parv[])
 		if (is_internal_client(u) || u == si->su)
 			return;
 
-		kuser = star;
-		khost = u->host;
+		get_kline_userhost(u, &kuser, &khost);
 	}
 	else
 	{
