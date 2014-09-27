@@ -872,12 +872,20 @@ char *combine_path(const char *parent, const char *child)
 
 void get_kline_userhost(user_t *u, const char **user, const char **host)
 {
-	if (config_options.kline_with_ident && (!config_options.kline_verified_ident || u->user[0] != '~'))
-		*user = u->user;
-	else
-		*user = "*";
+	hook_user_get_banmask_t hdata;
 
-	*host = u->ip ? u->ip : u->host;
+	hdata.u = u;
+	if (config_options.kline_with_ident && (!config_options.kline_verified_ident || u->user[0] != '~'))
+		hdata.user = u->user;
+	else
+		hdata.user = "*";
+
+	hdata.host = u->ip ? u->ip : u->host;
+
+	hook_call_user_get_banmask(&hdata);
+
+	*user = hdata.user;
+	*host = hdata.host;
 }
 
 /* vim:cinoptions=>s,e0,n0,f0,{0,}0,^0,=s,ps,t0,c3,+s,(2s,us,)20,*30,gs,hs
