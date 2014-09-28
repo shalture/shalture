@@ -3,7 +3,5 @@ script: ./configure --disable-nls --enable-ssl && make -j $(nproc)
 compiler:
   - gcc
   - clang
-notifications:
-  webhooks: http://n.tkte.ch/h/3362/qW8a8hebe1X7mBy1mCN-0xSA
 matrix:
   fast_finish: true
