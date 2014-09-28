@@ -1,7 +1,13 @@
 language: c
-script: ./configure --disable-nls --enable-ssl && make -j $(nproc)
+script: ./configure --disable-nls --enable-ssl $CONFIGURE_WITH && make -j $(nproc)
 compiler:
   - gcc
   - clang
 matrix:
   fast_finish: true
+env:
+  - CONFIGURE_WITH=""
+  - CONFIGURE_WITH="--with-perl"
+install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -q -y libperl-dev
