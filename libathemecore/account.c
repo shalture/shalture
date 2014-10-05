@@ -227,44 +227,12 @@ void myuser_delete(myuser_t *mu)
 		mc = ca->mychan;
 
 		/* attempt succession */
-		if (ca->level & CA_FOUNDER && mychan_num_founders(mc) == 1 && (successor = mychan_pick_successor(mc)) != NULL)
+		if (chanacs_entity_is_last_founder(mc, entity(mu)))
 		{
-			slog(LG_INFO, _("SUCCESSION: \2%s\2 to \2%s\2 from \2%s\2"), mc->name, entity(successor)->name, entity(mu)->name);
-			slog(LG_VERBOSE, "myuser_delete(): giving channel %s to %s (unused %lds, founder %s, chanacs %zu)",
-					mc->name, entity(successor)->name,
-					(long)(CURRTIME - mc->used),
-					entity(mu)->name,
-					MOWGLI_LIST_LENGTH(&mc->chanacs));
-			if (chansvs.me != NULL)
-				verbose(mc, "Foundership changed to \2%s\2 because \2%s\2 was dropped.", entity(successor)->name, entity(mu)->name);
-
-			/* CA_FOUNDER | CA_FLAGS is the minimum required for full control; let chanserv take care of assigning the rest via founder_flags */
-			chanacs_change_simple(mc, entity(successor), NULL, CA_FOUNDER | CA_FLAGS, 0, NULL);
-			hook_call_channel_succession((
-					&(hook_channel_succession_req_t){
-						.mc = mc,
-						.mu = successor
-					}));
-
-			if (chansvs.me != NULL)
-				myuser_notice(chansvs.nick, successor, "You are now founder on \2%s\2 (as \2%s\2).", mc->name, entity(successor)->name);
-			object_unref(ca);
+			if (mychan_succession(mc) != NULL)
+				object_unref(ca);
 		}
-		/* no successor found */
-		else if (ca->level & CA_FOUNDER && mychan_num_founders(mc) == 1)
-		{
-			slog(LG_REGISTER, _("DELETE: \2%s\2 from \2%s\2"), mc->name, entity(mu)->name);
-			slog(LG_VERBOSE, "myuser_delete(): deleting channel %s (unused %lds, founder %s, chanacs %zu)",
-					mc->name, (long)(CURRTIME - mc->used),
-					entity(mu)->name,
-					MOWGLI_LIST_LENGTH(&mc->chanacs));
-
-			hook_call_channel_drop(mc);
-			if (mc->chan != NULL && !(mc->chan->flags & CHAN_LOG))
-				part(mc->name, chansvs.nick);
-			object_unref(mc);
-		}
-		else /* not founder */
+		else
 			object_unref(ca);
 	}
 
@@ -1191,6 +1159,55 @@ myuser_t *mychan_pick_successor(mychan_t *mc)
 	return mychan_pick_candidate(mc, 0);
 }
 
+myentity_t *mychan_succession(mychan_t *mc)
+{
+	myuser_t *successor;
+
+	if (mychan_num_founders(mc) > 1)
+		slog(LG_ERROR, "mychan_succession(): attempted succession with other founders remaining?");
+
+	if ((successor = mychan_pick_successor(mc)) != NULL)
+	{
+		slog(LG_INFO, _("SUCCESSION: \2%s\2 to \2%s\2 from \2%s\2"), mc->name, entity(successor)->name, mychan_founder_names(mc));
+		slog(LG_VERBOSE, "myuser_delete(): giving channel %s to %s (unused %lds, founder %s, chanacs %zu)",
+				mc->name, entity(successor)->name,
+				(long)(CURRTIME - mc->used),
+				mychan_founder_names(mc),
+				MOWGLI_LIST_LENGTH(&mc->chanacs));
+		if (chansvs.me != NULL)
+			verbose(mc, "Foundership changed to \2%s\2 because \2%s\2 was dropped.", entity(successor)->name, mychan_founder_names(mc));
+
+		/* CA_FOUNDER | CA_FLAGS is the minimum required for full control; let chanserv take care of assigning the rest via founder_flags */
+		chanacs_change_simple(mc, entity(successor), NULL, CA_FOUNDER | CA_FLAGS, 0, NULL);
+		hook_call_channel_succession((
+					&(hook_channel_succession_req_t){
+					.mc = mc,
+					.mu = successor
+					}));
+
+		if (chansvs.me != NULL)
+			myuser_notice(chansvs.nick, successor, "You are now founder on \2%s\2 (as \2%s\2).", mc->name, entity(successor)->name);
+
+		return entity(successor);
+	}
+	/* no successor found */
+	else
+	{
+		slog(LG_REGISTER, _("DELETE: \2%s\2 from \2%s\2"), mc->name, mychan_founder_names(mc));
+		slog(LG_VERBOSE, "myuser_delete(): deleting channel %s (unused %lds, founder %s, chanacs %zu)",
+				mc->name, (long)(CURRTIME - mc->used),
+				mychan_founder_names(mc),
+				MOWGLI_LIST_LENGTH(&mc->chanacs));
+
+		hook_call_channel_drop(mc);
+		if (mc->chan != NULL && !(mc->chan->flags & CHAN_LOG))
+			part(mc->name, chansvs.nick);
+		object_unref(mc);
+
+		return NULL;
+	}
+}
+
 const char *mychan_get_mlock(mychan_t *mc)
 {
 	static char buf[BUFSIZE];
@@ -1535,6 +1552,14 @@ unsigned int chanacs_entity_flags(mychan_t *mychan, myentity_t *mt)
 	slog(LG_DEBUG, "chanacs_entity_flags(%s, %s): return %s", mychan->name, mt->name, bitmask_to_flags(result));
 
 	return result;
+}
+
+bool chanacs_entity_is_last_founder(mychan_t *mc, myentity_t *mt)
+{
+	if (chanacs_entity_flags(mc, mt) & CA_FOUNDER && mychan_num_founders(mc) == 1)
+		return true;
+	else
+		return false;
 }
 
 chanacs_t *chanacs_find_literal(mychan_t *mychan, myentity_t *mt, unsigned int level)

@@ -439,6 +439,7 @@ E unsigned int mychan_num_founders(mychan_t *mc);
 E const char *mychan_founder_names(mychan_t *mc);
 E myuser_t *mychan_pick_candidate(mychan_t *mc, unsigned int minlevel);
 E myuser_t *mychan_pick_successor(mychan_t *mc);
+E myentity_t *mychan_succession(mychan_t *mc);
 E const char *mychan_get_mlock(mychan_t *mc);
 E const char *mychan_get_sts_mlock(mychan_t *mc);
 
@@ -448,6 +449,7 @@ E chanacs_t *chanacs_add_host(mychan_t *mychan, const char *host, unsigned int l
 E chanacs_t *chanacs_find(mychan_t *mychan, myentity_t *myuser, unsigned int level);
 E unsigned int chanacs_entity_flags(mychan_t *mychan, myentity_t *myuser);
 //inline bool chanacs_entity_has_flag(mychan_t *mychan, myentity_t *mt, unsigned int level)
+E bool chanacs_entity_is_last_founder(mychan_t *mychan, myentity_t *myuser);
 E chanacs_t *chanacs_find_literal(mychan_t *mychan, myentity_t *myuser, unsigned int level);
 E chanacs_t *chanacs_find_host(mychan_t *mychan, const char *host, unsigned int level);
 E unsigned int chanacs_host_flags(mychan_t *mychan, const char *host);
