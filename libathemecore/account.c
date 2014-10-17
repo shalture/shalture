@@ -1556,10 +1556,7 @@ unsigned int chanacs_entity_flags(mychan_t *mychan, myentity_t *mt)
 
 bool chanacs_entity_is_last_founder(mychan_t *mc, myentity_t *mt)
 {
-	if (chanacs_entity_flags(mc, mt) & CA_FOUNDER && mychan_num_founders(mc) == 1)
-		return true;
-	else
-		return false;
+	return chanacs_entity_flags(mc, mt) & CA_FOUNDER && mychan_num_founders(mc) == 1;
 }
 
 chanacs_t *chanacs_find_literal(mychan_t *mychan, myentity_t *mt, unsigned int level)
