@@ -1,29 +1,33 @@
-## atheme
+## Shaltúre
 
-Atheme is a set of services for IRC networks designed for large IRC networks with high
-scalability requirements.  It is relatively mature software, with some code and design
-derived from another package called Shrike.
+Shaltúre is a set of services for IRC networks designed for large IRC networks 
+with high scalability requirements.  It is relatively mature software, with 
+some code and design derived from another package called Shrike, and is a fork 
+of a dying services package named Atheme.
 
-Atheme's behavior is tunable using modules and a highly detailed configuration file.
-Almost all behavior can be changed at deployment time just by editing the configuration.
+Shaltúre's behavior is tunable using modules and a highly detailed 
+configuration file. Almost all behavior can be changed at deployment time just 
+by editing the configuration.
 
-If you are running this code from Git, you should read GIT-Access for instructions on
-how to fully check out the atheme tree, as it is spread across many repositories.
+If you are running this code from Git, you should read `GIT-Access` for 
+instructions on how to fully check out the Shaltúre tree, as it is spread 
+across a few repositories.
 
-## basic build instructions for the impatient
+## Building
 
-Whatever you do, make sure you do *not* install Atheme into the same location as the source.
-Atheme will default to installing in `$HOME/atheme`, so make sure you plan accordingly for this.
+Whatever you do, make sure you do *not* install Shaltúre into the same location 
+as the source. Shaltúre will default to installing in `$HOME/shalture`, so make 
+sure you plan accordingly for this.
 
     $ git submodule update --init
     $ ./configure
     $ make
     $ make install
 
-If you're still lost, read [INSTALL](INSTALL) or [GIT-Access](GIT-Access) for hints.
+If you're still lost, read [INSTALL](INSTALL) or [GIT-Access](GIT-Access) for 
+hints.
 
-## links / contact
+## Contact Us
 
- * [GitHub](http://www.github.com/atheme/atheme)
- * [Website](http://www.atheme.net)
- * [IRC](irc://irc.atheme.org/#atheme)
+ * [GitHub](http://www.github.com/Shaltúre/Shaltúre)
+ * [IRC](irc://irc.freenode.net/#shalture)

@@ -46,7 +46,7 @@ scripts/*.tbz2
 scripts/*.tgz
 scripts/*.tar.bz2
 scripts/*.tar.gz
-src/services/atheme-services
+src/services/shalture-services
 src/dbverify/dbverify
 src/ecdsadecode/ecdsadecode
 src/ecdsakeygen/ecdsakeygen

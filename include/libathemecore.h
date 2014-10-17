@@ -9,11 +9,11 @@
 #ifndef LIBATHEMECORE_H
 #define LIBATHEMECORE_H
 
-extern void atheme_bootstrap(void);
-extern void atheme_init(char *execname, char *log_p);
-extern void atheme_setup(void);
+extern void shalture_bootstrap(void);
+extern void shalture_init(char *execname, char *log_p);
+extern void shalture_setup(void);
 
-extern int atheme_main(int argc, char *argv[]);
+extern int shalture_main(int argc, char *argv[]);
 
 #endif
 

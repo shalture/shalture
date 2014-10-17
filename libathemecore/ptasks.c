@@ -71,7 +71,7 @@ void handle_admin(user_t *u)
 
 	numeric_sts(me.me, 256, u, ":Administrative info about %s", me.name);
 	numeric_sts(me.me, 257, u, ":%s", me.adminname);
-	numeric_sts(me.me, 258, u, ":Atheme IRC Services (%s)", PACKAGE_STRING);
+	numeric_sts(me.me, 258, u, ":Shaltúre IRC Services (%s)", PACKAGE_STRING);
 	numeric_sts(me.me, 259, u, ":<%s>", me.adminemail);
 }
 

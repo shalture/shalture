@@ -106,9 +106,9 @@ static void handle_mdep(database_handle_t *db, const char *type)
 
 int main(int argc, char *argv[])
 {
-	atheme_bootstrap();
-	atheme_init(argv[0], LOGDIR "/dbverify.log");
-	atheme_setup();
+	shalture_bootstrap();
+	shalture_init(argv[0], LOGDIR "/dbverify.log");
+	shalture_setup();
 	module_t *m;
 	unsigned int errcnt;
 	char *filename = argv[1] ? argv[1] : "services.db";
@@ -131,7 +131,7 @@ int main(int argc, char *argv[])
 	db_load(filename);
 	runflags |= RF_LIVE;
 
-	slog(LG_INFO, "*** phase 2: doing basic atheme database consistency check");
+	slog(LG_INFO, "*** phase 2: doing basic shalture database consistency check");
 
 	db_check();
 

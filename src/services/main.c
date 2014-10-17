@@ -9,5 +9,5 @@
 
 int main(int argc, char *argv[])
 {
-	return atheme_main(argc, argv);
+	return shalture_main(argc, argv);
 }
