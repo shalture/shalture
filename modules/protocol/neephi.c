@@ -4,7 +4,7 @@
  * Copyright (c) 2014 Max Teufel
  * Rights to this code are documented in doc/LICENSE.
  *
- * This file contains protocol support for sillyircd.
+ * This file contains protocol support for neephi.
  *
  */
 
@@ -12,12 +12,12 @@
 #include "uplink.h"
 #include "pmodule.h"
 #include "protocol/charybdis.h"
-#include "protocol/sillyircd.h"
+#include "protocol/neephi.h"
 
-DECLARE_MODULE_V1("protocol/sillyircd", true, _modinit, NULL, PACKAGE_STRING, "SillyIRCd Development Group");
+DECLARE_MODULE_V1("protocol/neephi", true, _modinit, NULL, PACKAGE_STRING, "Zohlai Development Group");
 
-ircd_t sillyircd = {
-	"sillyircd",					/* IRCd name */
+ircd_t neephi = {
+	"neephi",					/* IRCd name */
 	"$$",						/* TLD Prefix, used by Global. */
 	true,						/* Whether or not we use IRCNet/TS6 UID */
 	false,						/* Whether or not we use RCOMMAND */
@@ -42,7 +42,7 @@ ircd_t sillyircd = {
 	IRCD_CIDR_BANS | IRCD_HOLDNICK			/* Flags */
 };
 
-struct cmode_ sillyircd_mode_list[] = {
+struct cmode_ neephi_mode_list[] = {
   { 'i', CMODE_INVITE },
   { 'm', CMODE_MOD    },
   { 'n', CMODE_NOEXT  },
@@ -68,7 +68,7 @@ struct cmode_ sillyircd_mode_list[] = {
   { '\0', 0 }
 };
 
-struct cmode_ sillyircd_user_mode_list[] = {
+struct cmode_ neephi_user_mode_list[] = {
   { 'I', UF_IMMUNE   },
   { 'a', UF_ADMIN    },
   { 'i', UF_INVIS    },
@@ -82,10 +82,10 @@ void _modinit(module_t * m)
 {
 	MODULE_TRY_REQUEST_DEPENDENCY(m, "protocol/charybdis");
 
-	mode_list = sillyircd_mode_list;
-	user_mode_list = sillyircd_user_mode_list;
+	mode_list = neephi_mode_list;
+	user_mode_list = neephi_user_mode_list;
 
-	ircd = &sillyircd;
+	ircd = &neephi;
 
 	m->mflags = MODTYPE_CORE;
 
