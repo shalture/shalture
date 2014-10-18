@@ -46,5 +46,5 @@ specified.
 
 ## Contact Us
 
- * [GitHub](http://www.github.com/Shaltúre/Shaltúre)
+ * [GitHub](https://github.com/shalture/shalture)
  * [IRC](irc://irc.freenode.net/#shalture)
