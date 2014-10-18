@@ -378,7 +378,7 @@ void remove_group_chanacs(mygroup_t *mg)
 		ca = n->data;
 		mc = ca->mychan;
 
-		if (chanacs_entity_is_last_founder(mc, mg))
+		if (chanacs_entity_is_last_founder(mc, entity(mg)))
 		{
 			if (mychan_succession(mc) != NULL)
 				object_unref(ca);
