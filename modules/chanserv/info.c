@@ -40,7 +40,7 @@ static void cs_cmd_info(sourceinfo_t *si, int parc, char *parv[])
 	metadata_t *md;
 	mowgli_patricia_iteration_state_t state;
 	hook_channel_req_t req;
-	bool hide_info;
+	bool hide_info, hide_acl;
 
 	if (!name)
 	{
