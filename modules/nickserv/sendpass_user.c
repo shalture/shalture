@@ -51,16 +51,31 @@ static void ns_cmd_sendpass(sourceinfo_t *si, int parc, char *parv[])
 
 	if (!name)
 	{
+		const char *error;
+		cmd_faultcode_t fault;
+
 wrong_syntax:
-		if (has_sendpass_priv)
+		/* Multiple places goto here, so this needs some checks to be accurate */
+		if (parc < (has_sendpass_priv ? 1 : 2))
 		{
-			command_fail(si, fault_needmoreparams, STR_INSUFFICIENT_PARAMS, "SENDPASS");
-			command_fail(si, fault_needmoreparams, _("Syntax: SENDPASS <account> <email>"));
+			error = STR_INSUFFICIENT_PARAMS;
+			fault = fault_needmoreparams;
 		}
 		else
 		{
-			command_fail(si, fault_badparams, STR_INVALID_PARAMS, "SENDPASS");
-			command_fail(si, fault_badparams, _("Syntax: SENDPASS <account> [CLEAR]"));
+			error = STR_INVALID_PARAMS;
+			fault = fault_badparams;
+		}
+
+		if (!has_sendpass_priv)
+		{
+			command_fail(si, fault, error, "SENDPASS");
+			command_fail(si, fault, _("Syntax: SENDPASS <account> <email>"));
+		}
+		else
+		{
+			command_fail(si, fault, error, "SENDPASS");
+			command_fail(si, fault, _("Syntax: SENDPASS <account> [CLEAR]"));
 		}
 		return;
 	}
@@ -143,10 +158,25 @@ wrong_syntax:
 
 			metadata_add(mu, "private:sendpass:sender", get_oper_name(si));
 			metadata_add(mu, "private:sendpass:timestamp", number_to_string(time(NULL)));
+
+			free(key);
+
+			if (has_sendpass_priv)
+			{
+				command_success_nodata(si, _("The password change key for \2%s\2 has been sent to the corresponding email address."), entity(mu)->name);
+				return;
+			}
 		}
 		else
+		{
+			free(key);
 			logcommand(si, CMDLOG_ADMIN, "SENDPASS: Could not send email for \2%s\2 to \2%s\2", entity(mu)->name, email);
-		free(key);
+			if (has_sendpass_priv)
+			{
+				command_fail(si, fault_emailfail, _("Email send failed."));
+				return;
+			}
+		}
 	}
 
 	command_success_nodata(si, _("The password change key for \2%s\2 has been sent to the email address provided, if it matched the one stored with the user and a reset key isn't already active."), entity(mu)->name);
