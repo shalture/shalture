@@ -1,3 +1,20 @@
+Shaltúre Services 8.0 Development Notes
+=======================================
+This is the first release series of Shaltúre, based on Atheme.
+
+operserv
+--------
+- operserv/akill: Allow users with operserv:akill-anymask to (try to) akill unsafe masks.
+
+libathemecore
+-------------
+- Add get_kline_userhost function to find a user's user@host to kline, avoiding some mishaps
+  with shared hosts.
+
+misc
+----
+- Add automated klines to the AKILL list.
+
 Atheme Services 7.2 Development Notes
 =====================================
 
