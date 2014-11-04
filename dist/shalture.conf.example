@@ -13,28 +13,28 @@
 /*
  * These are the modules included with the core distribution of Services.
  *
- * You may be interested in the atheme community modules distribution as 
+ * You may be interested in the shalture community modules distribution as
  * well, which adds additional features that may or may not be compatible
  * with the project paradigms intended for maintainance of the core of
- * atheme-services.
+ * shalture-services.
  *
- * Visit the atheme-services website for more information and to download them.
+ * Visit the following URL for more information and to download them:
+ * https://github.com/shalture/shalture-contrib-modules/
  *
- * Modules marked [experimental] will taint your atheme-services instance. Do
- * not file any bug reports with us about using Services with those modules;
- * they will be ignored.
+ * Modules marked [experimental] will taint your shalture-services instance.
+ * Don't be surprised if things break when using them.
  */
 
 /* Dynamic security modules.
  *
  * WARNING: If you select one of these modules, the default security policy included
- * with Atheme may break.  These modules are intended for people who know what they
+ * with Shaltúre may break.  These modules are intended for people who know what they
  * are doing and understand the implications of what they do.  Security modules which
  * are likely to break the default policy are prefixed with [!], if you are new to
- * Atheme, you should avoid enabling them.
+ * Shaltúre, you should avoid enabling them.
  *
  * If you find your security policy is broken, you may debug it while allowing normal
- * operation of your IRC network by putting Atheme into "permissive mode".  To do this,
+ * operation of your IRC network by putting Shaltúre into "permissive mode".  To do this,
  * enable general::permissive_mode.
  *
  * [!] Infer "command:" namespace permissions   modules/security/cmdperm
@@ -540,7 +540,7 @@ loadmodule "modules/infoserv/main";
  * AUTHCOOKIE mechanism (for IRIS)              modules/saslserv/authcookie
  * EXTERNAL mechanism (IRCv3.1+)                modules/saslserv/external
  *
- * ECDSA-NIST256p-CHALLENGE support requires that Atheme be compiled against OpenSSL.
+ * ECDSA-NIST256p-CHALLENGE support requires that Shaltúre be compiled against OpenSSL.
  */
 loadmodule "modules/saslserv/main";
 loadmodule "modules/saslserv/plain";
@@ -740,7 +740,7 @@ loadmodule "modules/groupserv/set_url";
 /*
  * Various modules.
  *
- * Atheme includes an optional HTTP server that can be used for integration
+ * Shaltúre includes an optional HTTP server that can be used for integration
  * with portal software and other useful things. To enable it, load this
  * module, and uncomment the httpd { } block towards the bottom of the config.
  *
@@ -759,7 +759,7 @@ loadmodule "modules/transport/xmlrpc";
 
 /* Extended target entity types. [EXPERIMENTAL]
  *
- * Atheme can set up special target mapping entities which match multiple
+ * Shaltúre can set up special target mapping entities which match multiple
  * users in channel access entries.  These target mapping entity types are
  * defined through the 'exttarget' modules listed below.
  *
@@ -780,7 +780,7 @@ loadmodule "modules/transport/xmlrpc";
 /* Other modules.
  *
  * Put any other modules you want to load on startup here. The path
- * is relative to PREFIX or PREFIX/lib/atheme, depending on how Atheme
+ * is relative to PREFIX or PREFIX/lib/shalture, depending on how Shaltúre
  * was compiled.
  */
 #loadmodule "modules/contrib/ns_listlogins";
@@ -802,7 +802,7 @@ serverinfo {
 	/* desc
 	 * The ``server comment'' we send to the IRC network.
 	 */
-	desc = "Atheme IRC Services";
+	desc = "Shaltúre IRC Services";
 
 	/* numeric
 	 * Some protocol drivers (Charybdis, Ratbox2, Hybrid, P10, IRCNet)
@@ -845,7 +845,7 @@ serverinfo {
 	registeremail = "noreply@admin.tld";
 
 	/* (*)hidden
-	 * If this is enabled, Atheme will indicate to the uplink IRCd
+	 * If this is enabled, Shaltúre will indicate to the uplink IRCd
 	 * that it should not be included in /links output.  This only works
 	 * on the following IRCds at present: charybdis, hybrid, ircd-seven,
 	 * ratbox, shadowircd.
@@ -863,7 +863,7 @@ serverinfo {
 
 	/* (*)loglevel
 	 * Specify the default categories of logging information to record
-	 * in the master Atheme logfile, usually var/atheme.log.
+	 * in the master Shaltúre logfile, usually var/shalture.log.
 	 *
 	 * Options include:
 	 *      debug, all      - meta-keyword for all possible categories
@@ -912,7 +912,7 @@ serverinfo {
 
 	/* (*)auth
 	 * What type of username registration authorization do you want?
-	 * If "email", Atheme will send a confirmation email to the address to
+	 * If "email", Shaltúre will send a confirmation email to the address to
 	 * ensure it's valid. If registration is not completed within one day,
 	 * the username will expire. If "none", no message will be sent and
 	 * the username will be fully registered.
@@ -931,8 +931,8 @@ serverinfo {
 
 /* uplink{} blocks define connections to IRC servers.
  * Multiple may be defined but only one will be used at a time (IRC
- * being a tree shaped network). Atheme does not currently link over SSL.
- * To link Atheme over ssl, please connect Atheme to a local ircd and have that
+ * being a tree shaped network). Shaltúre does not currently link over SSL.
+ * To link Shaltúre over ssl, please connect Shaltúre to a local ircd and have that
  * connect to your network over SSL.
  */
 uplink "irc.example.net" {
@@ -1239,7 +1239,7 @@ chanserv {
 	/* (*)founder_flags
 	 * The flags a user will get when they register a new channel.
 	 * This MUST include at least 'F' or it will be ignored.
-	 * If it is not set, Atheme will give the user all channel flags.
+	 * If it is not set, Shaltúre will give the user all channel flags.
 	 */
 	#founder_flags = "AFORfiorstv";
 
@@ -1800,7 +1800,7 @@ httpd {
 	host = "0.0.0.0";
 
 	/* host (ipv6)
-	 * If you want, you can have Atheme listen on an IPv6 host too.
+	 * If you want, you can have Shaltúre listen on an IPv6 host too.
 	 * Use :: if you want to listen on all available IPv6 hosts.
 	 */
 	#host = "::";
@@ -2083,7 +2083,7 @@ general {
 	/* (*)uplink_sendq_limit
 	 * The maximum amount of data that may be queued to be sent
 	 * to the uplink, in bytes. This should be enough to contain
-	 * Atheme's response to the netburst, but smaller than the
+	 * Shaltúre's response to the netburst, but smaller than the
 	 * IRCd's sendq limit for servers.
 	 */
 	uplink_sendq_limit = 1048576;
@@ -2102,7 +2102,7 @@ general {
 	};
 
 	/* allow_taint
-	 * By enabling this option, Atheme will run in configurations where
+	 * By enabling this option, Shaltúre will run in configurations where
 	 * the upstream will not provide support.  By enabling this feature,
 	 * you void any perceived rights to support.
 	 */
@@ -2134,7 +2134,7 @@ general {
 /* Operator configuration
  * See the PRIVILEGES document for more information.
  * NOTE: All changes apply immediately upon rehash. You may need
- * to send a signal (killall -HUP atheme-services) to regain control.
+ * to send a signal (killall -HUP shalture-services) to regain control.
  */
 /* (*) Operclasses specify groups of services operator privileges */
 /* The "user" operclass specifies privileges all users get.
