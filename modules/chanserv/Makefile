@@ -37,6 +37,7 @@ SRCS =			\
 	mark.c	\
 	moderate.c \
 	op.c		\
+	op_core.c	\
 	owner.c	\
 	protect.c	\
 	quiet.c	\
