@@ -270,7 +270,7 @@ static int parse_alis(sourceinfo_t *si, int parc, char *parv[], struct alis_quer
 		{
 			if (!has_priv(si, PRIV_CHAN_AUSPEX))
 			{
-				command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+				command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 				return 0;
 			}
 

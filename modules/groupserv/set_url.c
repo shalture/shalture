@@ -33,7 +33,7 @@ static void gs_cmd_set_url(sourceinfo_t *si, int parc, char *parv[])
 
 	if (!groupacs_sourceinfo_has_flag(mg, si, GA_SET))
 	{
-		command_fail(si, fault_noprivs, _("You are not authorized to execute this command."));
+		command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 		return;
 	}
 

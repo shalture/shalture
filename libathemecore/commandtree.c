@@ -128,7 +128,7 @@ void command_exec(service_t *svs, sourceinfo_t *si, command_t *c, int parc, char
 		command_fail(si, fault_noprivs, STR_NO_PRIVILEGE, accessbuf);
 	}
 	else
-		command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+		command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 	/* logcommand(si, CMDLOG_ADMIN, "DENIED COMMAND: \2%s\2 used \2%s\2 \2%s\2", origin, svs->name, cmd); */
 	if (si->smu != NULL)
 		language_set_active(NULL);

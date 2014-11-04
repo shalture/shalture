@@ -132,7 +132,7 @@ devoice_user(sourceinfo_t *si, mychan_t *mc, channel_t *c, user_t *tu)
 		flag = 0;
 	if (flag != 0 && !chanacs_source_has_flag(mc, si, flag))
 	{
-		command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+		command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 		return DEVOICE_FAILED;
 	}
 
@@ -298,7 +298,7 @@ static void cs_cmd_quiet(sourceinfo_t *si, int parc, char *parv[])
 
 	if (!chanacs_source_has_flag(mc, si, CA_REMOVE))
 	{
-		command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+		command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 		return;
 	}
 
@@ -406,7 +406,7 @@ static void cs_cmd_unquiet(sourceinfo_t *si, int parc, char *parv[])
 			 !chanacs_source_has_flag(mc, si, CA_EXEMPT) ||
 			 irccasecmp(target, si->su->nick)))
 	{
-		command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+		command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 		return;
 	}
 

@@ -130,13 +130,13 @@ static void cs_xop(sourceinfo_t *si, int parc, char *parv[], const char *levelde
 		 * possible future denial of granting +f */
 		if (!(restrictflags & CA_FLAGS))
 		{
-			command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+			command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 			return;
 		}
 		restrictflags = allow_flags(mc, restrictflags);
 		if ((restrictflags & level) != level)
 		{
-			command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+			command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 			return;
 		}
 		cs_xop_do_add(si, mc, mt, uname, level, leveldesc, restrictflags);
@@ -154,13 +154,13 @@ static void cs_xop(sourceinfo_t *si, int parc, char *parv[], const char *levelde
 		 * possible future denial of granting +f */
 		if (!(restrictflags & CA_FLAGS))
 		{
-			command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+			command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 			return;
 		}
 		restrictflags = allow_flags(mc, restrictflags);
 		if ((restrictflags & level) != level)
 		{
-			command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+			command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 			return;
 		}
 		cs_xop_do_del(si, mc, mt, uname, level, leveldesc);
@@ -174,7 +174,7 @@ static void cs_xop(sourceinfo_t *si, int parc, char *parv[], const char *levelde
 				operoverride = true;
 			else
 			{
-				command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+				command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 				return;
 			}
 		}
@@ -466,7 +466,7 @@ static void cs_cmd_forcexop(sourceinfo_t *si, int parc, char *parv[])
 
 	if (!is_founder(mc, entity(si->smu)))
 	{
-		command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+		command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 		return;
 	}
 

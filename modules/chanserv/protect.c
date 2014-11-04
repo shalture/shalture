@@ -71,7 +71,7 @@ static void cmd_protect(sourceinfo_t *si, bool protecting, int parc, char *parv[
 
 	if (!chanacs_source_has_flag(mc, si, CA_USEPROTECT))
 	{
-		command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+		command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 		return;
 	}
 
@@ -104,7 +104,7 @@ static void cmd_protect(sourceinfo_t *si, bool protecting, int parc, char *parv[
 		/* SECURE check; we can skip this if deprotecting or sender == target, because we already verified */
 		if (protect && (si->su != tu) && (mc->flags & MC_SECURE) && !chanacs_user_has_flag(mc, tu, CA_OP) && !chanacs_user_has_flag(mc, tu, CA_AUTOOP))
 		{
-			command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+			command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 			command_fail(si, fault_noprivs, _("\2%s\2 has the SECURE option enabled, and \2%s\2 does not have appropriate access."), mc->name, tu->nick);
 			return;
 		}

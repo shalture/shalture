@@ -69,7 +69,7 @@ static void bs_cmd_set_private(sourceinfo_t *si, int parc, char *parv[])
 
 	if (!has_priv(si, PRIV_CHAN_ADMIN))
 	{
-		command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+		command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 		return;
 	}
 

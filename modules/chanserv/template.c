@@ -95,7 +95,7 @@ static void cs_cmd_template(sourceinfo_t *si, int parc, char *parv[])
 				operoverride = true;
 			else
 			{
-				command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+				command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 				return;
 			}
 		}
@@ -155,7 +155,7 @@ static void cs_cmd_template(sourceinfo_t *si, int parc, char *parv[])
 		{
 			if (!(restrictflags & CA_FLAGS))
 			{
-				command_fail(si, fault_noprivs, _("You are not authorized to execute this command."));
+				command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 				return;
 			}
 			restrictflags = allow_flags(mc, restrictflags);

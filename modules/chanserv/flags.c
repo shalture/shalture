@@ -107,7 +107,7 @@ static void do_list(sourceinfo_t *si, mychan_t *mc, unsigned int flags)
 			operoverride = true;
 		else
 		{
-			command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+			command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 			return;
 		}
 	}
@@ -212,7 +212,7 @@ static void cs_cmd_flags(sourceinfo_t *si, int parc, char *parv[])
 		{
 			if (!(mc->flags & MC_PUBACL) && !chanacs_source_has_flag(mc, si, CA_ACLVIEW))
 			{
-				command_fail(si, fault_noprivs, _("You are not authorized to execute this command."));
+				command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 				return;
 			}
 			if (validhostmask(target))
@@ -257,7 +257,7 @@ static void cs_cmd_flags(sourceinfo_t *si, int parc, char *parv[])
 						irccasecmp(target, entity(si->smu)->name) ||
 						strcmp(flagstr, "-*"))
 				{
-					command_fail(si, fault_noprivs, _("You are not authorized to execute this command."));
+					command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 					return;
 				}
 			}

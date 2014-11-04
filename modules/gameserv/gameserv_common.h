@@ -88,7 +88,7 @@ static inline bool gs_do_parameters(sourceinfo_t *si, int *parc, char ***parv, m
 			}
 			if (!allow)
 			{
-				command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+				command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 				return false;
 			}
 		}

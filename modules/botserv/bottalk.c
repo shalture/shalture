@@ -65,7 +65,7 @@ static void bs_cmd_say(sourceinfo_t *si, int parc, char *parv[])
 
 	if (!(chanacs_source_flags(mc, si) & (CA_OP | CA_AUTOOP)))
 	{
-		command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+		command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 		return;
 	}
 
@@ -114,7 +114,7 @@ static void bs_cmd_act(sourceinfo_t *si, int parc, char *parv[])
 
 	if (!(chanacs_source_flags(mc, si) & (CA_OP | CA_AUTOOP)))
 	{
-		command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+		command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 		return;
 	}
 

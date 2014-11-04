@@ -83,7 +83,7 @@ static void cs_cmd_topic(sourceinfo_t *si, int parc, char *parv[])
 
 	if (!chanacs_source_has_flag(mc, si, CA_TOPIC))
 	{
-		command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+		command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 		return;
 	}
 
@@ -141,7 +141,7 @@ static void cs_cmd_topicappend(sourceinfo_t *si, int parc, char *parv[])
 
         if (!chanacs_source_has_flag(mc, si, CA_TOPIC))
         {
-                command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+                command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
                 return;
         }
 
@@ -216,7 +216,7 @@ static void cs_cmd_topicprepend(sourceinfo_t *si, int parc, char *parv[])
 
         if (!chanacs_source_has_flag(mc, si, CA_TOPIC))
         {
-                command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+                command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
                 return;
         }
 
@@ -310,7 +310,7 @@ static void cs_cmd_topicswap(sourceinfo_t *si, int parc, char *parv[])
 
 	if (!chanacs_source_has_flag(mc, si, CA_TOPIC))
 	{
-		command_fail(si, fault_noprivs, _("You are not authorized to perform this operation."));
+		command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
 		return;
 	}
 

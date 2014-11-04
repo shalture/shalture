@@ -73,6 +73,7 @@ struct nicksvs_
 #define STR_INSUFFICIENT_PARAMS _("Insufficient parameters for \2%s\2.")
 #define STR_INVALID_PARAMS _("Invalid parameters for \2%s\2.")
 #define STR_NO_PRIVILEGE _("You do not have the %s privilege.")
+#define STR_NOT_AUTHORIZED _("You are not authorized to perform this operation.")
 
 /* for command_add_flood(),
  * note that floodcheck() already does one FLOOD_MSGS_FACTOR
