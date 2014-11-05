@@ -1,0 +1,16 @@
+Ayuda para NETSPLIT:
+
+NETSPLIT le permite vigilar splits (desconexiones) de servidores.
+
+Sintaxis: NETSPLIT LIST
+
+Proporciona una lista de servidores que actualmente
+se encuentran desconectados, y el tiempo que éstos han
+estado desconectados.
+
+Sintaxis: NETSPLIT REMOVE <servidor>
+
+Elimina un servidor determinado de la lista de servidores desconectados.
+
+Ejemplos:
+   /msg &nick& NETSPLIT REMOVE moocow.int
