@@ -1,0 +1,20 @@
+Ayuda para SEARCH:
+
+SEARCH le permite realizar una búsqueda de canales de juego de rol
+siguiendo unos criterios establecidos. Para mostrar los criterios
+disponibles, véase la ayuda del comando SET mediante /msg &nick& HELP SET
+
+Las opciones de búsqueda que se detallan en la ayuda de SET pueden
+usarse como palabras clave dentro del comando SEARCH. Para ejemplos,
+véase más abajo.
+
+Sintaxis: SEARCH <palabras clave>
+
+Ejemplos:
+    /msg &nick& SEARCH FANTASY MIDDLEAGES FREEFORM PG13 R
+         Realiza una búsqueda de género fantástico, del periodo
+         de la edad media, normas freeform y de calificación por
+         edades PG13 o R.
+    /msg &nick& SEARCH CYBERPUNK FANTASY REALISTIC
+         Realiza una búsqueda de todos los juegos de género cyberpunk,
+         fantástico, o realista.

@@ -1,0 +1,37 @@
+Ayuda para SET:
+
+SET le permite proporcionar detalles sobre su canal de juego de rol.
+Véase los ejemplos más abajo para aprender la sintaxis de los comandos.
+
+GENRE (género; una selección sólo; elija el más relevante si más de uno)
+     APOCALYPSE       ANIME            ANTROPOMORPH     CYBERPUNK
+     FANTASY          HORROR           MULTIGENRE       REALISTIC
+     SCIFI            STEAMPUNK        
+
+PERIOD (periodo; una selección sólo)
+     PREHISTORIC      ANTIQUITY        MIDDLEAGES       EARLYMODERN
+     MODERN           FUTURE
+
+RULESET (reglas; una selección sólo)
+     ADND             HOMEBREW         DND3.0           DND3.5
+     DND4.0           FREEFORM         OTHER            OWOD
+     NWOD
+
+RATING (clasificación por edades; una selección sólo)
+     G                PG               PG13             R
+     ADULT
+
+SYSTEM (sistema; se puede elegir más de uno)
+     CHARAPPROVAL     DICED            SHEETED
+
+SETTING (escriba aquí una descripción del escenario del rol)
+STORYLINE (escriba aquí la trama del rol)
+SUMMARY (escriba aquí un resumen del rol)
+
+Ejemplos:
+    /msg &nick& SET #ooc GENRE FANTASY
+         Fija el género (GENRE) de #ooc a FANTASY
+    /msg &nick& SET #ooc SYSTEM CHARAPPROVAL DICED
+         Fija el sistema (SYSTEM) de #ooc a "Character Approval" y "Diced"
+    /msg &nick& SET #ooc SYSTEM
+         Elimina las opciones de SYSTEM del canal #ooc

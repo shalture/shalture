@@ -1,0 +1,8 @@
+Ayuda para INFO:
+
+INFO se usa para mostrar el perfil completo de un canal.
+
+Sintaxis: INFO <#canal>
+
+Ejemplo:
+    /msg &nick& INFO #ooc

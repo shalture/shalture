@@ -1,0 +1,8 @@
+Ayuda para DISABLE:
+
+Deshabilita RPGServ en su canal.
+
+Sintaxis: DISABLE <#canal>
+
+Ejemplo:
+    /msg &nick& DISABLE #ooc

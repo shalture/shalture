@@ -1,0 +1,13 @@
+Ayuda para LIST:
+
+LIST se usa para mostrar una lista de todos los canales activos
+que han sido marcados como canales de juego de rol de la red.
+
+Por favor tenga en cuenta que este comando no mostrará todos los canales de
+rol, sino sólo aquellos que usen RPGServ. Para una lista completa
+de los canales de la red, use /LIST.
+
+Sintaxis: LIST
+
+Ejemplo:
+    /msg &nick& LIST

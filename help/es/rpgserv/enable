@@ -1,0 +1,8 @@
+Ayuda para ENABLE:
+
+Habilita RPGServ en su canal.
+
+Sintaxis: ENABLE <#canal>
+
+Ejemplo:
+    /msg &nick& ENABLE #ooc
