@@ -35,17 +35,17 @@ static op_cmddesc_t desc = {
 	.mode_cstatus = CSTATUS_OWNER,
 	.cmd_op      = "OWNER",
 	.cmd_deop    = "DEOWNER",
-	.notify_op   = "You have been set as owner on %s by %s",
-	.notify_deop = "You have been unset as owner on %s by %s",
-	.result_op   = "\2%s\2 has been set as owner on \2%s\2.",
-	.result_deop = "\2%s\2 has been unset as owner on \2%s\2."
+	.notify_op   = N_("You have been set as owner on %s by %s"),
+	.notify_deop = N_("You have been unset as owner on %s by %s"),
+	.result_op   = N_("\2%s\2 has been set as owner on \2%s\2."),
+	.result_deop = N_("\2%s\2 has been unset as owner on \2%s\2.")
 };
 
 void _modinit(module_t *m)
 {
 	if (ircd != NULL && !ircd->uses_owner)
 	{
-		slog(LG_INFO, "Module %s requires owner support, refusing to load.", m->name);
+		slog(LG_INFO, N_("Module %s requires owner support, refusing to load."), m->name);
 		m->mflags = MODTYPE_FAIL;
 		return;
 	}

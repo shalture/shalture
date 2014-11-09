@@ -121,11 +121,11 @@ void cmd_op_multiple(sourceinfo_t *si, bool opping, const op_cmddesc_t *cmd, int
 			cu->modes &= ~(cmd->mode_cstatus);
 
 		if (si->c == NULL && tu != si->su)
-			change_notify(chansvs.nick, tu, op ? cmd->notify_op : cmd->notify_deop, mc->name, get_source_name(si));
+			change_notify(chansvs.nick, tu, _(op ? cmd->notify_op : cmd->notify_deop), mc->name, get_source_name(si));
 
 		logcommand(si, CMDLOG_DO, "%s: \2%s!%s@%s\2 on \2%s\2", op ? cmd->cmd_op : cmd->cmd_deop, tu->nick, tu->user, tu->vhost, mc->name);
 		if (si->su == NULL || !chanuser_find(mc->chan, si->su))
-			command_success_nodata(si, op ? cmd->result_op : cmd->result_deop, tu->nick, mc->name);
+			command_success_nodata(si, _(op ? cmd->result_op : cmd->result_deop), tu->nick, mc->name);
 	}
 
 	prefix_action_clear(&op_actions);

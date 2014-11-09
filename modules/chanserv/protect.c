@@ -35,17 +35,17 @@ static op_cmddesc_t desc = {
 	.mode_cstatus = CSTATUS_PROTECT,
 	.cmd_op      = "PROTECT",
 	.cmd_deop    = "DEPROTECT",
-	.notify_op   = "You have been set as protected on %s by %s",
-	.notify_deop = "You have been unset as protected on %s by %s",
-	.result_op   = "\2%s\2 has been set as protected on \2%s\2.",
-	.result_deop = "\2%s\2 has been unset as protected on \2%s\2."
+	.notify_op   = N_("You have been set as protected on %s by %s"),
+	.notify_deop = N_("You have been unset as protected on %s by %s"),
+	.result_op   = N_("\2%s\2 has been set as protected on \2%s\2."),
+	.result_deop = N_("\2%s\2 has been unset as protected on \2%s\2.")
 };
 
 void _modinit(module_t *m)
 {
 	if (ircd != NULL && !ircd->uses_protect)
 	{
-		slog(LG_INFO, "Module %s requires protect support, refusing to load.", m->name);
+		slog(LG_INFO, _("Module %s requires protect support, refusing to load."), m->name);
 		m->mflags = MODTYPE_FAIL;
 		return;
 	}

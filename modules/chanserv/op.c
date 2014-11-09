@@ -35,10 +35,10 @@ static op_cmddesc_t desc = {
 	.mode_cstatus = CSTATUS_OP,
 	.cmd_op      = "OP",
 	.cmd_deop    = "DEOP",
-	.notify_op   = "You have been opped on %s by %s",
-	.notify_deop = "You have been deopped on %s by %s",
-	.result_op   = "\2%s\2 has been opped on \2%s\2.",
-	.result_deop = "\2%s\2 has been deopped on \2%s\2."
+	.notify_op   = N_("You have been opped on %s by %s"),
+	.notify_deop = N_("You have been deopped on %s by %s"),
+	.result_op   = N_("\2%s\2 has been opped on \2%s\2."),
+	.result_deop = N_("\2%s\2 has been deopped on \2%s\2.")
 };
 
 void _modinit(module_t *m)

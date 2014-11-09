@@ -35,10 +35,10 @@ static op_cmddesc_t desc = {
 	.mode_cstatus = CSTATUS_VOICE,
 	.cmd_op      = "VOICE",
 	.cmd_deop    = "DEVOICE",
-	.notify_op   = "You have been voiced on %s by %s",
-	.notify_deop = "You have been devoiced on %s by %s",
-	.result_op   = "\2%s\2 has been voiced on \2%s\2.",
-	.result_deop = "\2%s\2 has been devoiced on \2%s\2."
+	.notify_op   = N_("You have been voiced on %s by %s"),
+	.notify_deop = N_("You have been devoiced on %s by %s"),
+	.result_op   = N_("\2%s\2 has been voiced on \2%s\2."),
+	.result_deop = N_("\2%s\2 has been devoiced on \2%s\2.")
 };
 
 void _modinit(module_t *m)
