@@ -1,0 +1,11 @@
+Ayuda para DNSBLSCAN:
+
+DNBLSCAN permite a los operadores de la red analizar a un usuario (que se
+encuentra conectado a la red) de forma individual y comprobar si está en
+una lista negra. Actuará de acuerdo con la configuración de DNSBLACTION en
+el caso de que la IP del usuario se encuentre en una de las listas negras.
+
+Sintaxis: DNSBLSCAN <usario>
+
+Ejemplos:
+    /msg &nick& DNSBLSCAN jdhore

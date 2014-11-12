@@ -1,0 +1,16 @@
+Ayuda para FSEND:
+
+FSEND le permite mandar un memo por fuerza a un nickname
+que se encuentra desconectado. Cuando vuelva a conectarse
+se le informará de que tiene un mensaje en espera y tendrá
+la oportunidad de leer su memo.
+
+Su memo no puede contener más de 300 caracteres.
+
+FSEND obviará el hecho de que el usuario tenga activado NOMEMO
+y que le tenga ignorado en memoserv.
+
+Sintaxis: FSEND <usuario|nick> texto
+
+Ejemplos:
+    /msg &nick& FSEND Kog paga las facturas

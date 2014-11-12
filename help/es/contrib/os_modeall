@@ -1,0 +1,11 @@
+Ayuda para MODEALL:
+
+Sintaxis: MODEALL <modo> [parámetros]
+
+MODEALL fija modos en todos los canales. Esto puede ser
+útil a la hora de tratar floods mediante bots, y fijar +R
+en todos los canales.
+
+Ejemplos:
+    /msg &nick& MODEALL +R
+    /msg &nick& MODEALL +M

@@ -1,0 +1,15 @@
+Ayuda para DNSBLEXEMPT:
+
+DNSBLEXEMPT mantiene una lista de direcciones IP de tal forma que
+si un usuario coincide con una de las entrada de esa lista, no será
+comprobado.
+
+Sintaxis: DNSBLEXEMPT LIST
+Sintaxis: DNSBLEXEMPT ADD <ip> <razón>
+Sintaxis: DNSBLEXEMPT DEL <ip>
+
+Ejemplos:
+    /msg &nick& DNSBLEXEMPT LIST
+    /msg &nick& DNSBLEXEMPT ADD 127.0.0.2 localhost
+    /msg &nick& DNSBLEXEMPT ADD 208.54.35.85 IP de T-Mobile en DNSBL :(
+    /msg &nick& DNSBLEXEMPT DEL 127.0.0.2
