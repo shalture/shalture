@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Atheme IRC Services\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-02 02:08+0100\n"
+"POT-Creation-Date: 2014-11-13 16:36-0300\n"
 "PO-Revision-Date: 2014-11-01 22:16-0300\n"
 "Last-Translator: Ramiro Bou <bouramiro@gmail.com>\n"
 "Language-Team: Español; Castellano <LL@li.org>\n"
@@ -20,44 +20,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
-
-#: modules/alis/main.c:273 modules/botserv/bottalk.c:68
-#: modules/botserv/bottalk.c:117 modules/botserv/info.c:100
-#: modules/botserv/set_fantasy.c:76 modules/botserv/set_nobot.c:67
-#: modules/botserv/set_private.c:72 modules/chanserv/access.c:587
-#: modules/chanserv/access.c:664 modules/chanserv/access.c:762
-#: modules/chanserv/access.c:806 modules/chanserv/access.c:867
-#: modules/chanserv/access.c:916 modules/chanserv/access.c:1008
-#: modules/chanserv/access.c:1057 modules/chanserv/access.c:1187
-#: modules/chanserv/access.c:1278 modules/chanserv/access.c:1374
-#: modules/chanserv/akick.c:275 modules/chanserv/akick.c:469
-#: modules/chanserv/akick.c:608 modules/chanserv/ban.c:68
-#: modules/chanserv/ban.c:155 modules/chanserv/clear_bans.c:80
-#: modules/chanserv/clear_users.c:67 modules/chanserv/count.c:66
-#: modules/chanserv/drop.c:74 modules/chanserv/flags.c:110
-#: modules/chanserv/getkey.c:60 modules/chanserv/halfop.c:74
-#: modules/chanserv/halfop.c:107 modules/chanserv/invite.c:73
-#: modules/chanserv/kick.c:64 modules/chanserv/kick.c:136
-#: modules/chanserv/op.c:84 modules/chanserv/op.c:97
-#: modules/chanserv/owner.c:74 modules/chanserv/owner.c:107
-#: modules/chanserv/protect.c:74 modules/chanserv/protect.c:107
-#: modules/chanserv/quiet.c:135 modules/chanserv/quiet.c:301
-#: modules/chanserv/quiet.c:409 modules/chanserv/recover.c:67
-#: modules/chanserv/template.c:98 modules/chanserv/topic.c:86
-#: modules/chanserv/topic.c:144 modules/chanserv/topic.c:219
-#: modules/chanserv/topic.c:306 modules/chanserv/unban_self.c:87
-#: modules/chanserv/voice.c:84 modules/chanserv/why.c:82
-#: modules/chanserv/xop.c:133 modules/chanserv/xop.c:139
-#: modules/chanserv/xop.c:157 modules/chanserv/xop.c:163
-#: modules/chanserv/xop.c:177 modules/chanserv/xop.c:469
-#: modules/contrib/cs_access_alias.c:135 modules/contrib/cs_userinfo.c:73
-#: modules/contrib/cs_userinfo.c:98 modules/groupserv/flags.c:53
-#: modules/groupserv/flags.c:89 modules/groupserv/flags.c:141
-#: modules/groupserv/invite.c:52 modules/groupserv/listchans.c:64
-#: modules/memoserv/sendops.c:109 modules/operserv/soper.c:65
-#: modules/rpgserv/set.c:184
-msgid "You are not authorized to perform this operation."
-msgstr "No estás autorizado a realizar esta operación."
 
 #: modules/alis/main.c:468 modules/botserv/help.c:39
 #: modules/botserv/set_core.c:47 modules/chanfix/fix.c:602
@@ -152,37 +114,34 @@ msgstr "Sintaxis: SAY <#canal> <mensaje>"
 #: modules/chanserv/access.c:1174 modules/chanserv/access.c:1265
 #: modules/chanserv/access.c:1361 modules/chanserv/akick.c:191
 #: modules/chanserv/akick.c:454 modules/chanserv/akick.c:590
-#: modules/chanserv/antiflood.c:406 modules/chanserv/ban.c:56
-#: modules/chanserv/ban.c:140 modules/chanserv/clear_bans.c:68
-#: modules/chanserv/clear_users.c:55 modules/chanserv/close.c:87
-#: modules/chanserv/count.c:56 modules/chanserv/drop.c:62
-#: modules/chanserv/drop.c:144 modules/chanserv/fflags.c:56
-#: modules/chanserv/flags.c:176 modules/chanserv/ftransfer.c:58
-#: modules/chanserv/getkey.c:48 modules/chanserv/halfop.c:68
+#: modules/chanserv/ban.c:56 modules/chanserv/ban.c:140
+#: modules/chanserv/clear_bans.c:68 modules/chanserv/clear_users.c:55
+#: modules/chanserv/close.c:87 modules/chanserv/count.c:56
+#: modules/chanserv/drop.c:62 modules/chanserv/drop.c:144
+#: modules/chanserv/fflags.c:56 modules/chanserv/flags.c:176
+#: modules/chanserv/ftransfer.c:58 modules/chanserv/getkey.c:48
 #: modules/chanserv/hold.c:54 modules/chanserv/info.c:61
 #: modules/chanserv/invite.c:61 modules/chanserv/kick.c:58
 #: modules/chanserv/kick.c:130 modules/chanserv/mark.c:55
-#: modules/chanserv/op.c:55 modules/chanserv/owner.c:68
-#: modules/chanserv/protect.c:68 modules/chanserv/quiet.c:289
-#: modules/chanserv/quiet.c:394 modules/chanserv/recover.c:55
-#: modules/chanserv/set_email.c:44 modules/chanserv/set_entrymsg.c:43
-#: modules/chanserv/set_fantasy.c:58 modules/chanserv/set_founder.c:85
-#: modules/chanserv/set_gameserv.c:45 modules/chanserv/set_guard.c:58
-#: modules/chanserv/set_keeptopic.c:43 modules/chanserv/set_limitflags.c:47
-#: modules/chanserv/set_mlock.c:58 modules/chanserv/set_prefix.c:72
-#: modules/chanserv/set_private.c:47 modules/chanserv/set_property.c:61
-#: modules/chanserv/set_pubacl.c:42 modules/chanserv/set_restricted.c:43
+#: modules/chanserv/quiet.c:289 modules/chanserv/quiet.c:394
+#: modules/chanserv/recover.c:55 modules/chanserv/set_email.c:44
+#: modules/chanserv/set_entrymsg.c:43 modules/chanserv/set_fantasy.c:58
+#: modules/chanserv/set_founder.c:85 modules/chanserv/set_gameserv.c:45
+#: modules/chanserv/set_guard.c:58 modules/chanserv/set_keeptopic.c:43
+#: modules/chanserv/set_limitflags.c:47 modules/chanserv/set_mlock.c:58
+#: modules/chanserv/set_prefix.c:72 modules/chanserv/set_private.c:47
+#: modules/chanserv/set_property.c:61 modules/chanserv/set_restricted.c:43
 #: modules/chanserv/set_secure.c:43 modules/chanserv/set_topiclock.c:43
 #: modules/chanserv/set_url.c:44 modules/chanserv/set_verbose.c:43
 #: modules/chanserv/status.c:50 modules/chanserv/sync.c:355
 #: modules/chanserv/template.c:86 modules/chanserv/topic.c:67
 #: modules/chanserv/topic.c:131 modules/chanserv/topic.c:206
-#: modules/chanserv/topic.c:293 modules/chanserv/unban_self.c:68
-#: modules/chanserv/voice.c:55 modules/chanserv/why.c:71
-#: modules/chanserv/xop.c:103 modules/chanserv/xop.c:457
-#: modules/contrib/cs_badwords.c:247 modules/contrib/cs_badwords.c:388
-#: modules/rpgserv/enable.c:37 modules/rpgserv/enable.c:67
-#: modules/rpgserv/info.c:35 modules/rpgserv/set.c:178
+#: modules/chanserv/topic.c:300 modules/chanserv/unban_self.c:68
+#: modules/chanserv/why.c:71 modules/chanserv/xop.c:103
+#: modules/chanserv/xop.c:457 modules/contrib/cs_badwords.c:247
+#: modules/contrib/cs_badwords.c:388 modules/rpgserv/enable.c:37
+#: modules/rpgserv/enable.c:67 modules/rpgserv/info.c:35
+#: modules/rpgserv/set.c:178
 #, c-format
 msgid "Channel %s is not registered."
 msgstr "El canal %s no está registrado."
@@ -194,7 +153,7 @@ msgstr "El canal %s no está registrado."
 #: modules/chanserv/quiet.c:295 modules/chanserv/quiet.c:400
 #: modules/chanserv/recover.c:81 modules/chanserv/topic.c:74
 #: modules/chanserv/topic.c:138 modules/chanserv/topic.c:213
-#: modules/chanserv/topic.c:300 modules/chanserv/unban_self.c:74
+#: modules/chanserv/topic.c:307 modules/chanserv/unban_self.c:74
 #, c-format
 msgid "%s is currently empty."
 msgstr "%s se encuentra actualmente vacío."
@@ -381,19 +340,18 @@ msgstr "Sintaxis: ASSIGN <#canal> <nick>"
 #: modules/botserv/main.c:865 modules/botserv/main.c:942
 #: modules/chanserv/access.c:675 modules/chanserv/access.c:772
 #: modules/chanserv/access.c:877 modules/chanserv/access.c:1018
-#: modules/chanserv/fflags.c:88 modules/chanserv/flags.c:294
-#: modules/chanserv/flags.c:368 modules/chanserv/ftransfer.c:52
+#: modules/chanserv/fflags.c:88 modules/chanserv/flags.c:224
+#: modules/chanserv/flags.c:298 modules/chanserv/ftransfer.c:52
 #: modules/chanserv/set_founder.c:74 modules/contrib/cs_access_alias.c:197
 #: modules/contrib/cs_userinfo.c:57 modules/contrib/cs_userinfo.c:104
-#: modules/contrib/multimark.c:637 modules/contrib/ns_fenforce.c:48
-#: modules/contrib/ns_forbid.c:93 modules/hostserv/vhost.c:54
-#: modules/hostserv/vhostnick.c:55 modules/memoserv/forward.c:76
-#: modules/memoserv/ignore.c:110 modules/nickserv/access.c:230
-#: modules/nickserv/cert.c:68 modules/nickserv/drop.c:64
-#: modules/nickserv/drop.c:157 modules/nickserv/freeze.c:93
-#: modules/nickserv/hold.c:70 modules/nickserv/info.c:102
-#: modules/nickserv/listchans.c:55 modules/nickserv/listgroups.c:46
-#: modules/nickserv/mark.c:107 modules/nickserv/multimark.c:783
+#: modules/contrib/ns_fenforce.c:48 modules/contrib/ns_forbid.c:93
+#: modules/hostserv/vhost.c:54 modules/hostserv/vhostnick.c:55
+#: modules/memoserv/forward.c:76 modules/memoserv/ignore.c:110
+#: modules/nickserv/access.c:230 modules/nickserv/cert.c:68
+#: modules/nickserv/drop.c:64 modules/nickserv/drop.c:157
+#: modules/nickserv/freeze.c:93 modules/nickserv/hold.c:70
+#: modules/nickserv/info.c:102 modules/nickserv/listchans.c:55
+#: modules/nickserv/listgroups.c:46 modules/nickserv/mark.c:107
 #: modules/nickserv/regnolimit.c:66 modules/nickserv/resetpass.c:48
 #: modules/nickserv/restrict.c:116 modules/nickserv/return.c:52
 #: modules/nickserv/sendpass.c:74 modules/nickserv/sendpass_user.c:95
@@ -514,19 +472,18 @@ msgid "Syntax: SET <#channel> NOBOT {ON|OFF}"
 msgstr "Sintaxis: SET <#canal> NOBOT {ON|OFF}"
 
 #: modules/botserv/set_nobot.c:61 modules/botserv/set_private.c:66
-#: modules/chanserv/akick.c:582 modules/chanserv/flags.c:277
+#: modules/chanserv/akick.c:582 modules/chanserv/flags.c:207
 #: modules/chanserv/set_founder.c:62 modules/chanserv/status.c:77
 #: modules/chanserv/template.c:146 modules/chanserv/unban_self.c:80
 #: modules/chanserv/xop.c:95 modules/contrib/cs_fregister.c:69
-#: modules/contrib/ms_fsend.c:66 modules/contrib/ns_goodmail.c:147
-#: modules/contrib/os_joinmon.c:157 modules/groupserv/fflags.c:46
-#: modules/hostserv/offer.c:170 modules/infoserv/main.c:277
-#: modules/nickserv/access.c:216 modules/nickserv/access.c:268
-#: modules/nickserv/access.c:396 modules/nickserv/badmail.c:146
-#: modules/nickserv/cert.c:54 modules/nickserv/cert.c:109
-#: modules/nickserv/cert.c:145 modules/nickserv/listchans.c:64
-#: modules/nickserv/listgroups.c:55 modules/nickserv/logout.c:42
-#: modules/nickserv/status.c:98
+#: modules/contrib/ms_fsend.c:66 modules/contrib/os_joinmon.c:157
+#: modules/groupserv/fflags.c:46 modules/hostserv/offer.c:170
+#: modules/infoserv/main.c:277 modules/nickserv/access.c:216
+#: modules/nickserv/access.c:268 modules/nickserv/access.c:396
+#: modules/nickserv/badmail.c:146 modules/nickserv/cert.c:54
+#: modules/nickserv/cert.c:109 modules/nickserv/cert.c:145
+#: modules/nickserv/listchans.c:64 modules/nickserv/listgroups.c:55
+#: modules/nickserv/logout.c:42 modules/nickserv/status.c:98
 msgid "You are not logged in."
 msgstr "No has iniciado sesión."
 
@@ -894,7 +851,7 @@ msgid "Syntax: ACCESS <#channel> DEL <account|hostmask>"
 msgstr "Sintaxis: ACCESS <#canal> DEL <cuenta|máscara de host>"
 
 #: modules/chanserv/access.c:789 modules/chanserv/access.c:1043
-#: modules/chanserv/fflags.c:102 modules/chanserv/flags.c:383
+#: modules/chanserv/fflags.c:102 modules/chanserv/flags.c:313
 #: modules/groupserv/fflags.c:66 modules/groupserv/flags.c:149
 msgid "You may not remove the last founder."
 msgstr "No puede quitar al último fundador."
@@ -909,13 +866,18 @@ msgstr "No puedes quitar %s del rol %s."
 msgid "%s was removed from the %s role in %s."
 msgstr "%s ha sido quitado del rol %s en %s."
 
+#: modules/chanserv/access.c:824
+#, fuzzy, c-format
+msgid "%s deleted %s from the access list (had role: %s)."
+msgstr "%s ha sido quitado de la lista %s para %s."
+
 #: modules/chanserv/access.c:858
 msgid "Syntax: ACCESS <#channel> ADD <account|hostmask> <role>"
 msgstr "Sintaxis: ACCESS <#canal> ADD <cuenta|máscara de host> <rol>"
 
 #: modules/chanserv/access.c:887 modules/chanserv/akick.c:316
-#: modules/chanserv/akick.c:382 modules/chanserv/flags.c:418
-#: modules/chanserv/flags.c:449 modules/chanserv/set_founder.c:115
+#: modules/chanserv/akick.c:382 modules/chanserv/flags.c:348
+#: modules/chanserv/flags.c:379 modules/chanserv/set_founder.c:115
 #: modules/chanserv/set_founder.c:197 modules/chanserv/xop.c:240
 #: modules/chanserv/xop.c:312
 #, c-format
@@ -934,19 +896,19 @@ msgid "Role %s does not exist."
 msgstr "El rol %s no existe."
 
 #: modules/chanserv/access.c:930 modules/chanserv/access.c:1071
-#: modules/chanserv/flags.c:390
+#: modules/chanserv/flags.c:320
 #, c-format
 msgid "Only %d founders allowed per channel."
 msgstr "Sólo se permiten %d fundadores por canal."
 
 #: modules/chanserv/access.c:936 modules/chanserv/access.c:1077
-#: modules/chanserv/fflags.c:126 modules/chanserv/flags.c:442
+#: modules/chanserv/fflags.c:126 modules/chanserv/flags.c:372
 msgid "You may not set founder status on a hostmask."
 msgstr ""
 "No es posible establecer permisos de fundador para una máscara de host."
 
 #: modules/chanserv/access.c:942 modules/chanserv/access.c:1083
-#: modules/chanserv/flags.c:396 modules/chanserv/set_founder.c:124
+#: modules/chanserv/flags.c:326 modules/chanserv/set_founder.c:124
 #, c-format
 msgid "%s has too many channels registered."
 msgstr "%s ha registrado demasiados canales."
@@ -961,6 +923,11 @@ msgstr "No puedes añadir %s al rol %s."
 msgid "%s was added with the %s role in %s."
 msgstr "%s ha sido agregado con el rol %s a %s."
 
+#: modules/chanserv/access.c:965
+#, fuzzy, c-format
+msgid "%s added %s to the access list (with role: %s)."
+msgstr "%s ha sido agregado a la lista %s para %s."
+
 #: modules/chanserv/access.c:999
 msgid "Syntax: ACCESS <#channel> SET <account|hostmask> <role>"
 msgstr "Sintaxis: ACCESS <#channel> SET <cuenta|máscara> <role>"
@@ -974,6 +941,11 @@ msgstr "La lista de acceso de %s está llena."
 #, c-format
 msgid "%s now has the %s role in %s."
 msgstr "%s ahora tiene el rol %s en %s."
+
+#: modules/chanserv/access.c:1106
+#, fuzzy, c-format
+msgid "%s changed the access list role for %s to %s."
+msgstr "%s ha sido agregado a la lista %s para %s."
 
 #: modules/chanserv/access.c:1143
 msgid "List of channel-defined roles:"
@@ -1064,17 +1036,14 @@ msgstr ""
 #: modules/chanserv/akick.c:596 modules/chanserv/ban.c:74
 #: modules/chanserv/clear_bans.c:86 modules/chanserv/clear_users.c:73
 #: modules/chanserv/count.c:73 modules/chanserv/flags.c:182
-#: modules/chanserv/getkey.c:54 modules/chanserv/halfop.c:80
-#: modules/chanserv/invite.c:67 modules/chanserv/kick.c:70
-#: modules/chanserv/op.c:61 modules/chanserv/owner.c:80
-#: modules/chanserv/protect.c:80 modules/chanserv/quiet.c:307
+#: modules/chanserv/getkey.c:54 modules/chanserv/invite.c:67
+#: modules/chanserv/kick.c:70 modules/chanserv/quiet.c:307
 #: modules/chanserv/recover.c:61 modules/chanserv/status.c:58
 #: modules/chanserv/template.c:105 modules/chanserv/template.c:166
 #: modules/chanserv/topic.c:80 modules/chanserv/topic.c:150
-#: modules/chanserv/topic.c:225 modules/chanserv/topic.c:312
-#: modules/chanserv/voice.c:61 modules/chanserv/why.c:89
-#: modules/chanserv/xop.c:109 modules/chanserv/xop.c:463
-#: modules/contrib/cs_userinfo.c:63
+#: modules/chanserv/topic.c:225 modules/chanserv/topic.c:319
+#: modules/chanserv/why.c:89 modules/chanserv/xop.c:109
+#: modules/chanserv/xop.c:463 modules/contrib/cs_userinfo.c:63
 #, c-format
 msgid "%s is closed."
 msgstr "%s está cerrado."
@@ -1110,10 +1079,20 @@ msgstr "%s ya tiene los permisos %s en %s"
 msgid "The more general mask %s is already on the AKICK list for %s"
 msgstr "La máscara más general %s ya se encuentra en la lista AKICK para %s"
 
+#: modules/chanserv/akick.c:339 modules/chanserv/akick.c:406
+#, fuzzy, c-format
+msgid "%s added %s to the AKICK list, expires in %s."
+msgstr "%s no se encuentra en la lista AKICK para %s."
+
 #: modules/chanserv/akick.c:341 modules/chanserv/akick.c:405
 #, c-format
 msgid "AKICK on %s was successfully added for %s and will expire in %s."
 msgstr "AKICK en %s fue añadida con éxito a %s y expirará en %s."
+
+#: modules/chanserv/akick.c:356 modules/chanserv/akick.c:424
+#, fuzzy, c-format
+msgid "%s added %s to the AKICK list."
+msgstr "%s no se encuentra en la lista AKICK para %s."
 
 #: modules/chanserv/akick.c:359 modules/chanserv/akick.c:422
 #, c-format
@@ -1133,6 +1112,11 @@ msgstr "%s no se encuentra en la lista AKICK para %s, sin embargo %s sí."
 #, c-format
 msgid "%s is not on the AKICK list for %s."
 msgstr "%s no se encuentra en la lista AKICK para %s."
+
+#: modules/chanserv/akick.c:498 modules/chanserv/akick.c:551
+#, fuzzy, c-format
+msgid "%s removed %s from the AKICK list."
+msgstr "%s ha sido quitado de la lista AKICK para %s."
 
 #: modules/chanserv/akick.c:500 modules/chanserv/akick.c:549
 #, c-format
@@ -1176,51 +1160,6 @@ msgstr "%smodificado: %s"
 #, c-format
 msgid "Total of %d %s in %s's AKICK list."
 msgstr "Total de %d %s en la lista AKICK para %s."
-
-#: modules/chanserv/antiflood.c:414 modules/chanserv/antiflood.c:478
-#: modules/chanserv/set_fantasy.c:70 modules/chanserv/set_gameserv.c:57
-#: modules/chanserv/set_guard.c:70 modules/chanserv/set_keeptopic.c:55
-#: modules/chanserv/set_limitflags.c:59 modules/chanserv/set_mlock.c:68
-#: modules/chanserv/set_private.c:59 modules/chanserv/set_property.c:67
-#: modules/chanserv/set_pubacl.c:54 modules/chanserv/set_restricted.c:55
-#: modules/chanserv/set_secure.c:55 modules/chanserv/set_topiclock.c:55
-#: modules/chanserv/set_verbose.c:55 modules/chanserv/sync.c:367
-#: modules/contrib/cs_badwords.c:264 modules/contrib/cs_badwords.c:313
-#: modules/contrib/cs_badwords.c:352 modules/contrib/cs_badwords.c:400
-msgid "You are not authorized to perform this command."
-msgstr "No estás autorizado a ejecutar este comando."
-
-#: modules/chanserv/antiflood.c:430
-#, c-format
-msgid "Flood protection turned off for %s."
-msgstr "Protección contra el flood desactivada para%s."
-
-#: modules/chanserv/antiflood.c:437 modules/chanserv/set_fantasy.c:80
-#: modules/chanserv/set_guard.c:78 modules/chanserv/set_keeptopic.c:63
-#: modules/chanserv/set_pubacl.c:62 modules/chanserv/set_restricted.c:63
-#: modules/chanserv/set_secure.c:63 modules/chanserv/set_topiclock.c:63
-#: modules/chanserv/set_verbose.c:63 modules/chanserv/set_verbose.c:81
-#: modules/chanserv/sync.c:375 modules/contrib/cs_badwords.c:410
-#, c-format
-msgid "The %s flag is already set for channel %s."
-msgstr "La opción %s ya está activada para el canal %s."
-
-#: modules/chanserv/antiflood.c:444
-#, c-format
-msgid "Flood protection turned on for %s with default settings."
-msgstr ""
-"Protección contra el flood activada en %s con las configuraciones por "
-"defecto."
-
-#: modules/chanserv/antiflood.c:453 modules/chanserv/antiflood.c:462
-#: modules/chanserv/antiflood.c:473
-#, c-format
-msgid "Flood protection turned on for %s with %s action."
-msgstr "Protección contra el flood activada en %s con acción %s."
-
-#: modules/chanserv/antiflood.c:485
-msgid "Set anti-flood action"
-msgstr "Cambiar la acción anti-flood"
 
 #: modules/chanserv/ban.c:21
 msgid "Sets a ban on a channel."
@@ -1273,11 +1212,6 @@ msgstr "No se encontró el veto %s en %s."
 msgid "Syntax: UNBAN <#channel> [nickname|hostmask]"
 msgstr "Sintaxis: UNBAN <#canal> [nick|máscara de host]"
 
-#: modules/chanserv/clear_akicks.c:88
-#, c-format
-msgid "Cleared AKICK entries in %s."
-msgstr "Se han eliminado todos los AKICKs en %s."
-
 #: modules/chanserv/clear_bans.c:20
 msgid "Clears bans or other lists of a channel."
 msgstr "Limpia vetos u otras listas de un canal."
@@ -1313,10 +1247,15 @@ msgstr "Para mayor información, vea /msg %s HELP CLEAR comando."
 msgid "Syntax: CLEAR <#channel> <command> [parameters]"
 msgstr "Sintaxis: CLEAR <#canal> <comando> [parámetros]"
 
-#: modules/chanserv/clear_flags.c:88 modules/chanserv/flags.c:251
+#: modules/chanserv/clear_flags.c:88
 #, c-format
 msgid "Cleared flags in %s."
 msgstr "Se han borrado los permisos en %s."
+
+#: modules/chanserv/clear_flags.c:90
+#, c-format
+msgid "%s removed all %d non-founder access entries."
+msgstr ""
 
 #: modules/chanserv/clear_users.c:20
 msgid "Kicks all users from a channel."
@@ -1450,7 +1389,7 @@ msgstr "Fuerza un cambio de permisos en un canal."
 msgid "Syntax: FFLAGS <channel> <target> <flags>"
 msgstr "Sintaxis: FFLAGS <canal> <objeto> <permisos>"
 
-#: modules/chanserv/fflags.c:65 modules/chanserv/flags.c:345
+#: modules/chanserv/fflags.c:65 modules/chanserv/flags.c:275
 #: modules/chanserv/template.c:194
 #, c-format
 msgid "No valid flags given, use /%s%s HELP FLAGS for a list"
@@ -1462,7 +1401,7 @@ msgstr ""
 msgid "Usage: FFLAGS %s <target> <flags>"
 msgstr "Uso: FFLAGS %s <objeto> <permisos>"
 
-#: modules/chanserv/fflags.c:78 modules/chanserv/flags.c:358
+#: modules/chanserv/fflags.c:78 modules/chanserv/flags.c:288
 #: modules/chanserv/template.c:204
 #, c-format
 msgid "Invalid template name given, use /%s%s TEMPLATE %s for a list"
@@ -1471,20 +1410,25 @@ msgstr ""
 "plantillas válidas"
 
 #: modules/chanserv/fflags.c:112 modules/chanserv/fflags.c:138
-#: modules/chanserv/flags.c:428 modules/chanserv/flags.c:459
+#: modules/chanserv/flags.c:358 modules/chanserv/flags.c:389
 #, c-format
 msgid "You are not allowed to set %s on %s in %s."
 msgstr "No estás autorizado a establecer %s para %s en %s."
 
-#: modules/chanserv/fflags.c:151 modules/chanserv/flags.c:472
+#: modules/chanserv/fflags.c:151 modules/chanserv/flags.c:402
 #, c-format
 msgid "Channel access to %s for %s unchanged."
 msgstr "Los permisos de acceso al canal %s para %s no han cambiado."
 
-#: modules/chanserv/fflags.c:156 modules/chanserv/flags.c:476
+#: modules/chanserv/fflags.c:156 modules/chanserv/flags.c:406
 #, c-format
 msgid "Flags %s were set on %s in %s."
 msgstr "Los permisos %s fueron establecidos para %s en %s."
+
+#: modules/chanserv/fflags.c:158
+#, fuzzy, c-format
+msgid "%s forced flags change %s on %s."
+msgstr "%s ahora tiene los permisos %s en %s"
 
 #: modules/chanserv/flags.c:21
 msgid "Manipulates specific permissions on a channel."
@@ -1514,46 +1458,35 @@ msgstr "Fin de la lista de permisos para %s."
 msgid "Syntax: FLAGS <channel> [target] [flags]"
 msgstr "Sintaxis: FLAGS <canal> [objeto] [permisos]"
 
-#: modules/chanserv/flags.c:261
-msgid "Syntax: FLAGS <#channel> MODIFY [target] <flags>"
-msgstr "Sintaxis: <#canal> MODIFY [destino] <permisos>"
-
-#: modules/chanserv/flags.c:285 modules/chanserv/flags.c:330
-#: modules/chanserv/set_email.c:50 modules/chanserv/set_entrymsg.c:49
-#: modules/chanserv/set_prefix.c:78 modules/chanserv/set_url.c:50
-#: modules/chanserv/template.c:158 modules/groupserv/drop.c:53
-#: modules/groupserv/join.c:60 modules/groupserv/set_channel.c:37
-#: modules/groupserv/set_description.c:36 modules/groupserv/set_email.c:36
-#: modules/groupserv/set_groupname.c:70 modules/groupserv/set_joinflags.c:37
-#: modules/groupserv/set_open.c:42 modules/groupserv/set_public.c:42
-#: modules/groupserv/set_url.c:36
-msgid "You are not authorized to execute this command."
-msgstr "No estás autorizado a ejecutar este comando."
-
-#: modules/chanserv/flags.c:304
+#: modules/chanserv/flags.c:234
 #, c-format
 msgid "Flags for %s in %s are %s."
 msgstr "Los permisos para %s en %s son %s."
 
-#: modules/chanserv/flags.c:309
+#: modules/chanserv/flags.c:239
 #, c-format
 msgid "No flags for %s in %s."
 msgstr "No hay permisos para %s en %s."
 
-#: modules/chanserv/flags.c:356
+#: modules/chanserv/flags.c:286
 #, c-format
 msgid "Usage: FLAGS %s [target] [flags]"
 msgstr "Uso: FLAGS %s [objeto] [permisos]"
 
-#: modules/chanserv/flags.c:378
+#: modules/chanserv/flags.c:308
 msgid "You may not remove a founder's +f access."
 msgstr "No puedes quitar el permiso +f de un fundador."
 
-#: modules/chanserv/flags.c:411 modules/chanserv/xop.c:297
+#: modules/chanserv/flags.c:341 modules/chanserv/xop.c:297
 #: modules/groupserv/flags.c:124
 #, c-format
 msgid "%s does not wish to be added to channel access lists (NEVEROP set)."
 msgstr "%s no desea ser agregado a listas de acceso (NEVEROP activado)."
+
+#: modules/chanserv/flags.c:408
+#, fuzzy, c-format
+msgid "%s set flags %s on %s."
+msgstr "%s ahora tiene los permisos %s en %s"
 
 #: modules/chanserv/ftransfer.c:20
 msgid "Forces foundership transfer of a channel."
@@ -1567,6 +1500,11 @@ msgstr "Sintaxis: FTRANSFER <#canal> <nuevofundador>"
 #, c-format
 msgid "%s is already the founder of %s."
 msgstr "%s ya es el fundador de %s."
+
+#: modules/chanserv/ftransfer.c:72
+#, fuzzy, c-format
+msgid "Foundership transfer from %s to %s forced by %s administration."
+msgstr "El fundador de %s ha cambiado de %s a %s."
 
 #: modules/chanserv/ftransfer.c:73
 #, c-format
@@ -1591,56 +1529,38 @@ msgstr "%s no tiene clave de acceso."
 msgid "Channel %s key is: %s"
 msgstr "La clave de acceso del canal %s es: %s"
 
-#: modules/chanserv/halfop.c:22
+#: modules/chanserv/halfop.c:25
 msgid "Gives channel halfops to a user."
 msgstr "Otorga el estado de halfop a un usuario."
 
-#: modules/chanserv/halfop.c:24
+#: modules/chanserv/halfop.c:27
 msgid "Removes channel halfops from a user."
 msgstr "Quita el estado de halfop de un usuario."
 
-#: modules/chanserv/halfop.c:61
-msgid "Your IRC server does not support halfops."
-msgstr "Tu servidor de IRC no soporta el uso de halfops."
+#: modules/chanserv/halfop.c:38
+#, fuzzy, c-format
+msgid "You have been halfopped on %s by %s"
+msgstr "Has cerrado tu sesión de %s."
 
-#: modules/chanserv/halfop.c:97 modules/chanserv/kick.c:77
-#: modules/chanserv/kick.c:143 modules/chanserv/op.c:78
-#: modules/chanserv/owner.c:97 modules/chanserv/protect.c:97
-#: modules/chanserv/voice.c:78 modules/chanserv/why.c:62
-#: modules/nickserv/ghost.c:63 modules/nickserv/logout.c:52
-#, c-format
-msgid "%s is not online."
-msgstr "%s no se encuentra en línea."
+#: modules/chanserv/halfop.c:39
+#, fuzzy, c-format
+msgid "You have been dehalfopped on %s by %s"
+msgstr "%s ya no es halfop en %s."
 
-#: modules/chanserv/halfop.c:108 modules/chanserv/op.c:98
-#: modules/chanserv/owner.c:108 modules/chanserv/protect.c:108
-#, c-format
-msgid ""
-"%s has the SECURE option enabled, and %s does not have appropriate access."
-msgstr ""
-"%s tiene la opción SECURE activada, y %s no tiene los permisos de acceso "
-"apropiados."
-
-#: modules/chanserv/halfop.c:115 modules/chanserv/kick.c:91
-#: modules/chanserv/kick.c:157 modules/chanserv/op.c:105
-#: modules/chanserv/owner.c:115 modules/chanserv/protect.c:115
-#: modules/chanserv/voice.c:94
-#, c-format
-msgid "%s is not on %s."
-msgstr "%s no se encuentra en %s."
-
-#: modules/chanserv/halfop.c:130
-#, c-format
-msgid "%s has been %shalfopped on %s."
+#: modules/chanserv/halfop.c:40
+#, fuzzy, c-format
+msgid "%s has been halfopped on %s."
 msgstr "%s ha sido convertido en %ssemi-op en %s."
 
-#: modules/chanserv/halfop.c:141
-msgid "Syntax: HALFOP <#channel> [nickname] [...]"
-msgstr "Sintaxis: HALFOP <#canal> [nick] [...]"
+#: modules/chanserv/halfop.c:41
+#, c-format
+msgid "%s has been dehalfopped on %s."
+msgstr "%s ya no es halfop en %s."
 
-#: modules/chanserv/halfop.c:153
-msgid "Syntax: DEHALFOP <#channel> [nickname] [...]"
-msgstr "Sintaxis: DEHALFOP <#canal> [nick] [...]"
+#: modules/chanserv/halfop.c:48
+#, c-format
+msgid "Module %s requires halfop support, refusing to load."
+msgstr ""
 
 #: modules/chanserv/help.c:49
 #, c-format
@@ -1874,11 +1794,22 @@ msgstr "Expulsa y veta a un usuario de un canal."
 msgid "Syntax: KICK <#channel> <nickname> [reason]"
 msgstr "Sintaxis: KICK <#canal> <nick> [razón]"
 
+#: modules/chanserv/kick.c:77 modules/chanserv/kick.c:143
+#: modules/chanserv/why.c:62 modules/nickserv/ghost.c:63
+#: modules/nickserv/logout.c:52
+#, c-format
+msgid "%s is not online."
+msgstr "%s no se encuentra en línea."
+
 #: modules/chanserv/kick.c:84 modules/chanserv/kick.c:150
-#: modules/chanserv/op.c:90
 #, c-format
 msgid "%s is a network service; you cannot kick or deop them."
 msgstr "%s es un servicio de la red; no puedes expulsarlo o quitarle el op."
+
+#: modules/chanserv/kick.c:91 modules/chanserv/kick.c:157
+#, c-format
+msgid "%s is not on %s."
+msgstr "%s no se encuentra en %s."
 
 #: modules/chanserv/kick.c:97 modules/chanserv/kick.c:163
 #, c-format
@@ -1981,78 +1912,104 @@ msgstr "%s ha sido rechazado."
 msgid "%s (%s) [%s (%s ago)]"
 msgstr "%s (%s) [%s (hace %s)]"
 
-#: modules/chanserv/moderate.c:348 modules/contrib/multimark.c:808
-#: modules/infoserv/main.c:480 modules/infoserv/main.c:508
-#: modules/nickserv/multimark.c:976
+#: modules/chanserv/moderate.c:348 modules/infoserv/main.c:480
+#: modules/infoserv/main.c:508
 msgid "End of list."
 msgstr "Fin de la lista."
 
-#: modules/chanserv/op.c:22
+#: modules/chanserv/op.c:25
 msgid "Gives channel ops to a user."
 msgstr "Da estado de operador de canal a un usuario."
 
-#: modules/chanserv/op.c:24
+#: modules/chanserv/op.c:27
 msgid "Removes channel ops from a user."
 msgstr "Quita el estado de operador de canal a un usuario."
 
-#: modules/chanserv/op.c:120
-#, c-format
-msgid "%s has been %sopped on %s."
+#: modules/chanserv/op.c:38
+#, fuzzy, c-format
+msgid "You have been opped on %s by %s"
+msgstr "Has cerrado tu sesión de %s."
+
+#: modules/chanserv/op.c:39
+#, fuzzy, c-format
+msgid "You have been deopped on %s by %s"
+msgstr "%s ya no es operador de %s."
+
+#: modules/chanserv/op.c:40
+#, fuzzy, c-format
+msgid "%s has been opped on %s."
 msgstr "%s ha sido convertido en %soperador en %s."
 
-#: modules/chanserv/op.c:131
-msgid "Syntax: OP <#channel> [nickname] [...]"
-msgstr "Sintaxis: OP <#canal> [nick] [...]"
+#: modules/chanserv/op.c:41
+#, c-format
+msgid "%s has been deopped on %s."
+msgstr "%s ya no es operador de %s."
 
-#: modules/chanserv/op.c:143
-msgid "Syntax: DEOP <#channel> [nickname] [...]"
-msgstr "Sintaxis: DEOP <#canal> [nick] [...]"
-
-#: modules/chanserv/owner.c:22
+#: modules/chanserv/owner.c:25
 msgid "Gives the channel owner flag to a user."
 msgstr "Da el permiso de propietario de canal a un usuario."
 
-#: modules/chanserv/owner.c:24
+#: modules/chanserv/owner.c:27
 msgid "Removes channel owner flag from a user."
 msgstr "Quita el estado de propietario del canal de un usuario."
 
-#: modules/chanserv/owner.c:61 modules/chanserv/protect.c:61
-msgid "The IRCd software you are running does not support this feature."
-msgstr "El software IRCd que está ejecutando no soporta esta característica."
-
-#: modules/chanserv/owner.c:130
-#, c-format
-msgid "%s has been %sset as owner on %s."
+#: modules/chanserv/owner.c:38
+#, fuzzy, c-format
+msgid "You have been set as owner on %s by %s"
 msgstr "%s ha sido %sestablecido como el propietario de %s."
 
-#: modules/chanserv/owner.c:141
-msgid "Syntax: OWNER <#channel> [nickname] [...]"
-msgstr "Sintaxis: OWNER <#canal> [nick] [...]"
+#: modules/chanserv/owner.c:39
+#, fuzzy, c-format
+msgid "You have been unset as owner on %s by %s"
+msgstr "%s ya no es el propietario de %s."
 
-#: modules/chanserv/owner.c:153
-msgid "Syntax: DEOWNER <#channel> [nickname] [...]"
-msgstr "Sintaxis: DEOWNER <#canal> [nick] [...]"
+#: modules/chanserv/owner.c:40
+#, fuzzy, c-format
+msgid "%s has been set as owner on %s."
+msgstr "%s ha sido %sestablecido como el propietario de %s."
 
-#: modules/chanserv/protect.c:22
+#: modules/chanserv/owner.c:41
+#, c-format
+msgid "%s has been unset as owner on %s."
+msgstr "%s ya no es el propietario de %s."
+
+#: modules/chanserv/owner.c:48
+#, c-format
+msgid "Module %s requires owner support, refusing to load."
+msgstr ""
+
+#: modules/chanserv/protect.c:25
 msgid "Gives the channel protection flag to a user."
 msgstr "Da el permiso de protección de canal a un usuario."
 
-#: modules/chanserv/protect.c:24
+#: modules/chanserv/protect.c:27
 msgid "Removes channel protection flag from a user."
 msgstr "Quita el permiso de protección del canal a un usuario."
 
-#: modules/chanserv/protect.c:130
-#, c-format
-msgid "%s has been %sset as protected on %s."
+#: modules/chanserv/protect.c:38
+#, fuzzy, c-format
+msgid "You have been set as protected on %s by %s"
 msgstr "%s ha sido %sestablecido como protegido en %s."
 
-#: modules/chanserv/protect.c:141
-msgid "Syntax: PROTECT <#channel> [nickname]"
-msgstr "Sintaxis: PROTECT <#canal> [nick]"
+#: modules/chanserv/protect.c:39
+#, fuzzy, c-format
+msgid "You have been unset as protected on %s by %s"
+msgstr "%s ya no es protegido en %s."
 
-#: modules/chanserv/protect.c:153
-msgid "Syntax: DEPROTECT <#channel> [nickname]"
-msgstr "Sintaxis: DEPROTECT <#canal> [nick]"
+#: modules/chanserv/protect.c:40
+#, fuzzy, c-format
+msgid "%s has been set as protected on %s."
+msgstr "%s ha sido %sestablecido como protegido en %s."
+
+#: modules/chanserv/protect.c:41
+#, c-format
+msgid "%s has been unset as protected on %s."
+msgstr "%s ya no es protegido en %s."
+
+#: modules/chanserv/protect.c:48
+#, c-format
+msgid "Module %s requires protect support, refusing to load."
+msgstr ""
 
 #: modules/chanserv/quiet.c:22
 msgid "Sets a quiet on a channel."
@@ -2124,6 +2081,11 @@ msgstr "Recupera el control de su canal."
 #: modules/chanserv/recover.c:49
 msgid "Syntax: RECOVER <#channel>"
 msgstr "Sintaxis: RECOVER <#canal>"
+
+#: modules/chanserv/recover.c:87
+#, c-format
+msgid "%s used RECOVER."
+msgstr ""
 
 #: modules/chanserv/recover.c:199
 #, c-format
@@ -2255,30 +2217,38 @@ msgstr "El mensaje de ingreso para %s ha sido cambiado a %s"
 msgid "Allows or disallows in-channel commands."
 msgstr "Activa o desactiva comandos dentro del canal."
 
+#: modules/chanserv/set_fantasy.c:80 modules/chanserv/set_guard.c:78
+#: modules/chanserv/set_keeptopic.c:63 modules/chanserv/set_restricted.c:63
+#: modules/chanserv/set_secure.c:63 modules/chanserv/set_topiclock.c:63
+#: modules/chanserv/set_verbose.c:63 modules/chanserv/set_verbose.c:81
+#: modules/chanserv/sync.c:375 modules/contrib/cs_badwords.c:410
+#, c-format
+msgid "The %s flag is already set for channel %s."
+msgstr "La opción %s ya está activada para el canal %s."
+
 #: modules/chanserv/set_fantasy.c:87 modules/chanserv/set_guard.c:95
-#: modules/chanserv/set_keeptopic.c:71 modules/chanserv/set_pubacl.c:70
-#: modules/chanserv/set_restricted.c:71 modules/chanserv/set_secure.c:71
-#: modules/chanserv/set_topiclock.c:72 modules/chanserv/set_verbose.c:73
-#: modules/chanserv/set_verbose.c:99 modules/chanserv/sync.c:383
-#: modules/contrib/cs_badwords.c:417
+#: modules/chanserv/set_keeptopic.c:71 modules/chanserv/set_restricted.c:71
+#: modules/chanserv/set_secure.c:71 modules/chanserv/set_topiclock.c:72
+#: modules/chanserv/set_verbose.c:73 modules/chanserv/set_verbose.c:99
+#: modules/chanserv/sync.c:383 modules/contrib/cs_badwords.c:417
 #, c-format
 msgid "The %s flag has been set for channel %s."
 msgstr "La opción %s ha sido activada para el canal %s."
 
 #: modules/chanserv/set_fantasy.c:96 modules/chanserv/set_guard.c:102
-#: modules/chanserv/set_keeptopic.c:78 modules/chanserv/set_pubacl.c:77
-#: modules/chanserv/set_restricted.c:78 modules/chanserv/set_secure.c:78
-#: modules/chanserv/set_topiclock.c:80 modules/chanserv/set_verbose.c:106
-#: modules/chanserv/sync.c:390 modules/contrib/cs_badwords.c:426
+#: modules/chanserv/set_keeptopic.c:78 modules/chanserv/set_restricted.c:78
+#: modules/chanserv/set_secure.c:78 modules/chanserv/set_topiclock.c:80
+#: modules/chanserv/set_verbose.c:106 modules/chanserv/sync.c:390
+#: modules/contrib/cs_badwords.c:426
 #, c-format
 msgid "The %s flag is not set for channel %s."
 msgstr "La opción %s no está activada para el canal %s."
 
 #: modules/chanserv/set_fantasy.c:103 modules/chanserv/set_guard.c:113
-#: modules/chanserv/set_keeptopic.c:86 modules/chanserv/set_pubacl.c:85
-#: modules/chanserv/set_restricted.c:86 modules/chanserv/set_secure.c:86
-#: modules/chanserv/set_topiclock.c:89 modules/chanserv/set_verbose.c:118
-#: modules/chanserv/sync.c:398 modules/contrib/cs_badwords.c:433
+#: modules/chanserv/set_keeptopic.c:86 modules/chanserv/set_restricted.c:86
+#: modules/chanserv/set_secure.c:86 modules/chanserv/set_topiclock.c:89
+#: modules/chanserv/set_verbose.c:118 modules/chanserv/sync.c:398
+#: modules/contrib/cs_badwords.c:433
 #, c-format
 msgid "The %s flag has been removed for channel %s."
 msgstr "La opción %s ha sido quitada del canal %s."
@@ -2291,6 +2261,11 @@ msgstr "Transfiere fundadores de un canal."
 #, c-format
 msgid "%s is closed; it cannot be transferred."
 msgstr "%s está cerrado; no puede ser transferido."
+
+#: modules/chanserv/set_founder.c:135
+#, fuzzy, c-format
+msgid "Foundership transferred from %s to %s."
+msgstr "El fundador de %s ha cambiado de %s a %s."
 
 #: modules/chanserv/set_founder.c:154
 #, c-format
@@ -2515,10 +2490,6 @@ msgstr "Parámetros demasiado largos. Abortando."
 msgid "Metadata entry %s added."
 msgstr "La entrada de metadatos %s ha sido agregada."
 
-#: modules/chanserv/set_pubacl.c:20
-msgid "Allows the channel ACL to be public."
-msgstr "Hace que la lista de acceso de un canal sea pública."
-
 #: modules/chanserv/set_restricted.c:21
 msgid ""
 "Restricts access to the channel to users on the access list. (Other users "
@@ -2557,6 +2528,31 @@ msgstr "La URL para %s ha sido cambiada a %s."
 #: modules/chanserv/set_verbose.c:21
 msgid "Notifies channel about access list modifications."
 msgstr "Notifica al canal acerca de modificaciones en la lista de acceso."
+
+#: modules/chanserv/set_verbose.c:72
+#, c-format
+msgid "%s enabled the VERBOSE flag"
+msgstr ""
+
+#: modules/chanserv/set_verbose.c:89
+#, c-format
+msgid "%s restricted VERBOSE to chanops"
+msgstr ""
+
+#: modules/chanserv/set_verbose.c:96
+#, c-format
+msgid "%s enabled the VERBOSE_OPS flag"
+msgstr ""
+
+#: modules/chanserv/set_verbose.c:113
+#, c-format
+msgid "%s disabled the VERBOSE flag"
+msgstr ""
+
+#: modules/chanserv/set_verbose.c:115
+#, c-format
+msgid "%s disabled the VERBOSE_OPS flag"
+msgstr ""
 
 #: modules/chanserv/status.c:20
 msgid "Displays your status in services."
@@ -2599,6 +2595,11 @@ msgstr "Eres un administrador de servidor."
 #: modules/chanserv/status.c:104 modules/nickserv/status.c:125
 msgid "You are an IRC operator."
 msgstr "Eres un operador de IRC."
+
+#: modules/chanserv/sync.c:335
+#, fuzzy, c-format
+msgid "%s used SYNC."
+msgstr "%s está cerrado."
 
 #: modules/chanserv/sync.c:345
 msgid "Disables automatic channel ACL syncing."
@@ -2704,6 +2705,11 @@ msgstr "Se ha quitado la plantilla %s de %s."
 msgid "Changed template %s to %s in %s."
 msgstr "Se ha cambiado la plantilla %s a %s en %s."
 
+#: modules/chanserv/template.c:391
+#, c-format
+msgid "%s set %s on %d access entries with flags %s."
+msgstr ""
+
 #: modules/chanserv/template.c:394
 #, c-format
 msgid ""
@@ -2734,12 +2740,12 @@ msgid "Syntax: TOPIC <#channel> <topic>"
 msgstr "Sintaxis: TOPIC <#canal> <tema>"
 
 #: modules/chanserv/topic.c:92 modules/chanserv/topic.c:167
-#: modules/chanserv/topic.c:242 modules/chanserv/topic.c:343
+#: modules/chanserv/topic.c:242 modules/chanserv/topic.c:350
 msgid "The new topic is invalid or too long."
 msgstr "El nuevo tema no es válido o es demasiado largo."
 
 #: modules/chanserv/topic.c:108 modules/chanserv/topic.c:183
-#: modules/chanserv/topic.c:258 modules/chanserv/topic.c:359
+#: modules/chanserv/topic.c:258 modules/chanserv/topic.c:366
 #, c-format
 msgid "Topic set to %s on %s."
 msgstr "El tema ha cambiado a %s en %s."
@@ -2752,11 +2758,11 @@ msgstr "Sintaxis: TOPICAPPEND <#canal> <tema>"
 msgid "Syntax: TOPICPREPEND <#channel> <topic>"
 msgstr "Sintaxis: TOPICPREPEND <#canal> <tema>"
 
-#: modules/chanserv/topic.c:286
+#: modules/chanserv/topic.c:282 modules/chanserv/topic.c:293
 msgid "Syntax: TOPICSWAP <#channel> <search>:[<replace>]"
 msgstr "Sintaxis: TOPICSWAP <#canal> <buscar>:[<reemplazar>]"
 
-#: modules/chanserv/topic.c:329
+#: modules/chanserv/topic.c:336
 #, c-format
 msgid "Channel %s does not have %s in its topic."
 msgstr "El canal %s no tiene %s en su tema."
@@ -2783,26 +2789,33 @@ msgstr "Pruebe /mode %s -b %s"
 msgid "Displays version information of the services."
 msgstr "Muestra información de versión de los servicios."
 
-#: modules/chanserv/voice.c:22
+#: modules/chanserv/voice.c:25
 msgid "Gives channel voice to a user."
 msgstr "Otorga voz en el canal a un usuario."
 
-#: modules/chanserv/voice.c:24
+#: modules/chanserv/voice.c:27
 msgid "Removes channel voice from a user."
 msgstr "Quita voz en el canal a un usuario."
 
-#: modules/chanserv/voice.c:109
-#, c-format
-msgid "%s has been %svoiced on %s."
+#: modules/chanserv/voice.c:38
+#, fuzzy, c-format
+msgid "You have been voiced on %s by %s"
+msgstr "Has sido invitado a %s."
+
+#: modules/chanserv/voice.c:39
+#, fuzzy, c-format
+msgid "You have been devoiced on %s by %s"
+msgstr "Has sido invitado a %s."
+
+#: modules/chanserv/voice.c:40
+#, fuzzy, c-format
+msgid "%s has been voiced on %s."
 msgstr "%s ha adquirido %svoz en %s."
 
-#: modules/chanserv/voice.c:120
-msgid "Syntax: VOICE <#channel> [nickname] [...]"
-msgstr "Sintaxis: VOICE <#canal> [nick] [...]"
-
-#: modules/chanserv/voice.c:132
-msgid "Syntax: DEVOICE <#channel> [nickname] [...]"
-msgstr "Sintaxis: DEVOICE <#canal> [nick] [...]"
+#: modules/chanserv/voice.c:41
+#, c-format
+msgid "%s has been devoiced on %s."
+msgstr "%s ha perdido voz en %s."
 
 #: modules/chanserv/why.c:20
 msgid "Explains channel access logic."
@@ -2879,10 +2892,20 @@ msgstr "No estás autorizado a modificar la entrada de acceso para %s en %s.
 msgid "%s's access on %s has been changed to %s."
 msgstr "El acceso de %s en %s ha sido cambiado a %s."
 
+#: modules/chanserv/xop.c:266 modules/chanserv/xop.c:337
+#, fuzzy, c-format
+msgid "%s changed %s's access to %s."
+msgstr "%s no tiene acceso en %s."
+
 #: modules/chanserv/xop.c:271 modules/chanserv/xop.c:343
 #, c-format
 msgid "%s has been added to the %s list for %s."
 msgstr "%s ha sido agregado a la lista %s para %s."
+
+#: modules/chanserv/xop.c:272 modules/chanserv/xop.c:344
+#, fuzzy, c-format
+msgid "%s added %s to the %s list."
+msgstr "Se ha agregado %s a la lista NOOP de servidores."
 
 #: modules/chanserv/xop.c:282
 #, c-format
@@ -2898,6 +2921,11 @@ msgstr "%s ya se encuentra en la lista %s para %s."
 #, c-format
 msgid "%s is not on the %s list for %s."
 msgstr "%s no se encuentra en la lista %s para %s."
+
+#: modules/chanserv/xop.c:380 modules/chanserv/xop.c:404
+#, fuzzy, c-format
+msgid "%s removed %s from the %s list."
+msgstr "%s eliminado de la lista de servidores en netsplit."
 
 #: modules/chanserv/xop.c:382 modules/chanserv/xop.c:402
 #, c-format
@@ -2933,10 +2961,20 @@ msgstr "Sintaxis: FORCEXOP <#canal>"
 msgid "FORCEXOP %s done (%d changes)"
 msgstr "FORCEXOP %s completado (%d cambios)"
 
+#: modules/chanserv/xop.c:520
+#, fuzzy, c-format
+msgid "%s reset access levels to xOP (%d changes)"
+msgstr "Forza niveles de acceso a niveles xOP."
+
 #: modules/contrib/cs_access_alias.c:52
 #, c-format
 msgid "Command %s not loaded?"
 msgstr "¿Comando %s no está cargado?"
+
+#: modules/contrib/cs_access_alias.c:135 modules/contrib/cs_userinfo.c:73
+#: modules/contrib/cs_userinfo.c:98
+msgid "You are not authorized to perform this operation."
+msgstr "No estás autorizado a realizar esta operación."
 
 #: modules/contrib/cs_access_alias.c:152
 #, c-format
@@ -2972,6 +3010,11 @@ msgstr "Sintaxis: BADWORDS <#canal> ADD|DEL|LIST [patrón] [acción]"
 #: modules/contrib/cs_badwords.c:258
 msgid "Syntax: BADWORDS <#channel> ADD <badword> <action>"
 msgstr "Sintaxis: BADWORDS <#canal> ADD <patrón> <acción>"
+
+#: modules/contrib/cs_badwords.c:264 modules/contrib/cs_badwords.c:313
+#: modules/contrib/cs_badwords.c:352 modules/contrib/cs_badwords.c:400
+msgid "You are not authorized to perform this command."
+msgstr "No estás autorizado a ejecutar este comando."
 
 #: modules/contrib/cs_badwords.c:278
 #, c-format
@@ -3262,95 +3305,6 @@ msgstr "Los memos de canal no pueden ser forzados."
 msgid "Group memos may not be forced."
 msgstr "Los memos de grupo no pueden ser forzados."
 
-#: modules/contrib/multimark.c:38 modules/nickserv/mark.c:25
-#: modules/nickserv/multimark.c:40
-msgid "Adds a note to a user."
-msgstr "Agrega una nota a un usuario."
-
-#: modules/contrib/multimark.c:496 modules/contrib/multimark.c:736
-#: modules/nickserv/multimark.c:613 modules/nickserv/multimark.c:891
-#, c-format
-msgid "Mark %d set by %s (%s) on %s: %s"
-msgstr "Marca %d puesta por %s (%s) en %s: %s"
-
-#: modules/contrib/multimark.c:506 modules/contrib/multimark.c:746
-#: modules/nickserv/multimark.c:625 modules/nickserv/multimark.c:903
-#, c-format
-msgid "Mark %d set by %s on %s: %s"
-msgstr "Marca %d puesta por %s en %s: %s"
-
-#: modules/contrib/multimark.c:519 modules/contrib/multimark.c:759
-#: modules/nickserv/multimark.c:642 modules/nickserv/multimark.c:920
-#, c-format
-msgid "(Restored) Mark %d originally set on %s (%s) by %s (%s) on %s: %s"
-msgstr ""
-"(Restaurado) marca %d puesta originalmente en %s (%s) por %s (%s) en %s: %s"
-
-#: modules/contrib/multimark.c:531 modules/contrib/multimark.c:771
-#: modules/nickserv/multimark.c:656 modules/nickserv/multimark.c:934
-#, c-format
-msgid "(Restored) Mark %d originally set on %s by %s (%s) on %s: %s"
-msgstr "(Restaurado) marca %d puesta originalmente en %s por %s (%s)en %s: %s"
-
-#: modules/contrib/multimark.c:545 modules/contrib/multimark.c:785
-#: modules/nickserv/multimark.c:673 modules/nickserv/multimark.c:951
-#, c-format
-msgid "(Restored) Mark %d originally set on %s (%s) by %s on %s: %s"
-msgstr "(Restaurado) marca %d puesta originalmente en %s (%s) por %s en %s: %s"
-
-#: modules/contrib/multimark.c:556 modules/contrib/multimark.c:796
-#: modules/nickserv/multimark.c:686 modules/nickserv/multimark.c:964
-#, c-format
-msgid "(Restored) Mark %d originally set on %s by %s on %s: %s"
-msgstr "(Restaurado) marca %d puesta originalmente en %s por %s en %s: %s"
-
-#: modules/contrib/multimark.c:598 modules/contrib/multimark.c:696
-#: modules/nickserv/multimark.c:733 modules/nickserv/multimark.c:843
-#, c-format
-msgid "%s is not registered anymore but was marked by %s (%s) on %s: %s"
-msgstr "%s ya no está registrado, pero fue marcado por %s (%s) en %s: %s"
-
-#: modules/contrib/multimark.c:608 modules/contrib/multimark.c:706
-#: modules/nickserv/multimark.c:745 modules/nickserv/multimark.c:855
-#, c-format
-msgid "%s is not registered anymore but was marked by %s on %s: %s"
-msgstr "%s ya no está registrado, pero fue marcado por %s en %s: %s"
-
-#: modules/contrib/multimark.c:631
-msgid "Usage: MARK <target> <ADD|DEL|LIST> [note]"
-msgstr "Uso: MARK <objeto> <ADD|DEL|LIST> [nota]"
-
-#: modules/contrib/multimark.c:648 modules/nickserv/multimark.c:794
-msgid "Usage: MARK <target> ADD <note>"
-msgstr "Uso: MARK <objeto> ADD <nota>"
-
-#: modules/contrib/multimark.c:661 modules/nickserv/multimark.c:807
-#, c-format
-msgid "%s has been marked."
-msgstr "%s ha sido marcado."
-
-#: modules/contrib/multimark.c:677 modules/nickserv/multimark.c:819
-#, c-format
-msgid "%s is not registered, and was not marked."
-msgstr "%s no está registrado y no ha sido marcado."
-
-#: modules/contrib/multimark.c:718 modules/nickserv/multimark.c:867
-#, c-format
-msgid "%s's marks:"
-msgstr "Marcas de %s:"
-
-#: modules/contrib/multimark.c:813 modules/nickserv/multimark.c:983
-msgid "Usage: MARK <target> DEL <number>"
-msgstr "Uso: MARK <objeto> DEL <número>"
-
-#: modules/contrib/multimark.c:840 modules/nickserv/multimark.c:1011
-msgid "The mark has been deleted."
-msgstr "La marca ha sido eliminada"
-
-#: modules/contrib/multimark.c:843 modules/nickserv/multimark.c:1016
-msgid "This mark does not exist"
-msgstr "Esta marca no existe"
-
 #: modules/contrib/ns_fenforce.c:41
 msgid "Syntax: FENFORCE <account> ON|OFF"
 msgstr "Sintaxis: FENFORCE <cuenta> ON|OFF"
@@ -3413,39 +3367,6 @@ msgstr "Uso: FORBID <nick> ON|OFF <razón>"
 #: modules/contrib/ns_generatehash.c:41
 msgid "Syntax: GENERATEHASH <password>"
 msgstr "Sintaxis: GENERATEHASH <contraseña>"
-
-#: modules/contrib/ns_goodmail.c:24
-msgid "Restrict registration to certain email addresses."
-msgstr "Restringe el registro a ciertas direcciones de email."
-
-#: modules/contrib/ns_goodmail.c:132
-msgid "Syntax: goodmail ADD|DEL|LIST [parameters]"
-msgstr "Sintaxis: ADDMAIL ADD|DEL|LIST [parámetros]"
-
-#: modules/contrib/ns_goodmail.c:141
-msgid "Syntax: goodmail ADD <email> <reason>"
-msgstr "Sintaxis: GOODMAIL ADD <email> <motivo>"
-
-#: modules/contrib/ns_goodmail.c:158
-#, c-format
-msgid "Email %s has already been whitelisted."
-msgstr "La dirección de email %s ya ha sido añadido a la lista blanca."
-
-#: modules/contrib/ns_goodmail.c:174
-#, c-format
-msgid "You have whitelisted email address %s."
-msgstr "La dirección de email %s ha sido añadida a la lista blanca."
-
-#: modules/contrib/ns_goodmail.c:182
-msgid "Syntax: goodmail DEL <email>"
-msgstr "Sintaxis: GOODMAIL DEL <email>"
-
-#: modules/contrib/ns_goodmail.c:204
-#, c-format
-msgid "Email pattern %s not found in goodmail database."
-msgstr ""
-"No se encontró el patrón de direcciones de email %s en la lista de correos "
-"buenos."
 
 #: modules/contrib/ns_guestnoreg.c:43
 msgid "Registering of guest nicknames is disallowed."
@@ -3698,9 +3619,36 @@ msgstr "Un dado puede tener sólo 1-100 lados."
 msgid "Can't divide by zero."
 msgstr "No es posible dividir por cero."
 
+#: modules/gameserv/dice.c:537
+#, fuzzy, c-format
+msgid "%s rolled %ud%u: "
+msgstr "%s lanzamientos %d dados: %s"
+
+#: modules/gameserv/dice.c:546
+#, c-format
+msgid " <Total: %g>"
+msgstr ""
+
+#: modules/gameserv/dice.c:549
+#, c-format
+msgid " <Total: %g(%c%u) = "
+msgstr ""
+
 #: modules/gameserv/dice.c:587
 msgid "Syntax: ROLL [times] [dice]d<sides>"
 msgstr "Sintaxis: ROLL [veces] [dados]d<lados>"
+
+#: modules/gameserv/dice.c:603
+msgid "Never gonna give you up; Never gonna let you down"
+msgstr ""
+
+#: modules/gameserv/dice.c:604
+msgid "Never gonna run around and desert you; Never gonna make you cry"
+msgstr ""
+
+#: modules/gameserv/dice.c:605
+msgid "Never gonna say goodbye; Never gonna tell a lie and hurt you"
+msgstr ""
 
 #: modules/gameserv/dice.c:625
 msgid "Syntax: CALC [times] <expression>"
@@ -3900,6 +3848,50 @@ msgstr "Sintaxis: DF <dados>"
 msgid "Result: %s"
 msgstr "Resultado: %s"
 
+#: modules/gameserv/happyfarm.c:44
+msgid "nothing"
+msgstr ""
+
+#: modules/gameserv/happyfarm.c:45
+msgid "turnip"
+msgstr ""
+
+#: modules/gameserv/happyfarm.c:46
+msgid "tomato"
+msgstr ""
+
+#: modules/gameserv/happyfarm.c:47
+msgid "parsley"
+msgstr ""
+
+#: modules/gameserv/happyfarm.c:48
+msgid "lettuce"
+msgstr ""
+
+#: modules/gameserv/happyfarm.c:49
+msgid "corn"
+msgstr ""
+
+#: modules/gameserv/happyfarm.c:50
+msgid "potato"
+msgstr ""
+
+#: modules/gameserv/happyfarm.c:51
+msgid "beans"
+msgstr ""
+
+#: modules/gameserv/happyfarm.c:52
+msgid "peaches"
+msgstr ""
+
+#: modules/gameserv/happyfarm.c:53
+msgid "pears"
+msgstr ""
+
+#: modules/gameserv/happyfarm.c:54
+msgid "apples"
+msgstr ""
+
 #: modules/gameserv/happyfarm.c:309
 msgid "Welcome to Happy Farm!  May your farm be lucky."
 msgstr "Bienvenido a Happy Farm! Que tu granja sea suertuda."
@@ -3983,6 +3975,11 @@ msgstr "Este comando sólo puede ser utilizado en un canal."
 msgid "Generates some names to ponder."
 msgstr "Genera algunos nombres para pensar."
 
+#: modules/gameserv/namegen.c:79
+#, fuzzy, c-format
+msgid "Some names to ponder: %s"
+msgstr "Genera algunos nombres para pensar."
+
 #: modules/gameserv/rps.c:21
 msgid "Rock Paper Scissors."
 msgstr "Piedra papel y tijeras"
@@ -4034,8 +4031,8 @@ msgstr "Sintaxis: ACSNOLIMIT <!grupo> <ON|OFF>"
 
 #: modules/groupserv/acsnolimit.c:36 modules/groupserv/fflags.c:40
 #: modules/groupserv/flags.c:43 modules/groupserv/invite.c:46
-#: modules/groupserv/regnolimit.c:37 modules/groupserv/set_groupname.c:64
-#: modules/groupserv/set_open.c:36 modules/groupserv/set_public.c:36
+#: modules/groupserv/regnolimit.c:37 modules/groupserv/set_open.c:36
+#: modules/groupserv/set_public.c:36
 #, c-format
 msgid "The group %s does not exist."
 msgstr "El grupo %s no existe."
@@ -4323,7 +4320,7 @@ msgstr "Registra un grupo."
 msgid "To register a group: REGISTER <!groupname>"
 msgstr "Para registrar un grupo: REGISTER <!nombregrupo>"
 
-#: modules/groupserv/register.c:43 modules/groupserv/set_groupname.c:82
+#: modules/groupserv/register.c:43
 #, c-format
 msgid "The group %s already exists."
 msgstr "%s ya se encuentra registrado."
@@ -4444,24 +4441,6 @@ msgstr "La dirección de e-mail para el grupo %s no fue establecida."
 #, c-format
 msgid "The e-mail address for group %s has been set to %s."
 msgstr "La dirección de e-mail para el grupo %s ha cambiado a %s"
-
-#: modules/groupserv/set_groupname.c:23
-msgid "Changes the group's name."
-msgstr "Cambia el nombre de un grupo."
-
-#: modules/groupserv/set_groupname.c:47 modules/groupserv/set_groupname.c:57
-msgid "Syntax: SET GROUPNAME <oldname> <newname>"
-msgstr "Sitaxis: SET GROUPNAME <nombreviejo> <nuevonombre>"
-
-#: modules/groupserv/set_groupname.c:76
-#, c-format
-msgid "The group name is already set to %s."
-msgstr "El nombre del grupo ya es %s."
-
-#: modules/groupserv/set_groupname.c:89
-#, c-format
-msgid "The group %s has been renamed to %s."
-msgstr "El grupo %s ha sido renombrado a %s."
 
 #: modules/groupserv/set_joinflags.c:21
 msgid "Sets the flags users will be given when they JOIN the group."
@@ -6089,6 +6068,10 @@ msgstr ""
 "Este nick se encuentra registrado. Por favor escoja un nick distinto, o "
 "identifíquese mediante /%s%s identify <contraseña>."
 
+#: modules/nickserv/mark.c:25
+msgid "Adds a note to a user."
+msgstr "Agrega una nota a un usuario."
+
 #: modules/nickserv/mark.c:92 modules/nickserv/mark.c:153
 msgid "Usage: MARK <target> <ON|OFF> [note]"
 msgstr "Uso: MARK <objeto> <ON|OFF> [nota]"
@@ -6096,14 +6079,6 @@ msgstr "Uso: MARK <objeto> <ON|OFF> [nota]"
 #: modules/nickserv/mark.c:116
 msgid "Usage: MARK <target> ON <note>"
 msgstr "Uso: MARK <objeto> ON <nota>"
-
-#: modules/nickserv/multimark.c:777
-msgid "usage: MARK <target> <ADD|DEL|LIST> [note]"
-msgstr "Uso: MARK <objeto> <ADD|DEL|LIST> [nota]"
-
-#: modules/nickserv/multimark.c:1022
-msgid "usage: MARK <target> <ADD|DEL|LIST|MIGRATE> [note]"
-msgstr "Uso: MARK <objeto> <ADD|DEL|LIST|MIGRATE> [nota]"
 
 #: modules/nickserv/register.c:23
 msgid "Registers a nickname."
@@ -9185,16 +9160,12 @@ msgstr "Sintaxis CHANNEL TOPIC <#canal>"
 msgid "The channel %s does not exist."
 msgstr "El canal %s no existe."
 
-#: modules/statserv/channel.c:96
-msgid "You are not authorised to perform this action."
-msgstr "No está autorizado para realizar esta acción."
-
-#: modules/statserv/channel.c:101
+#: modules/statserv/channel.c:100
 #, c-format
 msgid "Topic for %s set by %s: %s"
 msgstr "Tema de %s puesto por %s: %s"
 
-#: modules/statserv/channel.c:104
+#: modules/statserv/channel.c:103
 #, c-format
 msgid "No topic set for %s"
 msgstr "%s no tiene ningún tema."
@@ -9320,23 +9291,173 @@ msgstr "Fin de la información del servidor."
 msgid "Network size: %u servers"
 msgstr "Tamaño de la red: %u servidores"
 
+#~ msgid "Flood protection turned off for %s."
+#~ msgstr "Protección contra el flood desactivada para%s."
+
+#~ msgid "Flood protection turned on for %s with default settings."
+#~ msgstr ""
+#~ "Protección contra el flood activada en %s con las configuraciones por "
+#~ "defecto."
+
+#~ msgid "Flood protection turned on for %s with %s action."
+#~ msgstr "Protección contra el flood activada en %s con acción %s."
+
+#~ msgid "Set anti-flood action"
+#~ msgstr "Cambiar la acción anti-flood"
+
+#~ msgid "Cleared AKICK entries in %s."
+#~ msgstr "Se han eliminado todos los AKICKs en %s."
+
+#~ msgid "Syntax: FLAGS <#channel> MODIFY [target] <flags>"
+#~ msgstr "Sintaxis: <#canal> MODIFY [destino] <permisos>"
+
+#~ msgid "You are not authorized to execute this command."
+#~ msgstr "No estás autorizado a ejecutar este comando."
+
+#~ msgid "Your IRC server does not support halfops."
+#~ msgstr "Tu servidor de IRC no soporta el uso de halfops."
+
+#~ msgid ""
+#~ "%s has the SECURE option enabled, and %s does not have appropriate access."
+#~ msgstr ""
+#~ "%s tiene la opción SECURE activada, y %s no tiene los permisos de acceso "
+#~ "apropiados."
+
+#~ msgid "Syntax: HALFOP <#channel> [nickname] [...]"
+#~ msgstr "Sintaxis: HALFOP <#canal> [nick] [...]"
+
+#~ msgid "Syntax: DEHALFOP <#channel> [nickname] [...]"
+#~ msgstr "Sintaxis: DEHALFOP <#canal> [nick] [...]"
+
+#~ msgid "Syntax: OP <#channel> [nickname] [...]"
+#~ msgstr "Sintaxis: OP <#canal> [nick] [...]"
+
+#~ msgid "Syntax: DEOP <#channel> [nickname] [...]"
+#~ msgstr "Sintaxis: DEOP <#canal> [nick] [...]"
+
+#~ msgid "The IRCd software you are running does not support this feature."
+#~ msgstr ""
+#~ "El software IRCd que está ejecutando no soporta esta característica."
+
+#~ msgid "Syntax: OWNER <#channel> [nickname] [...]"
+#~ msgstr "Sintaxis: OWNER <#canal> [nick] [...]"
+
+#~ msgid "Syntax: DEOWNER <#channel> [nickname] [...]"
+#~ msgstr "Sintaxis: DEOWNER <#canal> [nick] [...]"
+
+#~ msgid "Syntax: PROTECT <#channel> [nickname]"
+#~ msgstr "Sintaxis: PROTECT <#canal> [nick]"
+
+#~ msgid "Syntax: DEPROTECT <#channel> [nickname]"
+#~ msgstr "Sintaxis: DEPROTECT <#canal> [nick]"
+
+#~ msgid "Allows the channel ACL to be public."
+#~ msgstr "Hace que la lista de acceso de un canal sea pública."
+
+#~ msgid "Syntax: VOICE <#channel> [nickname] [...]"
+#~ msgstr "Sintaxis: VOICE <#canal> [nick] [...]"
+
+#~ msgid "Syntax: DEVOICE <#channel> [nickname] [...]"
+#~ msgstr "Sintaxis: DEVOICE <#canal> [nick] [...]"
+
+#~ msgid "Mark %d set by %s (%s) on %s: %s"
+#~ msgstr "Marca %d puesta por %s (%s) en %s: %s"
+
+#~ msgid "Mark %d set by %s on %s: %s"
+#~ msgstr "Marca %d puesta por %s en %s: %s"
+
+#~ msgid "(Restored) Mark %d originally set on %s (%s) by %s (%s) on %s: %s"
+#~ msgstr ""
+#~ "(Restaurado) marca %d puesta originalmente en %s (%s) por %s (%s) en %s: "
+#~ "%s"
+
+#~ msgid "(Restored) Mark %d originally set on %s by %s (%s) on %s: %s"
+#~ msgstr ""
+#~ "(Restaurado) marca %d puesta originalmente en %s por %s (%s)en %s: %s"
+
+#~ msgid "(Restored) Mark %d originally set on %s (%s) by %s on %s: %s"
+#~ msgstr ""
+#~ "(Restaurado) marca %d puesta originalmente en %s (%s) por %s en %s: %s"
+
+#~ msgid "(Restored) Mark %d originally set on %s by %s on %s: %s"
+#~ msgstr "(Restaurado) marca %d puesta originalmente en %s por %s en %s: %s"
+
+#~ msgid "%s is not registered anymore but was marked by %s (%s) on %s: %s"
+#~ msgstr "%s ya no está registrado, pero fue marcado por %s (%s) en %s: %s"
+
+#~ msgid "%s is not registered anymore but was marked by %s on %s: %s"
+#~ msgstr "%s ya no está registrado, pero fue marcado por %s en %s: %s"
+
+#~ msgid "Usage: MARK <target> <ADD|DEL|LIST> [note]"
+#~ msgstr "Uso: MARK <objeto> <ADD|DEL|LIST> [nota]"
+
+#~ msgid "Usage: MARK <target> ADD <note>"
+#~ msgstr "Uso: MARK <objeto> ADD <nota>"
+
+#~ msgid "%s has been marked."
+#~ msgstr "%s ha sido marcado."
+
+#~ msgid "%s is not registered, and was not marked."
+#~ msgstr "%s no está registrado y no ha sido marcado."
+
+#~ msgid "%s's marks:"
+#~ msgstr "Marcas de %s:"
+
+#~ msgid "Usage: MARK <target> DEL <number>"
+#~ msgstr "Uso: MARK <objeto> DEL <número>"
+
+#~ msgid "The mark has been deleted."
+#~ msgstr "La marca ha sido eliminada"
+
+#~ msgid "This mark does not exist"
+#~ msgstr "Esta marca no existe"
+
+#~ msgid "Restrict registration to certain email addresses."
+#~ msgstr "Restringe el registro a ciertas direcciones de email."
+
+#~ msgid "Syntax: goodmail ADD|DEL|LIST [parameters]"
+#~ msgstr "Sintaxis: ADDMAIL ADD|DEL|LIST [parámetros]"
+
+#~ msgid "Syntax: goodmail ADD <email> <reason>"
+#~ msgstr "Sintaxis: GOODMAIL ADD <email> <motivo>"
+
+#~ msgid "Email %s has already been whitelisted."
+#~ msgstr "La dirección de email %s ya ha sido añadido a la lista blanca."
+
+#~ msgid "You have whitelisted email address %s."
+#~ msgstr "La dirección de email %s ha sido añadida a la lista blanca."
+
+#~ msgid "Syntax: goodmail DEL <email>"
+#~ msgstr "Sintaxis: GOODMAIL DEL <email>"
+
+#~ msgid "Email pattern %s not found in goodmail database."
+#~ msgstr ""
+#~ "No se encontró el patrón de direcciones de email %s en la lista de "
+#~ "correos buenos."
+
+#~ msgid "Changes the group's name."
+#~ msgstr "Cambia el nombre de un grupo."
+
+#~ msgid "Syntax: SET GROUPNAME <oldname> <newname>"
+#~ msgstr "Sitaxis: SET GROUPNAME <nombreviejo> <nuevonombre>"
+
+#~ msgid "The group name is already set to %s."
+#~ msgstr "El nombre del grupo ya es %s."
+
+#~ msgid "The group %s has been renamed to %s."
+#~ msgstr "El grupo %s ha sido renombrado a %s."
+
+#~ msgid "usage: MARK <target> <ADD|DEL|LIST> [note]"
+#~ msgstr "Uso: MARK <objeto> <ADD|DEL|LIST> [nota]"
+
+#~ msgid "usage: MARK <target> <ADD|DEL|LIST|MIGRATE> [note]"
+#~ msgstr "Uso: MARK <objeto> <ADD|DEL|LIST|MIGRATE> [nota]"
+
+#~ msgid "You are not authorised to perform this action."
+#~ msgstr "No está autorizado para realizar esta acción."
+
 #~ msgid "%-5d %-22s %-20s [modified %s ago]"
 #~ msgstr "%-5d %-22s %-20s [modificado hace %s]"
-
-#~ msgid "%s has been dehalfopped on %s."
-#~ msgstr "%s ya no es halfop en %s."
-
-#~ msgid "%s has been deopped on %s."
-#~ msgstr "%s ya no es operador de %s."
-
-#~ msgid "%s has been unset as owner on %s."
-#~ msgstr "%s ya no es el propietario de %s."
-
-#~ msgid "%s has been unset as protected on %s."
-#~ msgstr "%s ya no es protegido en %s."
-
-#~ msgid "%s has been devoiced on %s."
-#~ msgstr "%s ha perdido voz en %s."
 
 #~ msgid "SUCCESSION: %s to %s from %s"
 #~ msgstr "SUCESIÓN: %s a %s de %s"
