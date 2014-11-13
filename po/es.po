@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Atheme IRC Services\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-13 16:36-0300\n"
-"PO-Revision-Date: 2014-11-01 22:16-0300\n"
+"POT-Creation-Date: 2014-11-13 15:07-0300\n"
+"PO-Revision-Date: 2014-11-13 15:47-0300\n"
 "Last-Translator: Ramiro Bou <bouramiro@gmail.com>\n"
 "Language-Team: Español; Castellano <LL@li.org>\n"
 "Language: es\n"
@@ -867,9 +867,9 @@ msgid "%s was removed from the %s role in %s."
 msgstr "%s ha sido quitado del rol %s en %s."
 
 #: modules/chanserv/access.c:824
-#, fuzzy, c-format
+#, c-format
 msgid "%s deleted %s from the access list (had role: %s)."
-msgstr "%s ha sido quitado de la lista %s para %s."
+msgstr "%s eliminó %s de la lista de acceso (tenía el rol %s)."
 
 #: modules/chanserv/access.c:858
 msgid "Syntax: ACCESS <#channel> ADD <account|hostmask> <role>"
@@ -924,9 +924,9 @@ msgid "%s was added with the %s role in %s."
 msgstr "%s ha sido agregado con el rol %s a %s."
 
 #: modules/chanserv/access.c:965
-#, fuzzy, c-format
+#, c-format
 msgid "%s added %s to the access list (with role: %s)."
-msgstr "%s ha sido agregado a la lista %s para %s."
+msgstr "%s añadió %s a la lista de acceso (con el rol %s)."
 
 #: modules/chanserv/access.c:999
 msgid "Syntax: ACCESS <#channel> SET <account|hostmask> <role>"
@@ -943,9 +943,9 @@ msgid "%s now has the %s role in %s."
 msgstr "%s ahora tiene el rol %s en %s."
 
 #: modules/chanserv/access.c:1106
-#, fuzzy, c-format
+#, c-format
 msgid "%s changed the access list role for %s to %s."
-msgstr "%s ha sido agregado a la lista %s para %s."
+msgstr "%s cambió los roles de acceso de %s a %s."
 
 #: modules/chanserv/access.c:1143
 msgid "List of channel-defined roles:"
@@ -1080,9 +1080,9 @@ msgid "The more general mask %s is already on the AKICK list for %s"
 msgstr "La máscara más general %s ya se encuentra en la lista AKICK para %s"
 
 #: modules/chanserv/akick.c:339 modules/chanserv/akick.c:406
-#, fuzzy, c-format
+#, c-format
 msgid "%s added %s to the AKICK list, expires in %s."
-msgstr "%s no se encuentra en la lista AKICK para %s."
+msgstr "%s añadió a %s a la lista de AKICK, y expira en %s."
 
 #: modules/chanserv/akick.c:341 modules/chanserv/akick.c:405
 #, c-format
@@ -1090,9 +1090,9 @@ msgid "AKICK on %s was successfully added for %s and will expire in %s."
 msgstr "AKICK en %s fue añadida con éxito a %s y expirará en %s."
 
 #: modules/chanserv/akick.c:356 modules/chanserv/akick.c:424
-#, fuzzy, c-format
+#, c-format
 msgid "%s added %s to the AKICK list."
-msgstr "%s no se encuentra en la lista AKICK para %s."
+msgstr "%s añadió a %s a la lista de AKICK."
 
 #: modules/chanserv/akick.c:359 modules/chanserv/akick.c:422
 #, c-format
@@ -1114,9 +1114,9 @@ msgid "%s is not on the AKICK list for %s."
 msgstr "%s no se encuentra en la lista AKICK para %s."
 
 #: modules/chanserv/akick.c:498 modules/chanserv/akick.c:551
-#, fuzzy, c-format
+#, c-format
 msgid "%s removed %s from the AKICK list."
-msgstr "%s ha sido quitado de la lista AKICK para %s."
+msgstr "%s eliminó a %s de la lista de AKICK."
 
 #: modules/chanserv/akick.c:500 modules/chanserv/akick.c:549
 #, c-format
@@ -1256,6 +1256,8 @@ msgstr "Se han borrado los permisos en %s."
 #, c-format
 msgid "%s removed all %d non-founder access entries."
 msgstr ""
+"%s eliminó todas las %d entradas que no son propietario en la lista de "
+"acceso."
 
 #: modules/chanserv/clear_users.c:20
 msgid "Kicks all users from a channel."
@@ -1426,9 +1428,9 @@ msgid "Flags %s were set on %s in %s."
 msgstr "Los permisos %s fueron establecidos para %s en %s."
 
 #: modules/chanserv/fflags.c:158
-#, fuzzy, c-format
+#, c-format
 msgid "%s forced flags change %s on %s."
-msgstr "%s ahora tiene los permisos %s en %s"
+msgstr "%s forzó los permisos %s a %s"
 
 #: modules/chanserv/flags.c:21
 msgid "Manipulates specific permissions on a channel."
@@ -1484,9 +1486,9 @@ msgid "%s does not wish to be added to channel access lists (NEVEROP set)."
 msgstr "%s no desea ser agregado a listas de acceso (NEVEROP activado)."
 
 #: modules/chanserv/flags.c:408
-#, fuzzy, c-format
+#, c-format
 msgid "%s set flags %s on %s."
-msgstr "%s ahora tiene los permisos %s en %s"
+msgstr "%s cambió los permisos %s a %s"
 
 #: modules/chanserv/ftransfer.c:20
 msgid "Forces foundership transfer of a channel."
@@ -1502,9 +1504,10 @@ msgid "%s is already the founder of %s."
 msgstr "%s ya es el fundador de %s."
 
 #: modules/chanserv/ftransfer.c:72
-#, fuzzy, c-format
+#, c-format
 msgid "Foundership transfer from %s to %s forced by %s administration."
-msgstr "El fundador de %s ha cambiado de %s a %s."
+msgstr ""
+"Propiedad del canal cambiada de %s a %s forzada por la %s administración."
 
 #: modules/chanserv/ftransfer.c:73
 #, c-format
@@ -1538,19 +1541,19 @@ msgid "Removes channel halfops from a user."
 msgstr "Quita el estado de halfop de un usuario."
 
 #: modules/chanserv/halfop.c:38
-#, fuzzy, c-format
+#, c-format
 msgid "You have been halfopped on %s by %s"
-msgstr "Has cerrado tu sesión de %s."
+msgstr "Ahora eres semi-op en %s (por %s)"
 
 #: modules/chanserv/halfop.c:39
-#, fuzzy, c-format
+#, c-format
 msgid "You have been dehalfopped on %s by %s"
-msgstr "%s ya no es halfop en %s."
+msgstr "Ya no eres semi-op en %s (por %s)"
 
 #: modules/chanserv/halfop.c:40
-#, fuzzy, c-format
+#, c-format
 msgid "%s has been halfopped on %s."
-msgstr "%s ha sido convertido en %ssemi-op en %s."
+msgstr "%s ha sido convertido en semi-op en %s."
 
 #: modules/chanserv/halfop.c:41
 #, c-format
@@ -1560,7 +1563,7 @@ msgstr "%s ya no es halfop en %s."
 #: modules/chanserv/halfop.c:48
 #, c-format
 msgid "Module %s requires halfop support, refusing to load."
-msgstr ""
+msgstr "El módulo %s requiere soporte para semi-op, negándose a cargarlo."
 
 #: modules/chanserv/help.c:49
 #, c-format
@@ -1926,19 +1929,19 @@ msgid "Removes channel ops from a user."
 msgstr "Quita el estado de operador de canal a un usuario."
 
 #: modules/chanserv/op.c:38
-#, fuzzy, c-format
+#, c-format
 msgid "You have been opped on %s by %s"
-msgstr "Has cerrado tu sesión de %s."
+msgstr "Has sido convertido en operador de %s por %s"
 
 #: modules/chanserv/op.c:39
-#, fuzzy, c-format
+#, c-format
 msgid "You have been deopped on %s by %s"
-msgstr "%s ya no es operador de %s."
+msgstr "Ya no eres operador de %s (%s)"
 
 #: modules/chanserv/op.c:40
-#, fuzzy, c-format
+#, c-format
 msgid "%s has been opped on %s."
-msgstr "%s ha sido convertido en %soperador en %s."
+msgstr "%s ha sido convertido en operador en %s."
 
 #: modules/chanserv/op.c:41
 #, c-format
@@ -1954,19 +1957,19 @@ msgid "Removes channel owner flag from a user."
 msgstr "Quita el estado de propietario del canal de un usuario."
 
 #: modules/chanserv/owner.c:38
-#, fuzzy, c-format
+#, c-format
 msgid "You have been set as owner on %s by %s"
-msgstr "%s ha sido %sestablecido como el propietario de %s."
+msgstr "Has sido establecido como propietario en %s (por %s)"
 
 #: modules/chanserv/owner.c:39
-#, fuzzy, c-format
+#, c-format
 msgid "You have been unset as owner on %s by %s"
-msgstr "%s ya no es el propietario de %s."
+msgstr "Ya no eres el propietario de %s (por %s)"
 
 #: modules/chanserv/owner.c:40
-#, fuzzy, c-format
+#, c-format
 msgid "%s has been set as owner on %s."
-msgstr "%s ha sido %sestablecido como el propietario de %s."
+msgstr "%s ha sido establecido como el propietario de %s."
 
 #: modules/chanserv/owner.c:41
 #, c-format
@@ -1976,7 +1979,7 @@ msgstr "%s ya no es el propietario de %s."
 #: modules/chanserv/owner.c:48
 #, c-format
 msgid "Module %s requires owner support, refusing to load."
-msgstr ""
+msgstr "El módulo %s requiere soporte para owner, negándose a cargarlo."
 
 #: modules/chanserv/protect.c:25
 msgid "Gives the channel protection flag to a user."
@@ -1987,19 +1990,19 @@ msgid "Removes channel protection flag from a user."
 msgstr "Quita el permiso de protección del canal a un usuario."
 
 #: modules/chanserv/protect.c:38
-#, fuzzy, c-format
+#, c-format
 msgid "You have been set as protected on %s by %s"
-msgstr "%s ha sido %sestablecido como protegido en %s."
+msgstr "Has sido establecido como protegido en %s (por %s)"
 
 #: modules/chanserv/protect.c:39
-#, fuzzy, c-format
+#, c-format
 msgid "You have been unset as protected on %s by %s"
-msgstr "%s ya no es protegido en %s."
+msgstr "Ya no estás protegido en %s (por %s)"
 
 #: modules/chanserv/protect.c:40
-#, fuzzy, c-format
+#, c-format
 msgid "%s has been set as protected on %s."
-msgstr "%s ha sido %sestablecido como protegido en %s."
+msgstr "%s ha sido establecido como protegido en %s."
 
 #: modules/chanserv/protect.c:41
 #, c-format
@@ -2009,7 +2012,7 @@ msgstr "%s ya no es protegido en %s."
 #: modules/chanserv/protect.c:48
 #, c-format
 msgid "Module %s requires protect support, refusing to load."
-msgstr ""
+msgstr "El módulo %s requiere soporte para protect, negándose a cargarlo."
 
 #: modules/chanserv/quiet.c:22
 msgid "Sets a quiet on a channel."
@@ -2085,7 +2088,7 @@ msgstr "Sintaxis: RECOVER <#canal>"
 #: modules/chanserv/recover.c:87
 #, c-format
 msgid "%s used RECOVER."
-msgstr ""
+msgstr "%s usó RECOVER."
 
 #: modules/chanserv/recover.c:199
 #, c-format
@@ -2263,9 +2266,9 @@ msgid "%s is closed; it cannot be transferred."
 msgstr "%s está cerrado; no puede ser transferido."
 
 #: modules/chanserv/set_founder.c:135
-#, fuzzy, c-format
+#, c-format
 msgid "Foundership transferred from %s to %s."
-msgstr "El fundador de %s ha cambiado de %s a %s."
+msgstr "El fundador ha cambiado de %s a %s."
 
 #: modules/chanserv/set_founder.c:154
 #, c-format
@@ -2532,27 +2535,27 @@ msgstr "Notifica al canal acerca de modificaciones en la lista de acceso."
 #: modules/chanserv/set_verbose.c:72
 #, c-format
 msgid "%s enabled the VERBOSE flag"
-msgstr ""
+msgstr "%s activó VERBOSE."
 
 #: modules/chanserv/set_verbose.c:89
 #, c-format
 msgid "%s restricted VERBOSE to chanops"
-msgstr ""
+msgstr "%s restringió VERBOSE a los operadores del canal"
 
 #: modules/chanserv/set_verbose.c:96
 #, c-format
 msgid "%s enabled the VERBOSE_OPS flag"
-msgstr ""
+msgstr "%s activó VERBOSE_OPS"
 
 #: modules/chanserv/set_verbose.c:113
 #, c-format
 msgid "%s disabled the VERBOSE flag"
-msgstr ""
+msgstr "%s deshabilitó VERBOSE"
 
 #: modules/chanserv/set_verbose.c:115
 #, c-format
 msgid "%s disabled the VERBOSE_OPS flag"
-msgstr ""
+msgstr "%s deshabilitó VERBOSE_OPS"
 
 #: modules/chanserv/status.c:20
 msgid "Displays your status in services."
@@ -2597,9 +2600,9 @@ msgid "You are an IRC operator."
 msgstr "Eres un operador de IRC."
 
 #: modules/chanserv/sync.c:335
-#, fuzzy, c-format
+#, c-format
 msgid "%s used SYNC."
-msgstr "%s está cerrado."
+msgstr "%s usó SYNC."
 
 #: modules/chanserv/sync.c:345
 msgid "Disables automatic channel ACL syncing."
@@ -2708,7 +2711,7 @@ msgstr "Se ha cambiado la plantilla %s a %s en %s."
 #: modules/chanserv/template.c:391
 #, c-format
 msgid "%s set %s on %d access entries with flags %s."
-msgstr ""
+msgstr "%s otorgó los permisos %s en %d entradas con permisos %s."
 
 #: modules/chanserv/template.c:394
 #, c-format
@@ -2798,19 +2801,19 @@ msgid "Removes channel voice from a user."
 msgstr "Quita voz en el canal a un usuario."
 
 #: modules/chanserv/voice.c:38
-#, fuzzy, c-format
+#, c-format
 msgid "You have been voiced on %s by %s"
-msgstr "Has sido invitado a %s."
+msgstr "Has adquirido voz en %s por %s"
 
 #: modules/chanserv/voice.c:39
-#, fuzzy, c-format
+#, c-format
 msgid "You have been devoiced on %s by %s"
-msgstr "Has sido invitado a %s."
+msgstr "Tu voz en %s ha sido quitada por %s"
 
 #: modules/chanserv/voice.c:40
-#, fuzzy, c-format
+#, c-format
 msgid "%s has been voiced on %s."
-msgstr "%s ha adquirido %svoz en %s."
+msgstr "%s ha adquirido voz en %s."
 
 #: modules/chanserv/voice.c:41
 #, c-format
@@ -2893,9 +2896,9 @@ msgid "%s's access on %s has been changed to %s."
 msgstr "El acceso de %s en %s ha sido cambiado a %s."
 
 #: modules/chanserv/xop.c:266 modules/chanserv/xop.c:337
-#, fuzzy, c-format
+#, c-format
 msgid "%s changed %s's access to %s."
-msgstr "%s no tiene acceso en %s."
+msgstr "%s cambio el nivel de acceso de %s a %s."
 
 #: modules/chanserv/xop.c:271 modules/chanserv/xop.c:343
 #, c-format
@@ -2903,9 +2906,9 @@ msgid "%s has been added to the %s list for %s."
 msgstr "%s ha sido agregado a la lista %s para %s."
 
 #: modules/chanserv/xop.c:272 modules/chanserv/xop.c:344
-#, fuzzy, c-format
+#, c-format
 msgid "%s added %s to the %s list."
-msgstr "Se ha agregado %s a la lista NOOP de servidores."
+msgstr "%s añadió a %s a la lista de %s."
 
 #: modules/chanserv/xop.c:282
 #, c-format
@@ -2923,9 +2926,9 @@ msgid "%s is not on the %s list for %s."
 msgstr "%s no se encuentra en la lista %s para %s."
 
 #: modules/chanserv/xop.c:380 modules/chanserv/xop.c:404
-#, fuzzy, c-format
+#, c-format
 msgid "%s removed %s from the %s list."
-msgstr "%s eliminado de la lista de servidores en netsplit."
+msgstr "%s eliminó a %s de la lista de %s."
 
 #: modules/chanserv/xop.c:382 modules/chanserv/xop.c:402
 #, c-format
@@ -2962,9 +2965,9 @@ msgid "FORCEXOP %s done (%d changes)"
 msgstr "FORCEXOP %s completado (%d cambios)"
 
 #: modules/chanserv/xop.c:520
-#, fuzzy, c-format
+#, c-format
 msgid "%s reset access levels to xOP (%d changes)"
-msgstr "Forza niveles de acceso a niveles xOP."
+msgstr "%s reinició los niveles de acceso a xOP (%d cambios)"
 
 #: modules/contrib/cs_access_alias.c:52
 #, c-format
@@ -3620,35 +3623,38 @@ msgid "Can't divide by zero."
 msgstr "No es posible dividir por cero."
 
 #: modules/gameserv/dice.c:537
-#, fuzzy, c-format
+#, c-format
 msgid "%s rolled %ud%u: "
-msgstr "%s lanzamientos %d dados: %s"
+msgstr "%s lanzó %ud%u:"
 
 #: modules/gameserv/dice.c:546
 #, c-format
 msgid " <Total: %g>"
-msgstr ""
+msgstr " <Total: %g>"
 
 #: modules/gameserv/dice.c:549
 #, c-format
 msgid " <Total: %g(%c%u) = "
-msgstr ""
+msgstr " <Total: %g(%c%u) = "
 
 #: modules/gameserv/dice.c:587
 msgid "Syntax: ROLL [times] [dice]d<sides>"
 msgstr "Sintaxis: ROLL [veces] [dados]d<lados>"
 
+# Leaving it in english... it is part of a song
 #: modules/gameserv/dice.c:603
 msgid "Never gonna give you up; Never gonna let you down"
-msgstr ""
+msgstr "Never gonna give you up; Never gonna let you down"
 
+# Leaving it in english... it is part of a song
 #: modules/gameserv/dice.c:604
 msgid "Never gonna run around and desert you; Never gonna make you cry"
-msgstr ""
+msgstr "Never gonna run around and desert you; Never gonna make you cry"
 
+# Leaving it in english... it is part of a song
 #: modules/gameserv/dice.c:605
 msgid "Never gonna say goodbye; Never gonna tell a lie and hurt you"
-msgstr ""
+msgstr "Never gonna say goodbye; Never gonna tell a lie and hurt you"
 
 #: modules/gameserv/dice.c:625
 msgid "Syntax: CALC [times] <expression>"
@@ -3850,47 +3856,47 @@ msgstr "Resultado: %s"
 
 #: modules/gameserv/happyfarm.c:44
 msgid "nothing"
-msgstr ""
+msgstr "nada"
 
 #: modules/gameserv/happyfarm.c:45
 msgid "turnip"
-msgstr ""
+msgstr "nabo"
 
 #: modules/gameserv/happyfarm.c:46
 msgid "tomato"
-msgstr ""
+msgstr "tomate"
 
 #: modules/gameserv/happyfarm.c:47
 msgid "parsley"
-msgstr ""
+msgstr "perejil"
 
 #: modules/gameserv/happyfarm.c:48
 msgid "lettuce"
-msgstr ""
+msgstr "lechuga"
 
 #: modules/gameserv/happyfarm.c:49
 msgid "corn"
-msgstr ""
+msgstr "maíz"
 
 #: modules/gameserv/happyfarm.c:50
 msgid "potato"
-msgstr ""
+msgstr "patata"
 
 #: modules/gameserv/happyfarm.c:51
 msgid "beans"
-msgstr ""
+msgstr "frijoles"
 
 #: modules/gameserv/happyfarm.c:52
 msgid "peaches"
-msgstr ""
+msgstr "duraznos"
 
 #: modules/gameserv/happyfarm.c:53
 msgid "pears"
-msgstr ""
+msgstr "peras"
 
 #: modules/gameserv/happyfarm.c:54
 msgid "apples"
-msgstr ""
+msgstr "manzanas"
 
 #: modules/gameserv/happyfarm.c:309
 msgid "Welcome to Happy Farm!  May your farm be lucky."
@@ -3976,9 +3982,9 @@ msgid "Generates some names to ponder."
 msgstr "Genera algunos nombres para pensar."
 
 #: modules/gameserv/namegen.c:79
-#, fuzzy, c-format
+#, c-format
 msgid "Some names to ponder: %s"
-msgstr "Genera algunos nombres para pensar."
+msgstr "Algunos nombres para pensar: %s"
 
 #: modules/gameserv/rps.c:21
 msgid "Rock Paper Scissors."
