@@ -1,0 +1,32 @@
+Ayuda para JOINMON:
+
+JOINMON le permite mantener una lista de patrones que se contrastan con
+los nicks de los usuarios y que provocará un mensaje en el canal de servicios
+(bajo el loglevel de info) si el usuario se une a cualquier canal.
+
+Estos patrones se guardan en la base de datos de Atheme y permanecen al reiniciar
+servicios.
+
+Sintaxis: JOINMON ADD <patrón> [razón]
+
+Ejemplos:
+    /msg &nick& JOINMON ADD jdhore1 alguna razón
+    /msg &nick& JOINMON ADD jd* otra razón
+    /msg &nick& JOINMON ADD machineg?d falso
+
+JOINMON DEL le permite eliminar entradas actualmente en el registro de patrones
+comprobados.
+
+Sintaxis: JOINMON DEL <patrón>
+
+Ejemplos:
+    /msg &nick& JOINMON DEL jdhore1
+    /msg &nick& JOINMON DEL machineg?d
+
+JOINMON LIST le permite mostrar una lista de entradas actualmente en el registro
+de patrones comprobados.
+
+Sintaxis: JOINMON LIST
+
+Ejemplos:
+    /msg &nick& JOINMON LIST

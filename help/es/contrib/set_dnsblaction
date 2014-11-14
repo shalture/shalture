@@ -1,0 +1,16 @@
+Ayuda para SET DNSBLACTION:
+
+SET DNSBLACTION permite definir qué acción se realiza cuando
+un usuario se encuentra en una determinada lista DNSBL.
+
+SNOOP - Manda un mensaje al canal de servicios sólo.
+NOTIFY - Manda un mensaje al canal de servicios y notifica al
+usuario.
+KLINE - Manda un mensaje al canal de servicios y aplica un k-line
+al usuario.
+NONE - Deshabilitar búsquedas por DNSBL.
+
+Sintaxis: SET DNSBLACTION <SNOOP|NOTIFY|KLINE|NONE>
+
+Ejemplo:
+    /msg &nick& SET DNSBLACTION NOTIFY
