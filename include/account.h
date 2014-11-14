@@ -357,6 +357,12 @@ typedef struct {
 	const char *host;
 } hook_user_get_banmask_t;
 
+typedef struct {
+	sourceinfo_t *si;
+	myuser_t *mu;
+	int allowed;
+} hook_user_needforce_t;
+
 /* pmodule.c XXX */
 E bool backend_loaded;
 
