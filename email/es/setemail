@@ -1,0 +1,17 @@
+From: &from&
+To: &to&
+Reply-To: &replyto&
+Subject: Verificación de nuevo email en &netname&
+Date: &date&
+
+&accountname&,
+
+Para finalizar el cambio de dirección de e-mail, debes verificar tu nuevo
+e-mail poniendo el siguiente comando en el IRC:
+
+   /msg &nicksvs& VERIFY EMAILCHG &accountname& &param&
+
+¡Gracias por actualizar su dirección de e-mail en la red de IRC &netname&!
+--
+Si usted no ha solicitado este mensaje, por favor contacte a &replyto&
+con una copia del mismo.

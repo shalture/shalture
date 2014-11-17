@@ -1,0 +1,19 @@
+From: &from&
+To: &to&
+Reply-To: &replyto&
+Subject: Registro de cuenta en &netname&
+Date: &date&
+
+&accountname&,
+
+Para completar el registro de su cuenta debes introducir el siguiente
+comando en el IRC:
+
+   /msg &nicksvs& VERIFY REGISTER &accountname& &param&
+
+¡Gracias por registrar su cuenta en la red IRC &netname&!
+
+--
+Este correo ha sido enviado debido a un comando de &sourceinfo&
+el &date&.  Si no ha solicitado este mensaje, por favor contacte &replyto&
+con una copia del mismo.
