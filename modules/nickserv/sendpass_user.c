@@ -125,7 +125,7 @@ wrong_syntax:
 
 	if (MOWGLI_LIST_LENGTH(&mu->logins) > 0)
 	{
-		if (si->mu == mu)
+		if (si->smu == mu)
 			command_fail(si, fault_already_authed, _("You are logged in and can change your password using the SET PASSWORD command."));
 		else
 			command_fail(si, fault_noprivs, _("This operation cannot be performed on %s, because someone is logged in to it."), entity(mu)->name);
