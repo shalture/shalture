@@ -15,12 +15,15 @@ de plantilla (cambia el acceso a los correspondientes a la
 plantilla) o un cambio de opciones (comienza con + o -). Vea
 la ayuda sobre TEMPLATE para más información sobre plantillas.
 
+#if !halfops
+Si Ud. no es un fundador, sólo puede manipular opciones a las
+ya que tenga acceso, y no puede modificar usuarios que tengan
+opciones que Ud. no. Para este propósito, +v permite +V,+o permite
++O, y +r permite +b.
+#else
 Si Ud. no es un fundador, sólo puede manipular opciones a las
 ya que tenga acceso, y no puede modificar usuarios que tengan
 opciones que Ud. no. Para este propósito, +v permite +V,
-#if !halfops
-+o permite +O, y +r permite +b.
-#else
 +h permite +H, +o permite +O, y +r permite +b.
 #endif
 
@@ -29,6 +32,34 @@ Si la opción LIMITFLAGS está activada para el canal, se
 aplican más restricciones; vea la ayuda sobre SET LIMITFLAGS.
 
 #endif
+
+#if module exttarget/main
+Apartir de Atheme 7.0, hay identificadores de entidades extendidos,
+los cuales permiten comparar entradas en la lista con una situación
+en vez de un nick, máscara de host o grupo.
+
+Los identificadores extendidos disponibles son:
+#endif
+#if module exttarget/oper
+$oper - Cualquier usuario que sea oper (modo de usuario +o).
+#endif
+#if module exttarget/registered
+$registered - Cualquier usuario con el nick identificado.
+#endif
+#if module exttarget/channel
+$channel:#channel - Cualquier usuario que sea miembro del canal en
+cuestión.
+#endif
+#if module exttarget/server
+$server:server.name - Cualquier usuario conectado al servidor en cuestión.
+                      (El nombre del servidor puede contener comodines.)
+#endif
+#if module exttarget/chanacs
+$chanacs:#channel - Cualquier usuario con una entrada en la lista de acceso
+del canal en cuestión.
+                      (incluyendo máscara de host).
+#endif
+
 Si Ud. no tiene +f aún puede quitar su propio acceso con -*.
 
 Sintaxis: FLAGS <#canal> [nick|máscara_de_host|grupo plantilla]
@@ -69,9 +100,14 @@ Permisos:
 #endif
     +F - Concede acceso completo como fundador del canal.
     +b - Activa la expulsión y veto automáticos.
+    +e - No toma efecto +b y permite quitarse a uno mismo un veto.
 
-El permiso especial +* agrega todos los permisos salvo +b y +F
-Utilice -* para quitar todos los permisos incluyendo +b y +F.
+#if module chanserv/successor_acl
+El permiso especial +* agrega todos los permisos salvo +b, +S y +F.
+#else
+El permiso especial +* agrega todos los permisos salvo +b y +F.
+#endif
+El permiso especial -* quita todos los permisos incluyendo +b y +F.
 
 Ejemplos:
     /msg &nick& FLAGS #abc
