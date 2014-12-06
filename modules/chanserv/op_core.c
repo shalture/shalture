@@ -34,7 +34,7 @@ void cmd_op_multiple(sourceinfo_t *si, bool opping, const op_cmddesc_t *cmd, int
 	chanuser_t *cu;
 	char *nicks;
 	bool op;
-	mowgli_list_t op_actions;
+	mowgli_list_t op_actions = {0};
 	mowgli_node_t *n;
 
 	if (!parv[0])
