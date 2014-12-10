@@ -622,7 +622,7 @@ static void show_multimark(hook_user_req_t *hdata)
 
 		strftime(time, sizeof time, TIME_FORMAT, &tm);
 
-		if ( setter = myuser_find_uid(mm->setter_uid) )
+		if ((setter = myuser_find_uid(mm->setter_uid)) != NULL)
 		{
 			setter_name = entity(setter)->name;
 		}
@@ -631,9 +631,9 @@ static void show_multimark(hook_user_req_t *hdata)
 			setter_name = mm->setter_name;
 		}
 
-		if ( mm->restored_from_uid == NULL )
+		if (mm->restored_from_uid == NULL)
 		{
-			if ( strcasecmp (setter_name, mm->setter_name) )
+			if (strcasecmp(setter_name, mm->setter_name))
 			{
 				command_success_nodata(
 					hdata->si,
@@ -659,10 +659,10 @@ static void show_multimark(hook_user_req_t *hdata)
 		}
 		else
 		{
-			if ( strcasecmp (setter_name, mm->setter_name) )
+			if (strcasecmp(setter_name, mm->setter_name))
 			{
 				myuser_t *user;
-				if (user = myuser_find_uid(mm->restored_from_uid))
+				if ((user = myuser_find_uid(mm->restored_from_uid)) != NULL)
 				{
 					command_success_nodata(
 						hdata->si,
@@ -693,7 +693,7 @@ static void show_multimark(hook_user_req_t *hdata)
 			else
 			{
 				myuser_t *user;
-				if (user = myuser_find_uid(mm->restored_from_uid))
+				if ((user = myuser_find_uid(mm->restored_from_uid)) != NULL)
 				{
 					command_success_nodata(
 						hdata->si,
@@ -752,7 +752,7 @@ static void show_multimark_noexist(hook_info_noexist_req_t *hdata)
 
 		strftime(time, sizeof time, TIME_FORMAT, &tm);
 
-		if ( setter = myuser_find_uid(rm->setter_uid) )
+		if ((setter = myuser_find_uid(rm->setter_uid)) != NULL)
 		{
 			setter_name = entity(setter)->name;
 		}
@@ -761,7 +761,7 @@ static void show_multimark_noexist(hook_info_noexist_req_t *hdata)
 			setter_name = rm->setter_name;
 		}
 
-		if ( strcasecmp (setter_name, rm->setter_name) )
+		if (strcasecmp(setter_name, rm->setter_name))
 		{
 			command_success_nodata(
 				hdata->si,
@@ -874,7 +874,7 @@ static void ns_cmd_multimark(sourceinfo_t *si, int parc, char *parv[])
 
 				strftime(time, sizeof time, TIME_FORMAT, &tm);
 
-				if ( setter = myuser_find_uid(rm->setter_uid) )
+				if ((setter = myuser_find_uid(rm->setter_uid)) != NULL)
 				{
 					setter_name = entity(setter)->name;
 				}
@@ -883,7 +883,7 @@ static void ns_cmd_multimark(sourceinfo_t *si, int parc, char *parv[])
 					setter_name = rm->setter_name;
 				}
 
-				if ( strcasecmp (setter_name, rm->setter_name) )
+				if (strcasecmp(setter_name, rm->setter_name))
 				{
 					command_success_nodata(
 						si,
@@ -920,7 +920,7 @@ static void ns_cmd_multimark(sourceinfo_t *si, int parc, char *parv[])
 
 			strftime(time, sizeof time, TIME_FORMAT, &tm);
 
-			if ( setter = myuser_find_uid(mm->setter_uid) )
+			if ((setter = myuser_find_uid(mm->setter_uid)) != NULL)
 			{
 				setter_name = entity(setter)->name;
 			}
@@ -929,9 +929,9 @@ static void ns_cmd_multimark(sourceinfo_t *si, int parc, char *parv[])
 				setter_name = mm->setter_name;
 			}
 
-			if ( mm->restored_from_uid == NULL )
+			if (mm->restored_from_uid == NULL)
 			{
-				if ( strcasecmp (setter_name, mm->setter_name) )
+				if (strcasecmp(setter_name, mm->setter_name))
 				{
 					command_success_nodata(
 						si,
@@ -957,10 +957,10 @@ static void ns_cmd_multimark(sourceinfo_t *si, int parc, char *parv[])
 			}
 			else
 			{
-				if ( strcasecmp (setter_name, mm->setter_name) )
+				if (strcasecmp(setter_name, mm->setter_name))
 				{
 					myuser_t *user;
-					if (user = myuser_find_uid(mm->restored_from_uid))
+					if ((user = myuser_find_uid(mm->restored_from_uid)) != NULL)
 					{
 						command_success_nodata(
 							si,
@@ -991,7 +991,7 @@ static void ns_cmd_multimark(sourceinfo_t *si, int parc, char *parv[])
 				else
 				{
 					myuser_t *user;
-					if (user = myuser_find_uid(mm->restored_from_uid))
+					if ((user = myuser_find_uid(mm->restored_from_uid)) != NULL)
 					{
 						command_success_nodata(
 							si,
@@ -1038,7 +1038,7 @@ static void ns_cmd_multimark(sourceinfo_t *si, int parc, char *parv[])
 		{
 			mm = n->data;
 
-			if ( mm->number == num )
+			if (mm->number == num)
 			{
 				mowgli_node_delete(&mm->node, l);
 
