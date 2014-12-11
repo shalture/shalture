@@ -3,38 +3,45 @@ Frequently asked questions
 
 1. Will you implement SQL support?
 
-   No, there are many impracticalities with SQL support, such as:
+   Probably not.
+
+   There are various impracticalities with SQL support, such as:
 
      - the inability to properly validate data being inserted back
        into the database
      - cache invalidation (caching would be needed to ensure
        performance)
 
-   The only gain would be easier web integration, but you can do
-   that with XMLRPC and authentication modules anyway.
+   Additionally, implementing SQL support would require reworking
+   a lot of code; while we're not fundamentally opposed to that,
+   there is currently no compelling reason to support SQL.
 
-   Plus, we strongly believe you should know how your services
-   are working, so why would we do all the work for you?
+   If you're looking for approaches for web integration, take a look
+   at the XMLRPC and JSONRPC interfaces.
 
 2. Which crypto module should I use?
 
    `crypto/posix`, unless you are importing from anope, in which case
    use the module that is appropriate for you.
 
-3. There is an Atheme "0day exploit"?!&%&%@!!
+3. There is a Shaltúre "0day exploit"?!&%&%@!!
 
    Report it to us.  Do not twitter about it, that is generally not
    helpful.  People who publicize 0days before they can be fixed are
    also generally known as "assholes."
 
+   If the exploit applies to Atheme as well, you'll want to report it
+   upstream to ensure all derived services packages can be fixed
+   as soon as possible.
+
 4. I get a compile error about some `.po` file thing.
 
    `./configure --disable-nls` or install gettext and rerun `./configure`.
 
-5. Atheme exits complaining that it is 'tainted'.
+5. Shaltúre exits complaining that it is 'tainted'.
 
    You have configured your network in a way that is not supported
-   correctly by Atheme at this time.  In order to use this configuration,
+   correctly by Shaltúre at this time.  In order to use this configuration,
    you must acknowledge that you are using an unsupported configuration.
 
    To do this, you enable the `allow_taint` directive in the config, but
