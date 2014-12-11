@@ -46,5 +46,7 @@ specified.
 
 ## Contact Us
 
+__Be sure to read [the FAQ](doc/FAQ.md) as well.__
+
  * [GitHub: shalture/shalture](https://github.com/shalture/shalture)
  * [IRC: chat.freenode.net, #shalture](ircs://chat.freenode.net:6697/shalture) ([webchat](https://kiwiirc.com/client/chat.freenode.net:+6697/shalture))
