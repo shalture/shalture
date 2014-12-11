@@ -49,3 +49,20 @@ Frequently asked questions
    we will not provide you with support.
 
    Also note that we do not provide support for enabling `allow_taint`.
+
+6. There hasn't been a stable release of Shaltúre yet. Can I use it on my network?
+
+   It depends, really.
+
+   Shaltúre is based on Atheme, which is in use on various major and minor
+   production IRC networks. As such, some people are fine with using the
+   latest code from git at their own risk.
+
+   While we try to avoid breaking the `master` branch, it's happened before
+   and probably will happen again. Thus we recommend setting up a test
+   environment before you rely on the latest development code for
+   production use.
+
+   If you need a stable release that has been used on production networks
+   for a while, we recommend using the latest Atheme release for now
+   until we make a stable release of our own.
