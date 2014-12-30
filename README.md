@@ -27,23 +27,6 @@ sure you plan accordingly for this.
 If you're still lost, read [INSTALL](INSTALL) or [GIT-Access](GIT-Access) for 
 hints.
 
-### Docker
-
-Shaltúre also supports running inside Docker as a base for projects that build 
-on top of it. Simply use `shalture/shalture` as your base image and then go 
-from there. In the Docker image Shaltúre is installed to `/home/shalture/run/`
-
-Example Dockerfile:
-
-```Dockerfile
-FROM shalture/shalture
-
-ADD shalture.conf /home/shalture/run/etc/shalture.conf
-```
-
-runit will then start Shaltúre as normal, but with the configuration file you 
-specified.
-
 ## Contact Us
 
 __Be sure to read [the FAQ](doc/FAQ.md) as well.__
