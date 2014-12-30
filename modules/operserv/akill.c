@@ -119,8 +119,8 @@ static void os_cmd_akill_add(sourceinfo_t *si, int parc, char *parv[])
 	char *target = parv[0];
 	char *token = strtok(parv[1], " ");
 	bool force = false;
-	char star[] = "*";
-	const char *kuser, *khost;
+	char kuserbuf[USERLEN], khostbuf[HOSTLEN];
+	const char *kuser = kuserbuf, *khost = khostbuf;
 	char *treason, reason[BUFSIZE];
 	long duration;
 	char *s;
@@ -228,7 +228,7 @@ static void os_cmd_akill_add(sourceinfo_t *si, int parc, char *parv[])
 			return;
 		}
 
-		get_kline_userhost(u, &kuser, &khost);
+		get_kline_userhost(u, kuserbuf, khostbuf);
 	}
 	else
 	{

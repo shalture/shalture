@@ -158,8 +158,8 @@ kline_t *kline_add(const char *user, const char *host, const char *reason, long 
 
 kline_t *kline_add_user(user_t *u, const char *reason, long duration, const char *setby)
 {
-	const char *user, *host;
-	get_kline_userhost(u, &user, &host);
+	char user[USERLEN], host[HOSTLEN];
+	get_kline_userhost(u, user, host);
 
 	return kline_add(user, host, reason, duration, setby);
 }

@@ -870,22 +870,18 @@ char *combine_path(const char *parent, const char *child)
 	return sstrdup(buf);
 }
 
-void get_kline_userhost(user_t *u, const char **user, const char **host)
+void get_kline_userhost(user_t *u, char *user, char *host)
 {
-	hook_user_get_banmask_t hdata;
+	hook_user_get_banmask_t hdata = { u, user, host };
 
-	hdata.u = u;
 	if (config_options.kline_with_ident && (!config_options.kline_verified_ident || u->user[0] != '~'))
-		hdata.user = u->user;
+		mowgli_strlcpy(hdata.user, u->user, USERLEN);
 	else
-		hdata.user = "*";
+		mowgli_strlcpy(hdata.user, "*", USERLEN);
 
-	hdata.host = u->ip ? u->ip : u->host;
+	mowgli_strlcpy(hdata.host, u->ip ? u->ip : u->host, HOSTLEN);
 
 	hook_call_user_get_banmask(&hdata);
-
-	*user = hdata.user;
-	*host = hdata.host;
 }
 
 /* vim:cinoptions=>s,e0,n0,f0,{0,}0,^0,=s,ps,t0,c3,+s,(2s,us,)20,*30,gs,hs
