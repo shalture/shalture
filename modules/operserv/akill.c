@@ -126,7 +126,7 @@ static void os_cmd_akill_add(sourceinfo_t *si, int parc, char *parv[])
 	char *s;
 	kline_t *k;
 
-	if (!strcasecmp(token, "FORCE"))
+	if (token && !strcasecmp(token, "FORCE"))
 	{
 		if (has_priv(si, PRIV_AKILL_ANYMASK))
 		{
