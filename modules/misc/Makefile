@@ -8,7 +8,7 @@
 
 MODULE = misc
 
-SRCS = httpd.c canon_gmail.c
+SRCS = httpd.c canon_gmail.c banmask_irccloud.c
 
 include ../../extra.mk
 include ../../buildsys.mk
