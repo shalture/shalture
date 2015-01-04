@@ -142,7 +142,7 @@ static void cs_cmd_set_founder(sourceinfo_t *si, int parc, char *parv[])
 				 * ensures we don't crash if not -- jilles
 				 */
 				if (ca->entity != NULL && ca->level & CA_FOUNDER)
-					chanacs_modify_simple(ca, CA_FLAGS, CA_FOUNDER);
+					chanacs_modify_simple(ca, CA_FLAGS, CA_FOUNDER, si->smu);
 			}
 			chanacs_change_simple(mc, mt, NULL, CA_FOUNDER_0, 0, entity(si->smu));
 
