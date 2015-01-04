@@ -142,6 +142,11 @@ static void gs_cmd_flags(sourceinfo_t *si, int parc, char *parv[])
 		return;
 	}
 
+	if (!(flags & GA_FLAGS) && groupacs_find(mg, mt, GA_FOUNDER, false)) {
+		command_fail(si, fault_noprivs, _("You may not remove a founder's +f access."));
+		return;
+	}
+
 	if (!(flags & GA_FOUNDER) && groupacs_find(mg, mt, GA_FOUNDER, false))
 	{
 		if (mygroup_count_flag(mg, GA_FOUNDER) == 1)
