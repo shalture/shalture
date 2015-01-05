@@ -181,7 +181,7 @@ static void ns_cmd_sendpass(sourceinfo_t *si, int parc, char *parv[])
 		if (sendemail(si->su != NULL ? si->su : si->service->me, mu, EMAIL_SETPASS, mu->email, key))
 		{
 			metadata_add(mu, "private:setpass:key", crypt_string(key, gen_salt()));
-			metadata_add(mu, "private:sendpass:sender", get_oper_name(si));
+			metadata_add(mu, "private:sendpass:sender", get_storage_oper_name(si));
 			metadata_add(mu, "private:sendpass:timestamp", number_to_string(time(NULL)));
 			logcommand(si, CMDLOG_ADMIN, "SENDPASS: \2%s\2 (change key)", name);
 			command_success_nodata(si, _("The password change key for \2%s\2 has been sent to \2%s\2."), entity(mu)->name, mu->email);
@@ -214,7 +214,7 @@ static void ns_cmd_sendpass(sourceinfo_t *si, int parc, char *parv[])
 			wallops("%s sent the password for the \2MARKED\2 account %s.", get_oper_name(si), entity(mu)->name);
 			command_success_nodata(si, _("Overriding MARK placed by %s on the account %s."), md->value, entity(mu)->name);
 		}
-		metadata_add(mu, "private:sendpass:sender", get_oper_name(si));
+		metadata_add(mu, "private:sendpass:sender", get_storage_oper_name(si));
 		metadata_add(mu, "private:sendpass:timestamp", number_to_string(time(NULL)));
 	}
 	else

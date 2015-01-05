@@ -159,7 +159,7 @@ wrong_syntax:
 			if (ismarked)
 				wallops("%s sent the password for the \2MARKED\2 account %s.", get_oper_name(si), entity(mu)->name);
 
-			metadata_add(mu, "private:sendpass:sender", get_oper_name(si));
+			metadata_add(mu, "private:sendpass:sender", get_storage_oper_name(si));
 			metadata_add(mu, "private:sendpass:timestamp", number_to_string(time(NULL)));
 
 			free(key);
