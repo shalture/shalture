@@ -135,24 +135,31 @@ static void show_setpass(hook_user_req_t *hdata)
 	if (has_priv(hdata->si, PRIV_USER_AUSPEX))
 	{
 		if (get_setpass_key(hdata->mu) != NULL)
-			command_success_nodata(hdata->si, "%s has an active password reset key", entity(hdata->mu)->name);
-
-		metadata_t *md;
-		char strfbuf[BUFSIZE];
-
-		if ((md = metadata_find(hdata->mu, "private:sendpass:sender")) != NULL)
 		{
-			const char *sender = md->value;
-			time_t ts;
-			struct tm tm;
+			metadata_t *md;
+			char strfbuf[BUFSIZE];
+			char buf[BUFSIZE];
+			size_t buflen = 0;
 
-			md = metadata_find(hdata->mu, "private:sendpass:timestamp");
-			ts = md != NULL ? atoi(md->value) : 0;
+			buf[0] = '\0';
 
-			tm = *localtime(&ts);
-			strftime(strfbuf, sizeof strfbuf, TIME_FORMAT, &tm);
+			if ((md = metadata_find(hdata->mu, "private:sendpass:sender")) != NULL)
+				buflen += snprintf(buf + buflen, sizeof(buf) - buflen, " by %s", md->value);
+			if ((md = metadata_find(hdata->mu, "private:sendpass:timestamp")) != NULL)
+			{
+				time_t ts;
+				struct tm tm;
 
-			command_success_nodata(hdata->si, _("%s was \2SENDPASSED\2 by %s on %s"), entity(hdata->mu)->name, sender, strfbuf);
+				ts = atoi(md->value);
+				tm = *localtime(&ts);
+				strftime(strfbuf, sizeof strfbuf, TIME_FORMAT, &tm);
+
+				buflen += snprintf(buf + buflen, sizeof(buf) - buflen, " on %s (%s ago)", strfbuf, time_ago(ts));
+			}
+			if (buf[0] != '\0')
+				command_success_nodata(hdata->si, _("%s has an active \2SETPASS\2 key (sent%s)"), entity(hdata->mu)->name, buf);
+			else
+				command_success_nodata(hdata->si, _("%s has an active \2SETPASS\2 key"), entity(hdata->mu)->name);
 		}
 	}
 }
