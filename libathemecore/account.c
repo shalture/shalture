@@ -1977,6 +1977,10 @@ static int expire_myuser_cb(myentity_t *mt, void *unused)
 
 	return_val_if_fail(isuser(mt), 0);
 
+	req.data.mu = mu;
+	req.do_expire = 1;
+	hook_call_user_check_expire(&req);
+
 	/* If they're logged in, update lastlogin time.
 	 * To decrease db traffic, may want to only do
 	 * this if the account would otherwise be
@@ -1988,14 +1992,10 @@ static int expire_myuser_cb(myentity_t *mt, void *unused)
 		return 0;
 	}
 
-	if (MU_HOLD & mu->flags)
+	if (!req.do_expire)
 		return 0;
 
-	req.data.mu = mu;
-	req.do_expire = 1;
-	hook_call_user_check_expire(&req);
-
-	if (!req.do_expire)
+	if (MU_HOLD & mu->flags)
 		return 0;
 
 	if ((nicksvs.expiry > 0 && mu->lastlogin < CURRTIME && (unsigned int)(CURRTIME - mu->lastlogin) >= nicksvs.expiry) ||
