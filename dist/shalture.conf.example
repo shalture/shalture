@@ -1067,6 +1067,11 @@ nickserv {
 	 */
 	#enforce_prefix = "Guest";
 
+	/* (*)setpass_expire
+	 * The number of days SETPASS keys stay valid
+	 */
+	setpass_expire = 1;
+
 	/* (*)cracklib_dict
 	 * The location and filename prefix of the cracklib dictionaries
 	 * for use with nickserv/cracklib. This must be provided if you are

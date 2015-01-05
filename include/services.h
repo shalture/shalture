@@ -65,6 +65,9 @@ struct nicksvs_
   unsigned int enforce_expiry;  /* expiry time                */
   unsigned int enforce_delay;   /* delay for nickname enforce */
   char         *enforce_prefix; /* prefix for enforcement */
+
+  unsigned int setpass_expiry;  /* expiry time for setpass keys */
+
   char	       *cracklib_dict; /* cracklib dictionary path */
   mowgli_list_t emailexempts; /* emails exempt from maxusers checks */
 };
