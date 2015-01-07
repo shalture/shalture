@@ -53,16 +53,9 @@ static void ns_cmd_info(sourceinfo_t *si, int parc, char *parv[])
 	hook_user_req_t req;
 	hook_info_noexist_req_t noexist_req;
 
-	/* On IRC, default the name to something.
-	 * Not currently documented.
-	 */
-	if (!name && si->su)
-	{
-		if (!nicksvs.no_nick_ownership)
-			name = si->su->nick;
-		else if (si->smu)
-			name = entity(si->smu)->name;
-	}
+	/* Default to calling INFO on the current account, if any. */
+	if (!name && si->smu)
+		name = entity(si->smu)->name;
 
 	if (!name)
 	{
