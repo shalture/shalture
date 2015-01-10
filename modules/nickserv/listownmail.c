@@ -35,12 +35,6 @@ static void ns_cmd_listownmail(sourceinfo_t *si, int parc, char *parv[])
 	myentity_iteration_state_t state;
 	unsigned int matches = 0;
 
-	if (si->smu->flags & MU_WAITAUTH)
-	{
-		command_fail(si, fault_noprivs, _("You have to verify your email address before you can perform this operation."));
-		return;
-	}
-
 	/* Normally this couldn't fail due to the verification check above,
 	 * except when accounts have been imported from another services
 	 * database that didn't require them, in which case lots of unrelated

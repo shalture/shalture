@@ -57,12 +57,6 @@ static void ms_cmd_forward(sourceinfo_t *si, int parc, char *parv[])
 	else
 		memonum = atoi(arg);
 
-	if (si->smu->flags & MU_WAITAUTH)
-	{
-		command_fail(si, fault_notverified, _("You need to verify your email address before you may send memos."));
-		return;
-	}
-
 	/* Check to see if any memos */
 	if (!si->smu->memos.count)
 	{

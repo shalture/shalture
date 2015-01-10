@@ -364,20 +364,27 @@ bool has_priv_user(user_t *u, const char *priv)
 	if (is_ircop(u) && has_priv_operclass(ircop_r, priv))
 		return true;
 
-	if (u->myuser != NULL && has_priv_operclass(authenticated_r, priv))
-		return true;
-
-	if (u->myuser && is_soper(u->myuser))
+	if (u->myuser == NULL || u->myuser->flags & MU_WAITAUTH)
 	{
-		operclass = u->myuser->soper->operclass;
-		if (operclass == NULL)
-			return false;
-		if (operclass->flags & OPERCLASS_NEEDOPER && !is_ircop(u))
-			return false;
-		if (u->myuser->soper->password != NULL && !(u->flags & UF_SOPER_PASS))
-			return false;
-		if (has_priv_operclass(operclass, priv))
+		return false;
+	}
+	else
+	{
+		if (has_priv_operclass(authenticated_r, priv))
 			return true;
+
+		if (is_soper(u->myuser))
+		{
+			operclass = u->myuser->soper->operclass;
+			if (operclass == NULL)
+				return false;
+			if (operclass->flags & OPERCLASS_NEEDOPER && !is_ircop(u))
+				return false;
+			if (u->myuser->soper->password != NULL && !(u->flags & UF_SOPER_PASS))
+				return false;
+			if (has_priv_operclass(operclass, priv))
+				return true;
+		}
 	}
 
 	return false;
@@ -389,7 +396,7 @@ bool has_priv_myuser(myuser_t *mu, const char *priv)
 
 	if (priv == NULL)
 		return true;
-	if (mu == NULL)
+	if (mu == NULL || mu->flags & MU_WAITAUTH)
 		return false;
 
 	if (has_priv_operclass(authenticated_r, priv))

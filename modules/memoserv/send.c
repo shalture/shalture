@@ -59,12 +59,6 @@ static void ms_cmd_send(sourceinfo_t *si, int parc, char *parv[])
 		return;
 	}
 
-	if (si->smu->flags & MU_WAITAUTH)
-	{
-		command_fail(si, fault_notverified, _("You need to verify your email address before you may send memos."));
-		return;
-	}
-
 	/* rate limit it -- jilles */
 	if (CURRTIME - si->smu->memo_ratelimit_time > MEMO_MAX_TIME)
 		si->smu->memo_ratelimit_num = 0;

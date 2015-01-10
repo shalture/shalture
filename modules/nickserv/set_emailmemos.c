@@ -23,7 +23,7 @@ mowgli_patricia_t **ns_set_cmdtree;
 
 static void ns_cmd_set_emailmemos(sourceinfo_t *si, int parc, char *parv[]);
 
-command_t ns_set_emailmemos = { "EMAILMEMOS", N_("Forwards incoming memos to your e-mail address."), AC_NONE, 1, ns_cmd_set_emailmemos, { .path = "nickserv/set_emailmemos" } };
+command_t ns_set_emailmemos = { "EMAILMEMOS", N_("Forwards incoming memos to your e-mail address."), AC_AUTHENTICATED, 1, ns_cmd_set_emailmemos, { .path = "nickserv/set_emailmemos" } };
 
 static bool has_emailmemos(const mynick_t *mn, const void *arg)
 {
@@ -57,12 +57,6 @@ void _moddeinit(module_unload_intent_t intent)
 static void ns_cmd_set_emailmemos(sourceinfo_t *si, int parc, char *parv[])
 {
 	char *params = parv[0];
-
-	if (si->smu->flags & MU_WAITAUTH)
-	{
-		command_fail(si, fault_noprivs, _("You have to verify your email address before you can enable emailing memos."));
-		return;
-	}
 
 	if (!params)
 	{
