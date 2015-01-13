@@ -1178,15 +1178,15 @@ chanserv {
 	 */
 	templates {
 		vop = "+AV";
-		hop = "+AHhitrv";
-		aop = "+AOhiortv";
-		sop = "+AOafhiorstv";
+		hop = "+AHehitrv";
+		aop = "+AOehiortv";
+		sop = "+AOaefhiorstv";
 
-		founder = "+AFORafhiorstv";
+		founder = "+AFORaefhiorstv";
 
 		/* some examples (which are commented out...) */
 		#member = "+Ai";
-		#op = "+AOiortv";
+		#op = "+AOeiortv";
 	};
 
 	/* (*) deftemplates
@@ -1195,7 +1195,7 @@ chanserv {
 	 * Note: at this time no syntax checking is done on this; it
 	 * is your own responsibility to make sure it is correct.
 	 */
-	#deftemplates = "MEMBER=+Ai OP=+AOiortv";
+	#deftemplates = "MEMBER=+Ai OP=+AOeiortv";
 
 	/* (*) changets
 	 * Change the channel TS to the registration time when someone
@@ -1246,7 +1246,7 @@ chanserv {
 	 * This MUST include at least 'F' or it will be ignored.
 	 * If it is not set, Shaltúre will give the user all channel flags.
 	 */
-	#founder_flags = "AFORfiorstv";
+	#founder_flags = "AFORefiorstv";
 
 	/* (*)akick_time
 	 * The default expiration time (in minutes) for AKICKs.
