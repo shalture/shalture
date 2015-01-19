@@ -19,19 +19,15 @@ static void ms_cmd_delete(sourceinfo_t *si, int parc, char *parv[]);
 
 command_t ms_delete = { "DELETE", N_("Deletes memos."),
                         AC_AUTHENTICATED, 1, ms_cmd_delete, { .path = "memoserv/delete" } };
-command_t ms_del = { "DEL", N_("Alias for DELETE"),
-			AC_AUTHENTICATED, 1, ms_cmd_delete, { .path = "memoserv/delete" } };
 
 void _modinit(module_t *m)
 {
-        service_named_bind_command("memoserv", &ms_delete);
-	service_named_bind_command("memoserv", &ms_del);
+	service_named_bind_command("memoserv", &ms_delete);
 }
 
 void _moddeinit(module_unload_intent_t intent)
 {
 	service_named_unbind_command("memoserv", &ms_delete);
-	service_named_unbind_command("memoserv", &ms_del);
 }
 
 static void ms_cmd_delete(sourceinfo_t *si, int parc, char *parv[])

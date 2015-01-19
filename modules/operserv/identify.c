@@ -18,18 +18,15 @@ DECLARE_MODULE_V1
 static void os_cmd_identify(sourceinfo_t *si, int parc, char *parv[]);
 
 command_t os_identify = { "IDENTIFY", N_("Authenticate for services operator privileges."), AC_AUTHENTICATED, 1, os_cmd_identify, { .path = "oservice/identify" } };
-command_t os_id = { "ID", N_("Alias for IDENTIFY"), AC_AUTHENTICATED, 1, os_cmd_identify, { .path = "oservice/identify" } };
 
 void _modinit(module_t *m)
 {
-        service_named_bind_command("operserv", &os_identify);
-        service_named_bind_command("operserv", &os_id);
+	service_named_bind_command("operserv", &os_identify);
 }
 
 void _moddeinit(module_unload_intent_t intent)
 {
 	service_named_unbind_command("operserv", &os_identify);
-	service_named_unbind_command("operserv", &os_id);
 }
 
 static bool verify_operserv_password(soper_t *so, char *password)

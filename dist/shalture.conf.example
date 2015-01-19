@@ -1397,6 +1397,7 @@ operserv {
 	 * Command aliases for OperServ.
 	 */
 	aliases {
+		"ID" = "IDENTIFY";
 	};
 	
 	/* (*)access
@@ -1467,6 +1468,7 @@ memoserv {
 	 * Command aliases for MemoServ.
 	 */
 	aliases {
+		"DEL" = "DELETE";
 	};
 	
 	/* (*)access
