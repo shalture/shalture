@@ -40,6 +40,7 @@ static void ns_cmd_set_property(sourceinfo_t *si, int parc, char *parv[])
 {
 	char *property = strtok(parv[0], " ");
 	char *value = strtok(NULL, "");
+	bool changed;
 	unsigned int count;
 	mowgli_patricia_iteration_state_t state;
 	metadata_t *md;
@@ -100,6 +101,11 @@ static void ns_cmd_set_property(sourceinfo_t *si, int parc, char *parv[])
 		return;
 	}
 
+	if (metadata_find(si->smu, property))
+		changed = true;
+	else
+		changed = false;
+
 	md = metadata_add(si->smu, property, value);
 	if (md != NULL)
 	{
@@ -109,7 +115,7 @@ static void ns_cmd_set_property(sourceinfo_t *si, int parc, char *parv[])
 		hook_call_metadata_change(&mdchange);
 	}
 	logcommand(si, CMDLOG_SET, "SET:PROPERTY: \2%s\2 to \2%s\2", property, value);
-	command_success_nodata(si, _("Metadata entry \2%s\2 added."), property);
+	command_success_nodata(si, changed ? _("Metadata entry \2%s\2 modified.") : _("Metadata entry \2%s\2 added."), property);
 }
 
 /* vim:cinoptions=>s,e0,n0,f0,{0,}0,^0,=s,ps,t0,c3,+s,(2s,us,)20,*30,gs,hs
