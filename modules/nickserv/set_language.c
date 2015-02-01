@@ -10,14 +10,26 @@
 #include "atheme.h"
 #include "uplink.h"
 
-#ifdef ENABLE_NLS
-
 DECLARE_MODULE_V1
 (
 	"nickserv/set_language", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
 	"Atheme Development Group <http://www.atheme.org>"
 );
+
+#ifndef ENABLE_NLS
+
+void _modinit(module_t *m)
+{
+	slog(LG_ERROR, "services built without NLS support, refusing to load %s", m->name);
+	m->mflags = MODTYPE_FAIL;
+}
+
+void _moddeinit(module_unload_intent_t intent)
+{
+}
+
+#else
 
 mowgli_patricia_t **ns_set_cmdtree;
 
