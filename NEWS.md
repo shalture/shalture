@@ -2,6 +2,10 @@ Shaltúre Services 8.0 Development Notes
 =======================================
 This is the first release series of Shaltúre, based on Atheme.
 
+nickserv
+--------
+- nickserv/setpass: SETPASS keys expire automatically
+
 operserv
 --------
 - operserv/akill: Allow users with operserv:akill-anymask to (try to) akill unsafe masks.
@@ -14,6 +18,7 @@ libathemecore
 misc
 ----
 - Add automated klines to the AKILL list.
+- misc/banmask_irccloud: new module using get_kline_userhost
 
 Atheme Services 7.2 Development Notes
 =====================================
