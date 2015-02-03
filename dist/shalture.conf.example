@@ -1434,6 +1434,15 @@ saslserv {
 	 * The realname (gecos) information we want SaslServ to have.
 	 */
 	real = "SASL Authentication Agent";
+
+	/* (*)announce_auth_failure
+	 * Should we do the usual bad_password() routine
+	 * for clients trying to login to an account via SASL?
+	 * Can be useful to spot attempts to bruteforce passwords,
+	 * but there's not a lot of information to include
+	 * and the message might be confusing to users.
+	 */
+	#announce_auth_failure;
 };
 
 /* MemoServ configuration.

@@ -7,6 +7,7 @@
  */
 
 #include "atheme.h"
+#include "uplink.h"
 
 DECLARE_MODULE_V1
 (
@@ -18,6 +19,7 @@ DECLARE_MODULE_V1
 mowgli_list_t sessions;
 static mowgli_list_t sasl_mechanisms;
 static char mechlist_string[400];
+static bool announce_auth_failure;
 
 sasl_session_t *find_session(const char *uid);
 sasl_session_t *make_session(const char *uid);
@@ -37,6 +39,10 @@ static void mechlist_build_string(char *ptr, size_t buflen);
 static void mechlist_do_rebuild();
 
 sasl_mech_register_func_t sasl_mech_register_funcs = { &sasl_mech_register, &sasl_mech_unregister };
+
+struct sourceinfo_vtable sasl_vtable = {
+	.description = "sasl"
+};
 
 /* main services client routine */
 static void saslserv(sourceinfo_t *si, int parc, char *parv[])
@@ -130,6 +136,7 @@ void _modinit(module_t *m)
 	delete_stale_timer = mowgli_timer_add(base_eventloop, "sasl_delete_stale", delete_stale, NULL, 30);
 
 	saslsvs = service_add("saslserv", saslserv);
+	add_bool_conf_item("ANNOUNCE_AUTH_FAILURE", &saslsvs->conf_table, 0, &announce_auth_failure, false);
 	authservice_loaded++;
 }
 
@@ -142,6 +149,8 @@ void _moddeinit(module_unload_intent_t intent)
 	hook_del_server_eob(sasl_server_eob);
 
 	mowgli_timer_destroy(base_eventloop, delete_stale_timer);
+
+	del_conf_item("ANNOUNCE_AUTH_FAILURE", &saslsvs->conf_table);
 
         if (saslsvs != NULL)
 		service_delete(saslsvs);
@@ -438,6 +447,27 @@ static void sasl_packet(sasl_session_t *p, char *buf, int len)
 			sasl_sts(p->uid, 'C', "+");
 			free(out);
 			return;
+		}
+	}
+
+	/* If we reach this, they failed SASL auth, so if they were trying
+	 * to identify as a specific user, bad_password them.
+	 */
+	if (announce_auth_failure && p->username)
+	{
+		myuser_t *mu = myuser_find_by_nick(p->username);
+		if (mu)
+		{
+			sourceinfo_t *si = sourceinfo_create();
+			si->service = saslsvs;
+			si->sourcedesc = p->uid;
+			si->connection = curr_uplink->conn;
+			si->v = &sasl_vtable;
+			si->force_language = language_find("en");
+
+			bad_password(si, mu);
+
+			object_unref(si);
 		}
 	}
 
