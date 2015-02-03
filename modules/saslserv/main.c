@@ -136,7 +136,7 @@ void _modinit(module_t *m)
 	delete_stale_timer = mowgli_timer_add(base_eventloop, "sasl_delete_stale", delete_stale, NULL, 30);
 
 	saslsvs = service_add("saslserv", saslserv);
-	add_bool_conf_item("ANNOUNCE_AUTH_FAILURE", &saslsvs->conf_table, 0, &announce_auth_failure, false);
+	add_bool_conf_item("ANNOUNCE_AUTH_FAILURE", &saslsvs->conf_table, 0, &announce_auth_failure, true);
 	authservice_loaded++;
 }
 

@@ -1436,13 +1436,16 @@ saslserv {
 	real = "SASL Authentication Agent";
 
 	/* (*)announce_auth_failure
-	 * Should we do the usual bad_password() routine
+	 * Should we announce and record failed login attempts
 	 * for clients trying to login to an account via SASL?
-	 * Can be useful to spot attempts to bruteforce passwords,
+	 * This can be useful to spot attempts to bruteforce passwords,
 	 * but there's not a lot of information to include
-	 * and the message might be confusing to users.
+	 * and the message might be confusing to users, so you can turn this off.
+	 *
+	 * Note that turning this off means you WILL NOT be notified of possible
+	 * brute force attacks on passwords via SASL.
 	 */
-	#announce_auth_failure;
+	announce_auth_failure = yes;
 };
 
 /* MemoServ configuration.
