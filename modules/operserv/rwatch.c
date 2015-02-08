@@ -557,7 +557,7 @@ static void rwatch_newuser(hook_user_nick_t *data)
 					slog(LG_VERBOSE, "rwatch_newuser(): klining %s (user %s!%s@%s matches %s %s)",
 							u->nick, u->nick, u->user, u->host,
 							rw->regex, rw->reason);
-					kline_add_user(u, rw->reason, 86400, serviceinfo->nick);
+					kline_add_user(u, rw->reason, 86400, serviceinfo->nick, KLINE_AUTO);
 				}
 			}
 			else if (rw->actions & RWACT_QUARANTINE)
@@ -623,7 +623,7 @@ static void rwatch_nickchange(hook_user_nick_t *data)
 					slog(LG_VERBOSE, "rwatch_nickchange(): klining %s (user %s -> %s!%s@%s matches %s %s)",
 							u->nick, data->oldnick, u->nick, u->user, u->host,
 							rw->regex, rw->reason);
-					kline_add_user(u, rw->reason, 86400, serviceinfo->nick);
+					kline_add_user(u, rw->reason, 86400, serviceinfo->nick, KLINE_AUTO);
 				}
 			}
 			else if (rw->actions & RWACT_QUARANTINE)

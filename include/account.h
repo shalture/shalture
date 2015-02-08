@@ -20,6 +20,12 @@ typedef struct qline_ qline_t;
 typedef struct mymemo_ mymemo_t;
 typedef struct svsignore_ svsignore_t;
 
+typedef enum {
+	KLINE_MANUAL,
+	KLINE_AUTO,
+	KLINE_MASS
+} kline_type_t;
+
 /* kline list struct */
 struct kline_ {
   char *user;
@@ -378,8 +384,8 @@ E void get_kline_userhost(user_t *u, char *user, char *host);
 E mowgli_list_t klnlist;
 
 E kline_t *kline_add_with_id(const char *user, const char *host, const char *reason, long duration, const char *setby, unsigned long id);
-E kline_t *kline_add(const char *user, const char *host, const char *reason, long duration, const char *setby);
-E kline_t *kline_add_user(user_t *user, const char *reason, long duration, const char *setby);
+E kline_t *kline_add(const char *user, const char *host, const char *reason, long duration, const char *setby, kline_type_t how);
+E kline_t *kline_add_user(user_t *user, const char *reason, long duration, const char *setby, kline_type_t how);
 E void kline_delete(kline_t *k);
 E kline_t *kline_find(const char *user, const char *host);
 E kline_t *kline_find_num(unsigned long number);

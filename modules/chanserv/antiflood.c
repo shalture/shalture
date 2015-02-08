@@ -286,7 +286,7 @@ antiflood_enforce_kickban(user_t *u, channel_t *c)
 static void
 antiflood_enforce_kline(user_t *u, channel_t *c)
 {
-	kline_add_user(u, "Flooding", 86400, chansvs.nick);
+	kline_add_user(u, "Flooding", 86400, chansvs.nick, KLINE_AUTO);
 	slog(LG_INFO, "ANTIFLOOD:ENFORCE:AKILL: \2%s!%s@%s\2 from \2%s\2", u->nick, u->user, u->vhost, c->name);
 }
 

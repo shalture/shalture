@@ -87,6 +87,8 @@ struct ConfOption
   bool secure;               /* require /msg <service>@host? */
   bool kline_with_ident;     /* kline ident@host instead of *@host on automated bans? */
   bool kline_verified_ident; /* Don't kline ident@host if first char of ident is ~ ? */
+  bool akill_list_auto_klines; /* add automatic klines to the akill list? */
+  bool akill_list_mass_klines; /* add mass klines (rakill etc.) to the akill list? */
 
   unsigned int defuflags;           /* default username flags     */
   unsigned int defcflags;           /* default channel flags      */

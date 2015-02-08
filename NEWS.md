@@ -17,7 +17,7 @@ libathemecore
 
 misc
 ----
-- Add automated klines to the AKILL list.
+- Optionally add automated / mass klines to the AKILL list.
 - misc/banmask_irccloud: new module using get_kline_userhost
 
 Atheme Services 7.2 Development Notes

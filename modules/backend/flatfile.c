@@ -623,7 +623,7 @@ static void flatfile_db_load(const char *filename)
 
 			strip(reason);
 
-			k = kline_add(user, host, reason, duration, setby);
+			k = kline_add(user, host, reason, duration, setby, KLINE_MANUAL);
 			k->settime = settime;
 			/* XXX this is not nice, oh well -- jilles */
 			k->expires = k->settime + k->duration;

@@ -151,17 +151,24 @@ kline_t *kline_add_with_id(const char *user, const char *host, const char *reaso
 	return k;
 }
 
-kline_t *kline_add(const char *user, const char *host, const char *reason, long duration, const char *setby)
+kline_t *kline_add(const char *user, const char *host, const char *reason, long duration, const char *setby, kline_type_t how)
 {
-	return kline_add_with_id(user, host, reason, duration, setby, ++me.kline_id);
+	if (how == KLINE_MANUAL || (how == KLINE_AUTO && config_options.akill_list_auto_klines)
+			|| (how == KLINE_MASS && config_options.akill_list_mass_klines))
+		return kline_add_with_id(user, host, reason, duration, setby, ++me.kline_id);
+	else
+	{
+		kline_sts("*", user, host, duration, reason);
+		return NULL;
+	}
 }
 
-kline_t *kline_add_user(user_t *u, const char *reason, long duration, const char *setby)
+kline_t *kline_add_user(user_t *u, const char *reason, long duration, const char *setby, kline_type_t how)
 {
 	char user[USERLEN], host[HOSTLEN];
 	get_kline_userhost(u, user, host);
 
-	return kline_add(user, host, reason, duration, setby);
+	return kline_add(user, host, reason, duration, setby, how);
 }
 
 void kline_delete(kline_t *k)

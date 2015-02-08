@@ -935,7 +935,7 @@ int floodcheck(user_t *u, user_t *t)
 				service_t *opersvs = service_find("operserv");
 				const char *setby = (opersvs != NULL ? opersvs->nick : chansvs.nick);
 
-				k = kline_add_user(u, "ten minute ban - flooding services", 600, setby);
+				k = kline_add_user(u, "ten minute ban - flooding services", 600, setby, KLINE_AUTO);
 
 				slog(LG_INFO, "FLOOD:KLINE: \2%s\2", u->nick);
 
