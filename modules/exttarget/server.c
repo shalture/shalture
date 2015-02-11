@@ -24,7 +24,6 @@ typedef struct {
 static chanacs_t *server_ext_match_user(chanacs_t *ca, user_t *u)
 {
 	server_exttarget_t *ent;
-	mowgli_node_t *n;
 
 	ent = (server_exttarget_t *) ca->entity;
 	if (match(ent->server, u->server->name) == 0)

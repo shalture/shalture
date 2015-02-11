@@ -41,7 +41,6 @@ static int mech_step(sasl_session_t *p, char *message, size_t len, char **out, s
 {
 	mycertfp_t *mcfp;
 	const char *name;
-	int namelen;
 
 	if(p->certfp == NULL)
 		return ASASL_FAIL;

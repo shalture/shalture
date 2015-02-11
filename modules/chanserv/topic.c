@@ -283,7 +283,7 @@ static void cs_cmd_topicswap(sourceinfo_t *si, int parc, char *parv[])
 		return;
 	}
 
-	mowgli_strlcpy(commbuf, parv[1], BUFSIZE);
+	mowgli_strlcpy(commbuf, topic, BUFSIZE);
 	search = commbuf;
 	pos = strrchr(commbuf, ':');
 

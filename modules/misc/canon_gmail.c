@@ -21,7 +21,6 @@ static void canonicalize_gmail(char email[EMAILLEN + 1], void *user_data)
 	static char buf[EMAILLEN + 1];
 	const char *p, *p_at;
 	char *p_out;
-	stringref result;
 
 	p_at = strchr(email, '@');
 	if (!p_at || strcasecmp(p_at, "@gmail.com"))

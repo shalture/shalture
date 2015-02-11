@@ -248,7 +248,6 @@ static void hs_cmd_unoffer(sourceinfo_t *si, int parc, char *parv[])
 {
 	char *host = parv[0];
 	hsoffered_t *l;
-	mowgli_node_t *n;
 
 	if (!host)
 	{

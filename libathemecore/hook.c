@@ -142,7 +142,6 @@ static inline hook_privfn_ctx_t *hook_create_and_add(hook_t *hook, hookfn_t hand
 void hook_add_hook(const char *event, hookfn_t handler)
 {
 	hook_t *h;
-	hook_privfn_ctx_t *priv;
 
 	return_if_fail(event != NULL);
 	return_if_fail(handler != NULL);
@@ -172,7 +171,6 @@ void hook_call_event(const char *event, void *dptr)
 {
 	hook_run_ctx_t ctx;
 	mowgli_node_t *n, *tn;
-	void (*func)(void *data);
 
 	return_if_fail(event != NULL);
 

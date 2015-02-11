@@ -285,7 +285,6 @@ static void write_multimark_db(database_handle_t *db)
 static void db_h_mm(database_handle_t *db, const char *type)
 {
 	myuser_t *mu;
-	mowgli_patricia_iteration_state_t state;
 	mowgli_list_t *l;
 
 	const char *account_uid = db_sread_word(db);
@@ -321,9 +320,6 @@ static void db_h_mm(database_handle_t *db, const char *type)
 
 static void db_h_rm(database_handle_t *db, const char *type)
 {
-	myuser_t *mu;
-	mowgli_patricia_iteration_state_t state;
-
 	const char *account_uid = db_sread_word(db);
 	const char *account_name = db_sread_word(db);
 	const char *nick = db_sread_word(db);
@@ -511,9 +507,6 @@ static void account_register_hook(myuser_t *mu)
 
 	const char *name = entity(mu)->name;
 
-	char *setter_name;
-	myuser_t *setter;
-
 	mowgli_list_t *rml = restored_mark_list(name);
 
 	MOWGLI_ITER_FOREACH_SAFE(n, tn, rml->head)
@@ -547,7 +540,6 @@ static void nick_group_hook(hook_user_req_t *hdata)
 	multimark_t *mm2;
 	restored_mark_t *rm;
 
-	char *uid = entity(smu)->id;
 	const char *name = hdata->mn->nick;
 
 	mowgli_list_t *rml = restored_mark_list(name);
@@ -803,7 +795,6 @@ static void ns_cmd_multimark(sourceinfo_t *si, int parc, char *parv[])
 	char *action = parv[1];
 	char *info = parv[2];
 	myuser_t *mu;
-	myuser_name_t *mun;
 	mowgli_list_t *l;
 
 	mowgli_node_t *n;

@@ -282,8 +282,6 @@ static void logfile_write_irc(logfile_t *lf, const char *buf)
  */
 static void logfile_write_snotices(logfile_t *lf, const char *buf)
 {
-	channel_t *c;
-
 	return_if_fail(lf != NULL);
 	return_if_fail(lf->log_path != NULL);
 	return_if_fail(buf != NULL);

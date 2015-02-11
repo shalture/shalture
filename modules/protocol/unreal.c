@@ -994,7 +994,6 @@ static void m_uid(sourceinfo_t *si, int parc, char *parv[])
 {
 	server_t *s;
 	user_t *u;
-	bool realchange;
 	const char *vhost;
 	const char *ipb64;
 	char ipstring[64];
@@ -1249,7 +1248,6 @@ static void unreal_user_mode(user_t *u, const char *changes)
 static bool unreal_is_extban(const char *mask)
 {
 	const char mask_len = strlen(mask);
-	unsigned char offset = 0;
 
 	if (mask_len < 4 || mask[0] != '~' || mask[2] != ':' || strchr(mask, ' '))
 		return false;
@@ -1357,7 +1355,6 @@ static void m_server(sourceinfo_t *si, int parc, char *parv[])
 static void m_sid(sourceinfo_t *si, int parc, char *parv[])
 {
 	server_t *s;
-	const char *inf;
 
 	s = handle_server(si, parv[0], parv[2], atoi(parv[1]), parv[3]);
 

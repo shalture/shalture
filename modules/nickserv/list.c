@@ -244,7 +244,6 @@ static void ns_cmd_list(sourceinfo_t *si, int parc, char *parv[])
 	char criteriastr[BUFSIZE];
 
 	mowgli_patricia_iteration_state_t state;
-	myentity_iteration_state_t mestate;
 	mynick_t *mn;
 
 	int matches = 0;

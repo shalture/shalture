@@ -89,7 +89,6 @@ static const char *opensex_read_word(database_handle_t *db)
 	opensex_t *rs = (opensex_t *)db->priv;
 	char *ptr = rs->token;
 	char *res;
-	static char buf[BUFSIZE];
 
 	res = rs->token;
 	if (res == NULL)
@@ -169,8 +168,6 @@ static bool opensex_start_row(database_handle_t *db, const char *type)
 static bool opensex_write_cell(database_handle_t *db, const char *data, bool multiword)
 {
 	opensex_t *rs;
-	char buf[BUFSIZE], *bi;
-	const char *i;
 
 	return_val_if_fail(db != NULL, false);
 	rs = (opensex_t *)db->priv;

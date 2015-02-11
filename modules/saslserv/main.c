@@ -34,7 +34,7 @@ static void delete_stale(void *vptr);
 static void sasl_mech_register(sasl_mechanism_t *mech);
 static void sasl_mech_unregister(sasl_mechanism_t *mech);
 static void mechlist_build_string(char *ptr, size_t buflen);
-static void mechlist_do_rebuild();
+static void mechlist_do_rebuild(void);
 
 sasl_mech_register_func_t sasl_mech_register_funcs = { &sasl_mech_register, &sasl_mech_unregister };
 
@@ -318,7 +318,7 @@ static void sasl_server_eob(server_t *s)
 	sasl_mechlist_sts(mechlist_string);
 }
 
-static void mechlist_do_rebuild()
+static void mechlist_do_rebuild(void)
 {
 	mechlist_build_string(mechlist_string, sizeof(mechlist_string));
 

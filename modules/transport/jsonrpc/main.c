@@ -338,7 +338,6 @@ static bool jsonrpcmethod_command(void *conn, mowgli_list_t *params, char *id)
 	char *newparv[20];
 	struct httpddata *hd = ((connection_t *)conn)->userdata;
 
-	authcookie_t *ac;
 	char *accountname, *cookie, *service, *command, *sourceip;
 
 	size_t len = MOWGLI_LIST_LENGTH(params);

@@ -341,7 +341,6 @@ void remove_group_chanacs(mygroup_t *mg)
 {
 	chanacs_t *ca;
 	mychan_t *mc;
-	myuser_t *successor;
 	mowgli_node_t *n, *tn;
 
 	/* kill all their channels and chanacs */

@@ -27,8 +27,6 @@ static void gs_cmd_flags(sourceinfo_t *si, int parc, char *parv[])
 	myentity_t *mt;
 	groupacs_t *ga;
 	unsigned int flags = 0, oldflags = 0;
-	unsigned int dir = 0;
-	char *c;
 	bool operoverride = false;
 
 	if (!parv[0])

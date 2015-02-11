@@ -161,7 +161,6 @@ static void do_list(sourceinfo_t *si, mychan_t *mc, unsigned int flags)
 static void cs_cmd_flags(sourceinfo_t *si, int parc, char *parv[])
 {
 	chanacs_t *ca;
-	mowgli_node_t *n;
 	char *channel = parv[0];
 	char *target = sstrdup(parv[1]);
 	char *flagstr = parv[2];
