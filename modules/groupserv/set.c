@@ -15,7 +15,7 @@ DECLARE_MODULE_V1
 (
 	"groupserv/set", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 static void gs_help_set(sourceinfo_t *si, const char *subcmd);

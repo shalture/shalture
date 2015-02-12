@@ -14,7 +14,7 @@ DECLARE_MODULE_V1
 (
 	"exttarget/chanacs", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 static mowgli_patricia_t **exttarget_tree = NULL;

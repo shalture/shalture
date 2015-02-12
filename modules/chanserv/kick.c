@@ -12,7 +12,7 @@ DECLARE_MODULE_V1
 (
 	"chanserv/kick", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 static void cs_cmd_kick(sourceinfo_t *si, int parc, char *parv[]);

@@ -11,7 +11,7 @@ DECLARE_MODULE_V1
 (
 	"exttarget/main", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 mowgli_patricia_t *exttarget_tree = NULL;

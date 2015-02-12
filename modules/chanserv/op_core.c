@@ -14,7 +14,7 @@ DECLARE_MODULE_V1
 (
 	"chanserv/op_core", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 void _modinit(module_t *m)

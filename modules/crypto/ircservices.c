@@ -110,7 +110,7 @@ DECLARE_MODULE_V1
 (
 	"crypto/ircservices", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Jilles Tjoelker <jilles@stack.nl>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 static const char *ircservices_crypt_string(const char *key, const char *salt)

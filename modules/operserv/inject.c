@@ -14,7 +14,7 @@ DECLARE_MODULE_V1
 (
 	"operserv/inject", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 static void os_cmd_inject(sourceinfo_t *si, int parc, char *parv[]);

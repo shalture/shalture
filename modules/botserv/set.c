@@ -14,7 +14,7 @@ DECLARE_MODULE_V1
 (
 	"botserv/set", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Rizon Development Group <http://dev.rizon.net>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 void _modinit(module_t *m)

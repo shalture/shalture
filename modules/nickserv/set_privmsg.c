@@ -13,7 +13,7 @@ DECLARE_MODULE_V1
 (
 	"nickserv/set_privmsg", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 mowgli_patricia_t **ns_set_cmdtree;

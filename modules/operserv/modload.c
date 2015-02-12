@@ -13,7 +13,7 @@ DECLARE_MODULE_V1
 (
 	"operserv/modload", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 static void os_cmd_modload(sourceinfo_t *si, int parc, char *parv[]);

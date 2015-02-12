@@ -15,7 +15,7 @@ DECLARE_MODULE_V1
 (
 	"chanserv/main", true, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 static void cs_join(hook_channel_joinpart_t *hdata);

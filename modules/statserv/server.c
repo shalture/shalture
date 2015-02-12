@@ -9,7 +9,7 @@
 #include "atheme.h"
 
 DECLARE_MODULE_V1("statserv/server", false, _modinit, _moddeinit,
-        PACKAGE_STRING, "Alexandria Wolcott <alyx@sporksmoo.net>");
+        PACKAGE_STRING, "Shaltúre developers <https://github.com/shalture>");
 
 static void ss_cmd_server(sourceinfo_t * si, int parc, char *parv[]);
 static void ss_cmd_server_info(sourceinfo_t * si, int parc, char *parv[]);

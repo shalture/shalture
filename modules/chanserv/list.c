@@ -12,7 +12,7 @@ DECLARE_MODULE_V1
 (
 	"chanserv/list", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 static void cs_cmd_list(sourceinfo_t *si, int parc, char *parv[]);

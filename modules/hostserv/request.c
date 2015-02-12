@@ -13,7 +13,7 @@ DECLARE_MODULE_V1
 (
 	"hostserv/request", true, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Rizon Development Group <http://www.rizon.net>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 bool request_per_nick;

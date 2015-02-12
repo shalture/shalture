@@ -12,7 +12,7 @@ DECLARE_MODULE_V1
 (
 	"operserv/clearchan", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Robin Burchell <surreal.w00t@gmail.com>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 #define CLEAR_KICK 1

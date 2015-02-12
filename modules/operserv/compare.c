@@ -12,7 +12,7 @@ DECLARE_MODULE_V1
 (
 	"operserv/compare", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Robin Burchell <surreal.w00t@gmail.com>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 static void os_cmd_compare(sourceinfo_t *si, int parc, char *parv[]);

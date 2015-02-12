@@ -14,7 +14,7 @@ DECLARE_MODULE_V1
 (
 	"backend/flatfile", true, _modinit, NULL,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 /* database versions */

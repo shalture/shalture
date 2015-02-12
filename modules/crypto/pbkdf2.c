@@ -22,7 +22,7 @@
 
 #ifdef HAVE_OPENSSL
 
-DECLARE_MODULE_V1("crypto/pbkdf2", false, _modinit, _moddeinit, PACKAGE_VERSION, "Atheme Development Group <http://www.atheme.org>");
+DECLARE_MODULE_V1("crypto/pbkdf2", false, _modinit, _moddeinit, PACKAGE_VERSION, "Shaltúre developers <https://github.com/shalture>");
 
 #include <openssl/evp.h>
 #include <openssl/sha.h>

@@ -10,7 +10,7 @@
 #include "atheme.h"
 #include "gameserv_common.h"
 
-DECLARE_MODULE_V1("gameserv/happyfarm", false, _modinit, _moddeinit, PACKAGE_STRING, "Atheme Development Group <http://www.atheme.org>");
+DECLARE_MODULE_V1("gameserv/happyfarm", false, _modinit, _moddeinit, PACKAGE_STRING, "Shaltúre developers <https://github.com/shalture>");
 
 /* Privatedata schema... */
 #define SCHEMA_KEY_HAPPYFARMER		"gameserv:happyfarm:farmer"

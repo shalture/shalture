@@ -9,7 +9,7 @@ DECLARE_MODULE_V1
 (
 	"rpgserv/set", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 static void rs_cmd_set(sourceinfo_t *si, int parc, char *parv[]);

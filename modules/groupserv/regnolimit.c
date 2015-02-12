@@ -14,7 +14,7 @@ DECLARE_MODULE_V1
 (
 	"groupserv/regnolimit", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 static void gs_cmd_regnolimit(sourceinfo_t *si, int parc, char *parv[]);

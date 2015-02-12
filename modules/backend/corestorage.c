@@ -22,7 +22,7 @@ DECLARE_MODULE_V1
 (
 	"backend/corestorage", true, _modinit, NULL,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 unsigned int dbv;

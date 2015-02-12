@@ -12,7 +12,7 @@ DECLARE_MODULE_V1
 (
 	"nickserv/badmail", true, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.net>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 static void check_registration(hook_user_register_check_t *hdata);

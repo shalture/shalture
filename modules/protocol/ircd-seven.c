@@ -13,7 +13,7 @@
 #include "protocol/charybdis.h"
 #include "protocol/ircd-seven.h"
 
-DECLARE_MODULE_V1("protocol/ircd-seven", true, _modinit, NULL, PACKAGE_STRING, "Atheme Development Group <http://www.atheme.org>");
+DECLARE_MODULE_V1("protocol/ircd-seven", true, _modinit, NULL, PACKAGE_STRING, "Shaltúre developers <https://github.com/shalture>");
 
 /* *INDENT-OFF* */
 

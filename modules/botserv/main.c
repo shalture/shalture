@@ -13,7 +13,7 @@ DECLARE_MODULE_V1
 (
 	"botserv/main", true, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Rizon Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 static void bs_join(hook_channel_joinpart_t *hdata);

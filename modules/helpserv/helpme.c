@@ -13,7 +13,7 @@ DECLARE_MODULE_V1
 (
 	"helpserv/helpme", false, _modinit, _moddeinit,
 	PACKAGE_STRING,
-	"Atheme Development Group <http://www.atheme.org>"
+	"Shaltúre developers <https://github.com/shalture>"
 );
 
 unsigned int ratelimit_count = 0;
