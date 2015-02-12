@@ -17,7 +17,7 @@ DECLARE_MODULE_V1
 
 static void os_cmd_modlist(sourceinfo_t *si, int parc, char *parv[]);
 
-command_t os_modlist = { "MODLIST", N_("Lists loaded modules."), PRIV_SERVER_AUSPEX, 0, os_cmd_modlist, { .path = "oservice/modlist" } };
+command_t os_modlist = { "MODLIST", N_("Lists loaded modules."), PRIV_SERVER_AUSPEX, 1, os_cmd_modlist, { .path = "oservice/modlist" } };
 
 extern mowgli_list_t modules;
 
@@ -35,18 +35,32 @@ static void os_cmd_modlist(sourceinfo_t *si, int parc, char *parv[])
 {
 	mowgli_node_t *n;
 	unsigned int i = 0;
-	command_success_nodata(si, _("Loaded modules:"));
+	char *pattern = parv[0];
+
+	if (parc > 0)
+		command_success_nodata(si, _("Loaded modules matching \2%s\2:"), pattern);
+	else
+		command_success_nodata(si, _("Loaded modules:"));
 
 	MOWGLI_ITER_FOREACH(n, modules.head)
 	{
 		module_t *m = n->data;
 
-		command_success_nodata(si, _("%2d: %-20s [loaded at 0x%lx]"),
-			++i, m->name, (unsigned long)m->address);
+		if (!pattern || !match(pattern, m->name))
+			command_success_nodata(si, _("%2d: %-20s [loaded at 0x%lx]"),
+				++i, m->name, (unsigned long)m->address);
 	}
 
-	command_success_nodata(si, _("\2%d\2 modules loaded."), i);
-	logcommand(si, CMDLOG_GET, "MODLIST");
+	if (pattern)
+	{
+		command_success_nodata(si, _("\2%d\2 modules loaded matching \2%s\2."), i, pattern);
+		logcommand(si, CMDLOG_GET, "MODLIST: \2%s\2", pattern);
+	}
+	else
+	{
+		command_success_nodata(si, _("\2%d\2 modules loaded."), i);
+		logcommand(si, CMDLOG_GET, "MODLIST");
+	}
 }
 
 /* vim:cinoptions=>s,e0,n0,f0,{0,}0,^0,=s,ps,t0,c3,+s,(2s,us,)20,*30,gs,hs

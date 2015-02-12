@@ -1,6 +1,11 @@
 Help for MODLIST:
 
 MODLIST displays a listing of all loaded
-modules and their addresses.
+modules and their addresses, optionally
+filtering by a pattern.
 
-Syntax: MODLIST
+Syntax: MODLIST [<pattern>]
+
+Examples:
+    /msg &nick& MODLIST
+    /msg &nick& MODLIST nickserv/*
