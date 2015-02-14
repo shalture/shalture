@@ -69,6 +69,7 @@ gflags_t mu_flags[] = {
 	{ 'g', MU_NOGREET },
 	{ 'r', MU_REGNOLIMIT },
 	{ 'N', MU_NEVERGROUP },
+	{ 'S', MU_NOPASSWORD },
 	{ 0, 0 },
 };
 
