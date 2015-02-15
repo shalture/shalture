@@ -51,7 +51,6 @@
  * Bahamut 1.8.x                                modules/protocol/bahamut
  * Charybdis IRCd                               modules/protocol/charybdis
  * DreamForge 4.6.7 or later                    modules/protocol/dreamforge
- * Hybrid 7.1.2 and later                       modules/protocol/hybrid
  * InspIRCd 2.0                                 modules/protocol/inspircd
  * ircd-ratbox 2.0 and later                    modules/protocol/ratbox
  * IRCNet ircd (ircd 2.11)                      modules/protocol/ircnet
@@ -807,7 +806,7 @@ serverinfo {
 	desc = "Shaltúre IRC Services";
 
 	/* numeric
-	 * Some protocol drivers (Charybdis, Ratbox2, Hybrid, P10, IRCNet)
+	 * Some protocol drivers (Charybdis, Ratbox2, P10, IRCNet, neephi)
 	 * require a server id, also known as a numeric. Please consult your
 	 * ircd's documentation when providing this value. 
 	 */
@@ -849,8 +848,13 @@ serverinfo {
 	/* (*)hidden
 	 * If this is enabled, Shaltúre will indicate to the uplink IRCd
 	 * that it should not be included in /links output.  This only works
+<<<<<<< HEAD:dist/shalture.conf.example
 	 * on the following IRCds at present: charybdis, hybrid, ircd-seven,
 	 * ratbox, shadowircd.
+=======
+	 * on the following IRCds at present: charybdis, ircd-seven, ratbox,
+	 * shadowircd, neephi.
+>>>>>>> 66cb853... protocol: remove hybrid support:dist/zohlai.conf.example
 	 */
 	#hidden;
 
@@ -1208,10 +1212,17 @@ chanserv {
 	 * This also solves the "join-mode" problem where someone recreates
 	 * a registered channel and then sets some modes before they are
 	 * deopped.
+<<<<<<< HEAD:dist/shalture.conf.example
 	 * This is currently supported for charybdis, hybrid, ratbox,
 	 * bahamut and inspircd 1.1+. For charybdis, hybrid and ratbox
 	 * it only fully works with TS6, with TS5 bans and last-moment modes
 	 * will still apply.
+=======
+	 * This is currently supported for charybdis, ratbox, bahamut,
+	 * inspircd 1.1+ and neephi. For charybdis, ratbox and neephi
+	 * it only fully works with TS6, with TS5 bans and last-moment
+	 * modes will still apply.
+>>>>>>> 66cb853... protocol: remove hybrid support:dist/zohlai.conf.example
 	 * (That can also be used to advantage, when first enabling this.)
 	 */
 	#changets;
