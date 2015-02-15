@@ -254,6 +254,14 @@ static mowgli_node_t *charybdis_next_matching_ban(channel_t *c, user_t *u, int t
 						continue;
 					matched = extgecos_match(p, u);
 					break;
+				case 'j':
+					if (p == NULL)
+						continue;
+					target_c = channel_find(p);
+					if (target_c == NULL)
+						continue;
+					matched = next_matching_ban(target_c, u, type, target_c->bans.head) != NULL;
+					break;
 				default:
 					continue;
 			}
