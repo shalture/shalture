@@ -111,6 +111,7 @@ static void cs_cmd_drop(sourceinfo_t *si, int parc, char *parv[])
 	}
 
 	logcommand(si, CMDLOG_REGISTER, "DROP: \2%s\2", mc->name);
+	verbose(mc, _("\2%s\2 dropped the channel"), get_source_name(si));
 
 	hook_call_channel_drop(mc);
 	if (mc->chan != NULL && !(mc->chan->flags & CHAN_LOG))
@@ -159,6 +160,7 @@ static void cs_cmd_fdrop(sourceinfo_t *si, int parc, char *parv[])
 
 	logcommand(si, CMDLOG_ADMIN | LG_REGISTER, "FDROP: \2%s\2", mc->name);
 	wallops("%s dropped the channel \2%s\2", get_oper_name(si), name);
+	verbose(mc, _("The channel has been dropped by %s administration"), me.netname);
 
 	hook_call_channel_drop(mc);
 	if (mc->chan != NULL && !(mc->chan->flags & CHAN_LOG))
