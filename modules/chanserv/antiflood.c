@@ -427,6 +427,7 @@ cs_set_cmd_antiflood(sourceinfo_t *si, int parc, char *parv[])
 		metadata_delete(mc, METADATA_KEY_ENFORCE_METHOD);
 
 		logcommand(si, CMDLOG_SET, "ANTIFLOOD:NONE: \2%s\2",  mc->name);
+		verbose(mc, _("\2%s\2 disabled flood protection"), get_source_name(si));
 		command_success_nodata(si, _("Flood protection turned off for \2%s\2."), mc->name);
 		return;
 	}
@@ -441,6 +442,7 @@ cs_set_cmd_antiflood(sourceinfo_t *si, int parc, char *parv[])
 		metadata_delete(mc, METADATA_KEY_ENFORCE_METHOD);
 
 		logcommand(si, CMDLOG_SET, "ANTIFLOOD: %s (%s)",  mc->name, "DEFAULT");
+		verbose(mc, _("\2%s\2 enabled flood protection with default settings"), get_source_name(si));
 		command_success_nodata(si, _("Flood protection turned on for \2%s\2 with default settings."), mc->name);
 		return;
 	}
@@ -450,6 +452,7 @@ cs_set_cmd_antiflood(sourceinfo_t *si, int parc, char *parv[])
 		metadata_add(mc, METADATA_KEY_ENFORCE_METHOD, "QUIET");
 
 		logcommand(si, CMDLOG_SET, "ANTIFLOOD: %s (%s)",  mc->name, "QUIET");
+		verbose(mc, _("\2%s\2 enabled flood protection with \2%s\2 action"), get_source_name(si), "QUIET");
 		command_success_nodata(si, _("Flood protection turned on for \2%s\2 with \2%s\2 action."), mc->name, "QUIET");
 		return;
 	}
@@ -459,6 +462,7 @@ cs_set_cmd_antiflood(sourceinfo_t *si, int parc, char *parv[])
 		metadata_add(mc, METADATA_KEY_ENFORCE_METHOD, "KICKBAN");
 
 		logcommand(si, CMDLOG_SET, "ANTIFLOOD: %s (%s)",  mc->name, "KICKBAN");
+		verbose(mc, _("\2%s\2 enabled flood protection with \2%s\2 action"), get_source_name(si), "KICKBAN");
 		command_success_nodata(si, _("Flood protection turned on for \2%s\2 with \2%s\2 action."), mc->name, "KICKBAN");
 		return;
 	}
@@ -470,6 +474,7 @@ cs_set_cmd_antiflood(sourceinfo_t *si, int parc, char *parv[])
 			metadata_add(mc, METADATA_KEY_ENFORCE_METHOD, "AKILL");
 
 			logcommand(si, CMDLOG_SET, "ANTIFLOOD: %s (%s)",  mc->name, "AKILL");
+			verbose(mc, _("\2%s\2 enabled flood protection with \2%s\2 action"), get_source_name(si), "AKILL");
 			command_success_nodata(si, _("Flood protection turned on for \2%s\2 with \2%s\2 action."), mc->name, "AKILL");
 			return;
 		}

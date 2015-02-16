@@ -377,6 +377,7 @@ static void cs_cmd_set_nosync(sourceinfo_t *si, int parc, char *parv[])
 		}
 
 		logcommand(si, CMDLOG_SET, "SET:NOSYNC:ON: \2%s\2", mc->name);
+		verbose(mc, _("\2%s\2 enabled the NOSYNC flag"), get_source_name(si));
 
 		mc->flags |= MC_NOSYNC;
 
@@ -392,6 +393,7 @@ static void cs_cmd_set_nosync(sourceinfo_t *si, int parc, char *parv[])
 		}
 
 		logcommand(si, CMDLOG_SET, "SET:NOSYNC:OFF: \2%s\2", mc->name);
+		verbose(mc, _("\2%s\2 disabled the NOSYNC flag"), get_source_name(si));
 
 		mc->flags &= ~MC_NOSYNC;
 
