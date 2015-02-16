@@ -472,12 +472,7 @@ char *pretty_mask(char *mask)
         old_mask_pos = mask_pos;
 
         at = ex = NULL;
-	if(is_valid_host(mask))
-	{
-		if (*mask != '\0')
-			host = mask;
-	}
-	else if((t = strchr(mask, '@')) != NULL)
+	if((t = strchr(mask, '@')) != NULL)
 	{
                 at = t;
                 *t++ = '\0';
@@ -508,7 +503,7 @@ char *pretty_mask(char *mask)
                 if(*t != '\0')
                         user = t;
         }
-        else if(strchr(mask, '.') != NULL && strchr(mask, ':') != NULL)
+        else if(strchr(mask, '.') != NULL || strchr(mask, ':') != NULL)
         {
                 if(*mask != '\0')
                         host = mask;
