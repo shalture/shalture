@@ -1,10 +1,10 @@
 Help for SET VERBOSE:
 
 SET VERBOSE ON sends a notice to the channel when someone
-makes changes to the access lists.
+makes changes to the access lists or channel settings.
 
 SET VERBOSE OPS sends a notice to the channel operators when
-someone makes changes to the access lists.
+someone makes changes to the access lists or channel settings.
 
 Fantasy commands are always executed as if SET VERBOSE ON is
 in effect.
