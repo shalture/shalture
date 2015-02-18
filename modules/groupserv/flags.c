@@ -197,7 +197,7 @@ no_founder:
 	{
 		chanacs_t *ca = n->data;
 
-		verbose(ca->mychan, "\2%s\2 now has flags \2%s\2 in the group \2%s\2 which communally has \2%s\2 on \2%s\2.",
+		verbose(ca->mychan, "\2%s\2 now has flags \2%s\2 in the group \2%s\2 which communally has \2%s\2 on \2%s\2",
 			mt->name, gflags_tostr(ga_flags, ga->flags), entity(mg)->name,
 			bitmask_to_flags(ca->level), ca->mychan->name);
 

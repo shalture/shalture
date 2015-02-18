@@ -1174,7 +1174,7 @@ myentity_t *mychan_succession(mychan_t *mc)
 				mychan_founder_names(mc),
 				MOWGLI_LIST_LENGTH(&mc->chanacs));
 		if (chansvs.me != NULL)
-			verbose(mc, "Foundership changed to \2%s\2 because \2%s\2 was dropped.", entity(successor)->name, mychan_founder_names(mc));
+			verbose(mc, "Foundership changed to \2%s\2 because \2%s\2 was dropped", entity(successor)->name, mychan_founder_names(mc));
 
 		/* CA_FOUNDER | CA_FLAGS is the minimum required for full control; let chanserv take care of assigning the rest via founder_flags */
 		chanacs_change_simple(mc, entity(successor), NULL, CA_FOUNDER | CA_FLAGS, 0, NULL);

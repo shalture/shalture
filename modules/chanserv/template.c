@@ -388,14 +388,14 @@ static void cs_cmd_template(sourceinfo_t *si, int parc, char *parv[])
 			logcommand(si, CMDLOG_SET, "TEMPLATE: \2%s\2 \2%s\2 !\2%s\2 (\2%d\2 changes)", mc->name, target, flagstr, changes);
 			mowgli_strlcpy(flagstr2, flagstr, sizeof flagstr2);
 			if (changes > 0)
-				verbose(mc, _("\2%s\2 set \2%s\2 on %d access entries with flags \2%s\2."), get_source_name(si), flagstr2, changes, bitmask_to_flags(oldflags));
+				verbose(mc, _("\2%s\2 set \2%s\2 on %d access entries with flags \2%s\2"), get_source_name(si), flagstr2, changes, bitmask_to_flags(oldflags));
 			command_success_nodata(si, _("%d access entries updated accordingly."), changes);
 			if (founderskipped)
 				command_success_nodata(si, _("Not updating %d access entries involving founder status. Please do it manually."), founderskipped);
 		}
 		else
 			logcommand(si, CMDLOG_SET, "TEMPLATE: \2%s\2 \2%s\2 \2%s\2", mc->name, target, flagstr);
-		/*verbose(mc, "Flags \2%s\2 were set on template \2%s\2 in \2%s\2.", flagstr, target, channel);*/
+		/*verbose(mc, "Flags \2%s\2 were set on template \2%s\2 in \2%s\2", flagstr, target, channel);*/
 	}
 }
 
