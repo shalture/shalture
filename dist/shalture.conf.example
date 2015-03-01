@@ -1087,6 +1087,17 @@ nickserv {
 	 */
 	#cracklib_warn;
 
+	/* (*)sendpass_access
+	 * The mode of operation for the nickserv/sendpass module. Can be one of:
+	 *  staff         - require user:sendpass
+	 *  user          - unrestricted, like the old sendpass_user
+	 *  user_paranoid - unrestricted, but require knowledge of the used email address
+	 *                  (as this avoids leaking the email through guessing,
+	 *                   the interface is a bit less friendly, only giving generic
+	 *                   success messages even if there was an issue)
+	 */
+	#sendpass_access = staff;
+
 	/* (*)emailexempts
 	 * A list of email addresses that will be exempt from the check of how many
 	 * accounts one user may have. Any email address in this block may register
