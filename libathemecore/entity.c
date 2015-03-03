@@ -184,6 +184,15 @@ static bool linear_can_register_channel(myentity_t *mt)
 
 static bool linear_allow_foundership(myentity_t *mt)
 {
+	myuser_t *mu;
+
+	if ((mu = user(mt)) != NULL)
+	{
+		if (mu->flags & MU_WAITAUTH)
+			return false;
+		else if (metadata_find(mu, "private:restrict:setter"))
+			return false;
+	}
 	return true;
 }
 
