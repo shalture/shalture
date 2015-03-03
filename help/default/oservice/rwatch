@@ -5,8 +5,7 @@ which the nick!user@host gecos
 of all connecting clients are matched against.
 Matching clients can be displayed in the snoop
 channel and/or banned from the network. These
-network bans are set on *@host, last 24 hours
-and are not added to the AKILL list.
+network bans last 24 hours.
 The RWATCH list is stored in etc/rwatch.db and
 saved whenever it is modified.
 
