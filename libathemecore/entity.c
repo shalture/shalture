@@ -222,6 +222,8 @@ bool myentity_can_register_channel(myentity_t *mt)
 	return_val_if_fail(mt != NULL, false);
 
 	vt = myentity_get_chanacs_validator(mt);
+	if (vt->allow_foundership && !vt->allow_foundership(mt))
+		return false;
 	if (vt->can_register_channel(mt))
 		return true;
 

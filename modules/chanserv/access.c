@@ -937,15 +937,15 @@ static void cs_cmd_access_add(sourceinfo_t *si, int parc, char *parv[])
 			chanacs_close(ca);
 			return;
 		}
-		if (!myentity_can_register_channel(mt))
+		if (!myentity_allow_foundership(mt))
 		{
-			command_fail(si, fault_toomany, _("\2%s\2 has too many channels registered."), mt->name);
+			command_fail(si, fault_badparams, _("\2%s\2 cannot take foundership of a channel."), mt->name);
 			chanacs_close(ca);
 			return;
 		}
-		if (!myentity_allow_foundership(mt))
+		if (!myentity_can_register_channel(mt))
 		{
-			command_fail(si, fault_toomany, _("\2%s\2 cannot take foundership of a channel."), mt->name);
+			command_fail(si, fault_toomany, _("\2%s\2 has too many channels registered."), mt->name);
 			chanacs_close(ca);
 			return;
 		}
