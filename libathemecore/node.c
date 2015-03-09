@@ -155,7 +155,20 @@ kline_t *kline_add(const char *user, const char *host, const char *reason, long 
 {
 	if (how == KLINE_MANUAL || (how == KLINE_AUTO && config_options.akill_list_auto_klines)
 			|| (how == KLINE_MASS && config_options.akill_list_mass_klines))
+	{
+		kline_t *k;
+		mowgli_node_t *n;
+
+		/* kline_find would find any *matching* kline */
+		MOWGLI_ITER_FOREACH(n, klnlist.head)
+		{
+			k = (kline_t *)n->data;
+
+			if ((!strcasecmp(k->user, user)) && (!strcasecmp(k->host, host)))
+				return k;
+		}
 		return kline_add_with_id(user, host, reason, duration, setby, ++me.kline_id);
+	}
 	else
 	{
 		kline_sts("*", user, host, duration, reason);
