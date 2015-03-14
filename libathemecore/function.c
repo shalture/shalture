@@ -884,6 +884,66 @@ void get_kline_userhost(user_t *u, char *user, char *host)
 	hook_call_user_get_banmask(&hdata);
 }
 
+void parse_reason_with_duration(const char *combined, long *duration, char *reason)
+{
+	char *token = strtok(combined, " ");
+
+	if (!token)
+	{
+		reason[0] = 0;
+	}
+	else
+	{
+		if (!strcasecmp(token, "!P"))
+		{
+			*duration = 0;
+			token = strtok(NULL, "");
+			if (token)
+				mowgli_strlcpy(reason, token, BUFSIZE);
+		}
+		else if (!strcasecmp(token, "!T"))
+		{
+			char *s = strtok(NULL, " ");
+
+			if (s)
+			{
+				*duration = (atol(s) * 60);
+				while (isdigit((unsigned char)*s))
+					s++;
+				if (*s == 'h' || *s == 'H')
+					*duration *= 60;
+				else if (*s == 'd' || *s == 'D')
+					*duration *= 1440;
+				else if (*s == 'w' || *s == 'W')
+					*duration *= 10080;
+				else if (*s == '\0')
+					;
+				else
+					*duration = -1;
+				token = strtok(NULL, "");
+				if (token)
+					mowgli_strlcpy(reason, token, BUFSIZE);
+			}
+			else {
+				*duration = -1;
+			}
+
+		}
+		else
+		{
+			/* leave the duration alone, probably a default value */
+			mowgli_strlcpy(reason, token, BUFSIZE);
+			token = strtok(NULL, "");
+
+			if (token)
+			{
+				mowgli_strlcat(reason, " ", BUFSIZE);
+				mowgli_strlcat(reason, token, BUFSIZE);
+			}
+		}
+	}
+}
+
 /* vim:cinoptions=>s,e0,n0,f0,{0,}0,^0,=s,ps,t0,c3,+s,(2s,us,)20,*30,gs,hs
  * vim:ts=8
  * vim:sw=8
