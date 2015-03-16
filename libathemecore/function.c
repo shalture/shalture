@@ -884,6 +884,20 @@ void get_kline_userhost(user_t *u, char *user, char *host)
 	hook_call_user_get_banmask(&hdata);
 }
 
+/*
+ * Parses a combined reason and duration string in the format used by various commands,
+ * [!P|!T <minutes>] [reason]
+ *
+ * Parameters:
+ *   - the combined reason & duration string, passed to strtok()
+ *   - a pointer to a duration, set to:
+ *       0 if permanent
+ *       -1 if invalid duration specified
+ *       a duration in seconds if valid duration specified
+ *       unmodified if no duration specified
+ *   - a buffer to hold the reason, untouched if there was no reason specified
+ *     (for consistency with the duration parameter)
+ */
 void parse_reason_with_duration(char *combined, long *duration, char *reason)
 {
 	char *token = strtok(combined, " ");
