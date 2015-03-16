@@ -888,11 +888,7 @@ void parse_reason_with_duration(const char *combined, long *duration, char *reas
 {
 	char *token = strtok(combined, " ");
 
-	if (!token)
-	{
-		reason[0] = 0;
-	}
-	else
+	if (token)
 	{
 		if (!strcasecmp(token, "!P"))
 		{
