@@ -884,7 +884,7 @@ void get_kline_userhost(user_t *u, char *user, char *host)
 	hook_call_user_get_banmask(&hdata);
 }
 
-void parse_reason_with_duration(const char *combined, long *duration, char *reason)
+void parse_reason_with_duration(char *combined, long *duration, char *reason)
 {
 	char *token = strtok(combined, " ");
 
