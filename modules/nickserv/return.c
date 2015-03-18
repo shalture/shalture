@@ -110,6 +110,11 @@ static void ns_cmd_return(sourceinfo_t *si, int parc, char *parv[])
 						target, newmail);
 	command_success_nodata(si, _("A random password has been set; it has been sent to \2%s\2."),
 						newmail);
+	if (mu->flags & MU_NOPASSWORD)
+	{
+		mu->flags &= ~MU_NOPASSWORD;
+		command_success_nodata(si, _("The NOPASSWORD flag for \2%s\2 has been disabled."), entity(mu)->name);
+	}
 }
 
 /* vim:cinoptions=>s,e0,n0,f0,{0,}0,^0,=s,ps,t0,c3,+s,(2s,us,)20,*30,gs,hs

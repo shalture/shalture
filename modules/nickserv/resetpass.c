@@ -77,6 +77,11 @@ static void ns_cmd_resetpass(sourceinfo_t *si, int parc, char *parv[])
 
 	newpass = random_string(12);
 	command_success_nodata(si, _("The password for the account %s has been changed to %s."), entity(mu)->name, newpass);
+	if (mu->flags & MU_NOPASSWORD)
+	{
+		mu->flags &= ~MU_NOPASSWORD;
+		command_success_nodata(si, _("The NOPASSWORD flag for \2%s\2 has been disabled."), entity(mu)->name);
+	}
 	set_password(mu, newpass);
 	free(newpass);
 	metadata_delete(mu, "private:setpass:key");

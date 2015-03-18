@@ -209,6 +209,11 @@ static void ns_cmd_sendpass(sourceinfo_t *si, int parc, char *parv[])
 	{
 		logcommand(si, CMDLOG_ADMIN, "SENDPASS: \2%s\2", name);
 		command_success_nodata(si, _("The password for \2%s\2 has been sent to \2%s\2."), entity(mu)->name, mu->email);
+		if (mu->flags & MU_NOPASSWORD)
+		{
+			mu->flags &= ~MU_NOPASSWORD;
+			command_success_nodata(si, _("The NOPASSWORD flag for \2%s\2 has been disabled."), entity(mu)->name);
+		}
 		if (ismarked)
 		{
 			wallops("%s sent the password for the \2MARKED\2 account %s.", get_oper_name(si), entity(mu)->name);
