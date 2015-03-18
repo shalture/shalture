@@ -167,16 +167,15 @@ void cs_cmd_akick_add(sourceinfo_t *si, int parc, char *parv[])
 	hook_channel_acl_req_t req;
 	chanacs_t *ca, *ca2;
 	char *chan = parv[0];
-	long duration;
+	long duration = chansvs.akick_time;
 	char expiry[512];
-	char *s;
 	char *target;
 	char *uname;
-	char *token;
-	char *treason, reason[BUFSIZE];
+	char reason[BUFSIZE] = "";
+	char *duration_reason;
 
 	target = parv[1];
-	token = strtok(parv[2], " ");
+	duration_reason = parv[2];
 
 	if (!target)
 	{
@@ -198,76 +197,12 @@ void cs_cmd_akick_add(sourceinfo_t *si, int parc, char *parv[])
 		return;
 	}
 
-	/* A duration, reason or duration and reason. */
-	if (token)
+	parse_reason_with_duration(duration_reason, &duration, reason);
+	if (duration == -1)
 	{
-		if (!strcasecmp(token, "!P")) /* A duration [permanent] */
-		{
-			duration = 0;
-			treason = strtok(NULL, "");
-
-			if (treason)
-				mowgli_strlcpy(reason, treason, BUFSIZE);
-			else
-				reason[0] = 0;
-		}
-		else if (!strcasecmp(token, "!T")) /* A duration [temporary] */
-		{
-			s = strtok(NULL, " ");
-			treason = strtok(NULL, "");
-
-			if (treason)
-				mowgli_strlcpy(reason, treason, BUFSIZE);
-			else
-				reason[0] = 0;
-
-			if (s)
-			{
-				duration = (atol(s) * 60);
-				while (isdigit((unsigned char)*s))
-					s++;
-				if (*s == 'h' || *s == 'H')
-					duration *= 60;
-				else if (*s == 'd' || *s == 'D')
-					duration *= 1440;
-				else if (*s == 'w' || *s == 'W')
-					duration *= 10080;
-				else if (*s == '\0')
-					;
-				else
-					duration = 0;
-
-				if (duration == 0)
-				{
-					command_fail(si, fault_badparams, _("Invalid duration given."));
-					command_fail(si, fault_badparams, _("Syntax: AKICK <#channel> ADD <nick|hostmask> [!P|!T <minutes>] [reason]"));
-					return;
-				}
-			}
-			else
-			{
-				command_fail(si, fault_needmoreparams, STR_INSUFFICIENT_PARAMS, "AKICK ADD");
-				command_fail(si, fault_needmoreparams, _("Syntax: AKICK <#channel> ADD <nick|hostmask> [!P|!T <minutes>] [reason]"));
-				return;
-			}
-		}
-		else
-		{
-			duration = chansvs.akick_time;
-			mowgli_strlcpy(reason, token, BUFSIZE);
-			treason = strtok(NULL, "");
-
-			if (treason)
-			{
-				mowgli_strlcat(reason, " ", BUFSIZE);
-				mowgli_strlcat(reason, treason, BUFSIZE);
-			}
-		}
-	}
-	else
-	{ /* No reason and no duration */
-		duration = chansvs.akick_time;
-		reason[0] = 0;
+		command_fail(si, fault_badparams, _("Invalid duration given."));
+		command_fail(si, fault_badparams, _("Syntax: AKICK <#channel> ADD <nick|hostmask> [!P|!T <minutes>] [reason]"));
+		return;
 	}
 
 	if ((chanacs_source_flags(mc, si) & (CA_FLAGS | CA_REMOVE)) != (CA_FLAGS | CA_REMOVE))
