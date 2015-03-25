@@ -11,6 +11,10 @@ EMAIL         - All accounts registered with an email address
 MARK-REASON   - All accounts whose mark reason matches a
                 given pattern.
 #endif
+#if module nickserv/multimark
+MARK-REASON   - All accounts whose mark reason matches a
+                given pattern.
+#endif
 #if module nickserv/freeze
 FROZEN-REASON - All frozen accounts whose freeze reason matches
                 a given pattern.
@@ -61,6 +65,9 @@ REGNOLIMIT    - All users with the REGNOLIMIT flag set.
 FROZEN        - All users frozen by network staff.
 #endif
 #if module nickserv/mark
+MARKED        - All users marked by network staff.
+#endif
+#if module nickserv/multimark
 MARKED        - All users marked by network staff.
 #endif
 #if module nickserv/restrict
