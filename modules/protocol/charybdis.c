@@ -213,6 +213,8 @@ static mowgli_node_t *charybdis_next_matching_ban(channel_t *c, user_t *u, int t
 			return n;
 		if (strippedmask[0] == '$')
 		{
+			static bool recursion_guard = false; /* for $j */
+
 			p = strippedmask + 1;
 			negate = *p == '~';
 			if (negate)
@@ -255,12 +257,16 @@ static mowgli_node_t *charybdis_next_matching_ban(channel_t *c, user_t *u, int t
 					matched = extgecos_match(p, u);
 					break;
 				case 'j':
+					if (recursion_guard)
+						continue;
 					if (p == NULL)
 						continue;
 					target_c = channel_find(p);
 					if (target_c == NULL)
 						continue;
+					recursion_guard = true;
 					matched = next_matching_ban(target_c, u, type, target_c->bans.head) != NULL;
+					recursion_guard = false;
 					break;
 				default:
 					continue;
