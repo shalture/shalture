@@ -9,6 +9,6 @@
 #ifndef IRCD_SEVEN_H
 #define IRCD_SEVEN_H
 
-#define CMODE_IMMUNE    0x00200000      /* seven +M */
+#define CMODE_IMMUNE    0x02000000      /* seven +M */
 
 #endif
