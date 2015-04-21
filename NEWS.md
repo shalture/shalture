@@ -4,7 +4,8 @@ This is the first release series of Shaltúre, based on Atheme.
 
 nickserv
 --------
-- nickserv/setpass: SETPASS keys expire automatically
+- nickserv/sendpass: absorb nickserv/sendpass_user and nickserv/setpass functionality
+- SETPASS keys may expire automatically
 
 operserv
 --------
