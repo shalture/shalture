@@ -8,6 +8,7 @@
  */
 
 #include "atheme.h"
+#include "chanserv.h"
 
 DECLARE_MODULE_V1
 (
@@ -144,7 +145,7 @@ static void cs_cmd_set_founder(sourceinfo_t *si, int parc, char *parv[])
 				if (ca->entity != NULL && ca->level & CA_FOUNDER)
 					chanacs_modify_simple(ca, CA_FLAGS, CA_FOUNDER, si->smu);
 			}
-			chanacs_change_simple(mc, mt, NULL, CA_FOUNDER_0, 0, entity(si->smu));
+			chanacs_change_simple(mc, mt, NULL, custom_founder_check(), 0, entity(si->smu));
 
 			/* delete transfer metadata */
 			metadata_delete(mc, "private:verify:founderchg:newfounder");

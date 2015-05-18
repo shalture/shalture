@@ -1242,7 +1242,8 @@ chanserv {
 	maxfounders = 4;
 
 	/* (*)founder_flags
-	 * The flags a user will get when they register a new channel.
+	 * The flags a user will get when they register a new channel
+	 * or a channel is transferred to them (via FTRANSFER/SET FOUNDER).
 	 * This MUST include at least 'F' or it will be ignored.
 	 * If it is not set, Shaltúre will give the user all channel flags.
 	 */
