@@ -374,7 +374,7 @@ loadmodule "modules/chanserv/set_core";
 loadmodule "modules/chanserv/set_email";
 loadmodule "modules/chanserv/set_entrymsg";
 loadmodule "modules/chanserv/set_fantasy";
-loadmodule "modules/chanserv/set_founder";
+#loadmodule "modules/chanserv/set_founder";
 #loadmodule "modules/chanserv/set_gameserv";
 loadmodule "modules/chanserv/set_guard";
 loadmodule "modules/chanserv/set_keeptopic";
@@ -1238,6 +1238,8 @@ chanserv {
 	 * The maximum number of founders allowed in a channel.
 	 * Note that all founders have the exact same privileges and
 	 * the list of founders is shown in various places.
+	 * If this is set to 1, you might also want the chanserv/set_founder
+	 * module. Otherwise, that module is redundant with chanserv/flags.
 	 */
 	maxfounders = 4;
 
