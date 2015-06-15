@@ -608,7 +608,7 @@ void handle_message(sourceinfo_t *si, char *target, bool is_notice, char *messag
 	if (si->service->me != NULL && floodcheck(si->su, si->service->me))
 		return;
 
-	if (!is_notice && config_options.secure && irccasecmp(target, si->service->disp))
+	if (!is_notice && config_options.secure && irccasecmp(target, si->service->disp) && message[0] != '\1')
 	{
 		notice(si->service->me->nick, si->su->nick, "For security reasons, \2/msg %s\2 has been disabled."
 				" Use \2/%s%s <command>\2 to send a command.",
