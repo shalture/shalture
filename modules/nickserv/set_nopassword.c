@@ -1,6 +1,7 @@
 /*
  * Copyright (c) 2005 William Pitcock <nenolod -at- nenolod.net>
  * Copyright (c) 2007 Jilles Tjoelker
+ * Copyright (c) 2015 Max Teufel <max@teufelsnetz.com>
  * Rights to this code are as documented in doc/LICENSE.
  *
  * Allows you to disable any password-based authentication methods except for XMLRPC/JSONRPC.
