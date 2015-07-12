@@ -5,7 +5,7 @@ corresponding to the specified nickname
 that can be used to set a new password
 using SETPASS.
 
-Syntax: SENDPASS <nickname>
+Syntax: SENDPASS <nickname> <email>
 #if priv user:sendpass
 
 If a key has been emailed but not yet used,
@@ -15,4 +15,4 @@ Syntax: SENDPASS <nickname> CLEAR
 #endif
 
 Examples:
-    /msg &nick& SENDPASS foo
+    /msg &nick& SENDPASS foo foo@bar.baz
