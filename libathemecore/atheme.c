@@ -225,11 +225,6 @@ void shalture_init(char *execname, char *log_p)
 
 void shalture_setup(void)
 {
-#if HAVE_UMASK
-	/* file creation mask */
-	umask(077);
-#endif
-
 	base_eventloop = mowgli_eventloop_create();
         hooks_init();
 	db_init();
