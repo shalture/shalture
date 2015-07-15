@@ -7,7 +7,7 @@ dnl Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
 
-AC_INIT(shalture, 8.0-dev, shalture@yolo-swag.com)
+AC_INIT(shalture, 8.0-dev, [https://github.com/shalture/shalture/issues])
 
 AC_CONFIG_AUX_DIR(autoconf)
 
