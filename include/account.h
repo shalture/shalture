@@ -367,7 +367,7 @@ typedef struct {
 E bool backend_loaded;
 
 /* dbhandler.c */
-E void (*db_save)(void *arg);
+E void (*db_save)(void *arg, bool force);
 E void (*db_load)(const char *arg);
 
 /* function.c */

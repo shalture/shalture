@@ -62,7 +62,7 @@ bool strict_mode = true;
 bool offline_mode = false;
 bool permissive_mode = false;
 
-void (*db_save) (void *arg) = NULL;
+void (*db_save) (void *arg, bool force) = NULL;
 void (*db_load) (const char *name) = NULL;
 
 /* *INDENT-OFF* */
@@ -249,6 +249,11 @@ void shalture_setup(void)
 	common_ctcp_init();
 }
 
+static void db_save_periodic(void *unused)
+{
+	db_save(unused, false);
+}
+
 int shalture_main(int argc, char *argv[])
 {
 	int daemonize_pipe[2];
@@ -417,7 +422,7 @@ int shalture_main(int argc, char *argv[])
 
 	/* DB commit interval is configurable */
 	if (db_save && !readonly)
-		mowgli_timer_add(base_eventloop, "db_save", db_save, NULL, config_options.commit_interval);
+		mowgli_timer_add(base_eventloop, "db_save", db_save_periodic, NULL, config_options.commit_interval);
 
 	/* check expires every hour */
 	mowgli_timer_add(base_eventloop, "expire_check", expire_check, NULL, 3600);
@@ -439,8 +444,11 @@ int shalture_main(int argc, char *argv[])
 	/* we're shutting down */
 	hook_call_shutdown();
 
+	if (curr_uplink != NULL && curr_uplink->conn != NULL)
+		sendq_flush(curr_uplink->conn);
+
 	if (db_save && !readonly)
-		db_save(NULL);
+		db_save(NULL, true);
 
 	childproc_check(true);
 

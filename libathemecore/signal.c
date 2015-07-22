@@ -144,7 +144,7 @@ void check_signals(void)
 		{
 			slog(LG_INFO, "UPDATE: \2%s\2", "system console");
 			wallops(_("Updating database by request of \2%s\2."), "system console");
-			db_save(NULL);
+			db_save(NULL, true);
 		}
 
 		slog(LG_INFO, "REHASH: \2%s\2", "system console");

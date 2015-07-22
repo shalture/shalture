@@ -30,6 +30,9 @@ unsigned int their_ca_all;
 
 extern mowgli_list_t modules;
 
+static void corestorage_db_write(void *filename);
+static void corestorage_db_saved_cb(pid_t, int, void*);
+
 /* write atheme.db (core fields) */
 static void
 corestorage_db_save(database_handle_t *db)
@@ -931,6 +934,61 @@ static void corestorage_db_load(const char *filename)
 	db_close(db);
 }
 
+static pid_t child_pid;
+
+static void corestorage_db_saved_cb(pid_t pid, int status, void *data)
+{
+	if (child_pid != pid)
+		return; /* probably killed our child for a forced write */
+	else
+	{
+		child_pid = 0;
+		slog(LG_DEBUG, "db_save(): finished asynchronous DB write");
+	}
+}
+
+static void corestorage_db_fork_write(void *filename, bool force)
+{
+#ifndef HAVE_FORK
+	corestorage_db_write(filename);
+#else
+
+	if (child_pid && !force)
+	{
+		slog(LG_DEBUG, "db_save(): previous save unfinished, skipping save");
+		return;
+	}
+	else
+	{
+		if (child_pid)
+		{
+			slog(LG_DEBUG, "db_save(): interrupting unfinished previous save for forced save");
+			if (kill(child_pid, SIGKILL) == -1 && errno != ESRCH)
+			{
+				slog(LG_ERROR, "db_save(): kill() on previous save failed; trying to carry on somehow...");
+				waitpid(child_pid, NULL, 0);
+			}
+		}
+
+		pid_t pid = fork();
+		switch (pid)
+		{
+			case -1:
+				slog(LG_ERROR, "db_save(): fork() failed; writing database synchronously");
+				/* fall through */
+			case 0:
+				corestorage_db_write(filename);
+				if (!pid)
+					exit(EXIT_SUCCESS);
+				break;
+			default:
+				child_pid = pid;
+				childproc_add(pid, "db_save", corestorage_db_saved_cb, NULL);
+		}
+	}
+#endif
+}
+
 static void corestorage_db_write(void *filename)
 {
 	database_handle_t *db;
@@ -948,7 +1006,7 @@ void _modinit(module_t *m)
 	m->mflags = MODTYPE_CORE;
 
 	db_load = &corestorage_db_load;
-	db_save = &corestorage_db_write;
+	db_save = &corestorage_db_fork_write;
 
 	db_register_type_handler("DBV", corestorage_h_dbv);
 	db_register_type_handler("MDEP", corestorage_ignore_row);
