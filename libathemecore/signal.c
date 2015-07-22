@@ -31,8 +31,6 @@
 # include <sys/wait.h>
 #endif
 
-static void childproc_check(void);
-
 static volatile sig_atomic_t got_sighup, got_sigint, got_sigterm, got_sigchld, got_sigusr2;
 
 /*
@@ -203,7 +201,7 @@ void check_signals(void)
 	if (got_sigchld)
 	{
 		got_sigchld = 0;
-		childproc_check();
+		childproc_check(false);
 	}
 }
 
@@ -259,7 +257,7 @@ void childproc_delete_all(void (*cb)(pid_t pid, int status, void *data))
 	}
 }
 
-static void childproc_check(void)
+void childproc_check(bool wait)
 {
 #ifndef MOWGLI_OS_WIN
 	pid_t pid;
@@ -267,7 +265,7 @@ static void childproc_check(void)
 	mowgli_node_t *n;
 	struct childproc *p;
 
-	while ((pid = waitpid(-1, &status, WNOHANG)) > 0)
+	while ((pid = waitpid(-1, &status, (wait ? 0 : WNOHANG))) > 0)
 	{
 		MOWGLI_ITER_FOREACH(n, childproc_list.head)
 		{

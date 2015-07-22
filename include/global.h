@@ -197,6 +197,7 @@ E const char *infotext[];
 E void check_signals(void);
 E void childproc_add(pid_t pid, const char *desc, void (*cb)(pid_t pid, int status, void *data), void *data);
 E void childproc_delete_all(void (*cb)(pid_t pid, int status, void *data));
+E void childproc_check(bool wait);
 
 #endif
 

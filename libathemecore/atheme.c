@@ -442,6 +442,8 @@ int shalture_main(int argc, char *argv[])
 	if (db_save && !readonly)
 		db_save(NULL);
 
+	childproc_check(true);
+
 	remove(pidfilename);
 	errno = 0;
 	if (curr_uplink != NULL && curr_uplink->conn != NULL)
