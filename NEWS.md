@@ -19,6 +19,7 @@ misc
 ----
 - Add automated klines to the AKILL list.
 - misc/banmask_irccloud: new module using get_kline_userhost
+- Fork before writing to the database file to work around lag issues
 
 Atheme Services 7.2 Development Notes
 =====================================
