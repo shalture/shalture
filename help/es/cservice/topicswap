@@ -1,0 +1,9 @@
+Ayuda para TOPICSWAP:
+
+TOPICSWAP permite reemplazar o sustituir partes del tema
+de un canal con facilidad.
+
+Sintaxis: TOPICSWAP <#canal> <buscar>:[<reemplazar>]
+
+Ejemplos:
+    /msg &nick& TOPICSWAP #foo naranja:manzana
