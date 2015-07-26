@@ -1,0 +1,14 @@
+Ayuda para CLEAR AKICKS:
+
+CLEAR AKICKS eliminará todas las entradas de AKICK,
+incluyendo todas aquellas entradas en la lista de acceso
+que sólo tienen el permiso +b, de la lista de accesso
+de un canal.
+
+Este comando sólo puede ser usado por aquellos usuarios que
+tengan los permisos +R y +f.
+
+Sintaxis: CLEAR <#canal> AKICKS
+
+Ejemplos:
+   /msg &nick& CLEAR #atheme AKICKS

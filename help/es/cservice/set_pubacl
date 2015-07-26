@@ -1,0 +1,9 @@
+Ayuda para SET PUBACL:
+
+SET PUBACL permite que la lista de acceso de un canal sea visible
+públicamente.
+
+Sintaxis: SET <#canal> PUBACL ON|OFF
+
+Ejemplo:
+    /msg &nick& SET #foo PUBACL ON

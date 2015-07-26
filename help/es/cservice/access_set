@@ -1,0 +1,9 @@
+Ayuda para ACCESS SET:
+
+ACCESS SET cambiará el rol de un usuario al rol del canal
+que se especifica.
+
+Sintaxis: ACCESS <#canal> SET <usuario> <rol>
+
+Ejemplos:
+    /msg &nick& ACCESS #atheme SET stitch ayudante
