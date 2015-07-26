@@ -1,4 +1,4 @@
-Help for SET ANTIFLOOD:
+Help for SET ANTIFLOOD:
  
 SET ANTIFLOOD configures ChanServ flood control settings.
 The action parameter can be QUIET, KICKBAN or AKILL.
