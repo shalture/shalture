@@ -6,16 +6,16 @@ Date: &date&
 
 &accountname&,
 
-Alguien ha pedido que la contraseña de su cuenta sea recuperada y
-enviada a su cuenta de correo electrónico. Si usted no solicitó este
-cambio, por favor reportelo inmediatamente, ya que puede ser un intento
-de comprometer su cuenta.
+Alguien ha pedido que la contraseña de tu cuenta sea recuperada y
+enviada a tu cuenta de correo electrónico. Si no solicitaste este
+cambio, por favor repórtelo inmediatamente, ya que puede ser un intento
+de comprometer tu cuenta.
 
 Para establecer la nueva contraseña, debes escribir el siguiente comando
-en el IRC, donde <contraseña> es la nueva contraseña que desea tener.
+en el IRC, donde <contraseña> es la nueva contraseña que deseas tener.
 
    /msg &nicksvs& SETPASS &accountname& &param& <contraseña>
 
 --
-Si usted no ha solicitado este mensaje, por favor contacte a &replyto&
-con una copia del mismo.
+Si no has solicitado este mensaje, por favor contacte a &replyto&
+con una copia completa del mismo.

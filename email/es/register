@@ -6,14 +6,14 @@ Date: &date&
 
 &accountname&,
 
-Para completar el registro de su cuenta debes introducir el siguiente
+Para completar el registro de tu cuenta debes introducir el siguiente
 comando en el IRC:
 
    /msg &nicksvs& VERIFY REGISTER &accountname& &param&
 
-¡Gracias por registrar su cuenta en la red IRC &netname&!
+¡Gracias por registrar tu cuenta en la red IRC &netname&!
 
 --
 Este correo ha sido enviado debido a un comando de &sourceinfo&
-el &date&.  Si no ha solicitado este mensaje, por favor contacte &replyto&
-con una copia del mismo.
+el &date&.  Si no has solicitado este mensaje, por favor contacte a &replyto&
+con una copia completa del mismo.

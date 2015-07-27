@@ -1,7 +1,7 @@
 From: &from&
 To: &to&
 Reply-To: &replyto&
-Subject: Nuevo meemo en &netname&
+Subject: Nuevo memo en &netname&
 Date: &date&
 
 &accountname&,
@@ -13,5 +13,5 @@ Has recibido un nuevo memo de &entityname&:
 Para desactivar estos mensajes, escriba /msg &nicksvs& SET EMAILMEMOS OFF
 en el IRC.
 --
-Si usted no ha solicitado este mensaje, por favor contacte a &replyto&
-con una copia del mismo.
+Si no has solicitado este mensaje, por favor contacte a &replyto&
+con una copia completa del mismo.
