@@ -1,0 +1,9 @@
+Ayuda para SET MDLIMIT:
+
+SET MDLIMIT fija cuántas piezas de metadata pueden pertenecer a
+un objeto, ya sea una cuenta, un grupo o un canal.
+
+Sintaxis: SET MDLIMIT <valor>
+
+Ejemplo:
+    /msg &nick& SET MDLIMIT 30

@@ -1,0 +1,11 @@
+Ayuda para SET ENFORCEPREFIX:
+
+SET ENFORCEPREFIX cambia el prefijo del nick que
+se asignará a un usuario cuando usan un nick con
+la opción ENFORCE activada y no consiguen identificarse
+a él correctamente.
+
+Sintaxis: SET ENFORCEPREFIX <prefijo>
+
+Ejemplo:
+    /msg &nick& SET ENFORCEPREFIX Invitado

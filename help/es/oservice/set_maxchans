@@ -1,0 +1,9 @@
+Ayuda para SET MAXCHANS:
+
+SET MAXCHANS permite fijar de cuántos canales una cuenta puede ser
+fundador.
+
+Sintaxis: SET MAXCHANS <valor>
+
+Ejemplo:
+    /msg &nick& SET MAXCHANS 7

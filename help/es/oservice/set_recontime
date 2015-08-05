@@ -1,0 +1,9 @@
+Ayuda para SET RECONTIME:
+
+SET RECONTIME permite modificar cuánto tiempo transcurre hasta que
+servicios intentan conectarse de nuevo al servidor padre.
+
+Sintaxis: SET RECONTIME <tiempo en segundos>
+
+Ejemplo:
+    /msg &nick& SET RECONTIME 5

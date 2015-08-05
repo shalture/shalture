@@ -1,0 +1,11 @@
+Ayuda para SET MAXUSERS:
+
+SET MAXUSERS permite fijar cuántas cuentas un correo
+electrónico puede tener registradas. Esto se puede anular
+según correo electrónico con el bloque de configuración
+emailexempts.
+
+Sintaxis: SET MAXUSERS <valor>
+
+Ejemplo:
+    /msg &nick& SET MAXUSERS 7

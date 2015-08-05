@@ -1,0 +1,9 @@
+Ayuda para SET MAXLOGINS:
+
+SET MAXLOGINS permite fijar cuántos usuarios pueden estar identificados
+a una cuenta simultáneamente.
+
+Sintaxis: SET MAXLOGINS <valor>
+
+Ejemplos:
+    /msg &nick& SET MAXLOGINS 7

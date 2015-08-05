@@ -1,0 +1,9 @@
+Ayuda para SET COMMITINTERVAL:
+
+SET COMMITINTERVAL permite a la administración de la red fijar con qué
+frecuencia (en minutos) la base de datos de servicios se escribirá al disco.
+
+Sintaxis: SET COMMITINTERVAL <tiempo en minutos>
+
+Ejemplo:
+    /msg &nick& SET COMMITINTERVAL 5

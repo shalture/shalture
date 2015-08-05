@@ -1,0 +1,9 @@
+Ayuda para SET MAXCHANACS:
+
+SET MAXCHANACS permite cambiar la cantidad máxima de entradas en
+la lista de acceso de un canal.
+
+Sintaxis: SET MAXCHANACS <valor>
+
+Ejemplo:
+    /msg &nick& SET MAXCHANACS 30

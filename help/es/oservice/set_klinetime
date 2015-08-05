@@ -1,0 +1,10 @@
+Ayuda para SET KLINETIME:
+
+SET KLINETIME permite a la administración de la red fijar un tiempo
+por defecto para la expiración de aquellas AKILLS que no tengan una
+duración asignada.
+
+Sintaxis: SET KLINETIME <tiempo en días>
+
+Ejemplo:
+    /msg &nick& SET KLINETIME 5

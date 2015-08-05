@@ -1,0 +1,9 @@
+Ayuda para SET NICKEXPIRE:
+
+SET NICKEXPIRE permite a la administración de la red modificar con
+qué frecuencia se comprobarán las expiraciones de nicks.
+
+Sintaxis: SET NICKEXPIRE <tiempo en días>
+
+Ejemplo:
+    /msg &nick& SET NICKEXPIRE 30

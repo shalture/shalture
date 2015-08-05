@@ -1,0 +1,11 @@
+Ayuda para SET AKICKTIME:
+
+SET AKICKTIME permite a la administración de la red cambiar la duración
+por defecto de los akicks. Fijando esto a 0 hace que todos los akicks
+sean permanentes al menos que se especifique una duración en el comando
+AKICK.
+
+Sintaxis: SET AKICKTIME <tiempo en minutos>
+
+Ejemplo:
+    /msg &nick& SET AKICKTIME 20
