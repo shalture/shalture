@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# crontab script for atheme
+# crontab script for shalture
 #
 
 # Change this to the directory where you installed it
@@ -22,7 +22,7 @@ if [ -f "$pidfile" ] ; then
   rm -f "$pidfile"
 fi
 
-echo "$0: couldn't find atheme running, restarting..."
+echo "$0: couldn't find shalture running, restarting..."
 
 ./bin/shalture-services
 
