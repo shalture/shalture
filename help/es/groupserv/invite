@@ -1,0 +1,10 @@
+Ayuda para INVITE:
+
+INVITE permite invitar un usuario a unirse a un
+grupo "privado"/no abierto o a un grupo que se
+encuentra lleno.
+
+Sintaxis: INVITE <!grupo> <usario>
+
+Ejemplos:
+    /msg &nick& INVITE !foo jdhore

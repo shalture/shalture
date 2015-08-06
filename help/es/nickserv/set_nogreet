@@ -1,0 +1,9 @@
+Ayuda para SET NOGREET:
+
+Esta configuración te permite no mostrarte el mensaje de entrada de
+ChanServ al entrar a un canal.
+
+Sintaxis: SET NOGREET ON|OFF
+
+Ejemplo:
+    /msg &nick& SET NOGREET ON

@@ -1,0 +1,25 @@
+Ayuda para MARK:
+
+MARK permite a los operadores adjuntar notas a una cuenta.
+Por ejemplo, un operador puede agregar o adjuntar una nota a la
+cuenta de un spammer para que los demás sepan que el usuario ha
+sido avisado previamente.
+
+Sintaxis: MARK <nick> ADD <nota>
+
+Agrega una nota a un nick. Las notas se muestran al introducir
+MARK <nick> LIST o usando info de NickServ.
+
+Sintaxis: MARK <nick> DEL <número>
+
+Borra la nota con el número dado.
+
+Sintaxis: MARK <nick> LIST
+
+Muestra todas las notas adjuntadas a un nick.
+
+Ejemplos:
+    /msg &nick& MARK tomaw ADD En realidad no existe
+    /msg &nick& MARK tomaw ADD Puedes poner todas las notas que quieras
+    /msg &nick& MARK tomaw LIST
+    /msg &nick& MARK tomaw DEL 2
