@@ -1,0 +1,9 @@
+Ayuda para RPS:
+
+RPS contestará aleatoriamente con "Rock" (piedra), "Paper"
+(papel), o "Scissors" (tijeras).
+
+Sintaxis: RPS
+
+Ejemplos:
+    /msg &nick& RPS
