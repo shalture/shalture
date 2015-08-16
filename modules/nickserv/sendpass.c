@@ -365,6 +365,11 @@ static void ns_cmd_setpass(sourceinfo_t *si, int parc, char *parv[])
 
 
 		command_success_nodata(si, _("The password for \2%s\2 has been changed to \2%s\2."), entity(mu)->name, password);
+		if (mu->flags & MU_NOPASSWORD)
+		{
+			mu->flags &= ~MU_NOPASSWORD;
+			command_success_nodata(si, _("The NOPASSWORD flag for \2%s\2 has been disabled."), entity(mu)->name);
+		}
 
 		return;
 	}
