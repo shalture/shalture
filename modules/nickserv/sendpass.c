@@ -177,7 +177,7 @@ static void ns_cmd_sendpass(sourceinfo_t *si, int parc, char *parv[])
 		ismarked = true;
 		if (leaky_checks)
 		{
-			if (mode == op_force)
+			if (mode != op_force)
 			{
 				logcommand(si, CMDLOG_ADMIN, "failed SENDPASS \2%s\2 (marked)", entity(mu)->name);
 				command_fail(si, fault_badparams, _("This operation cannot be performed on %s, because the account has been marked."), entity(mu)->name);
