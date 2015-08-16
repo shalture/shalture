@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2005 William Pitcock, et al.
+ * Copyright (c) 2015 Janik Kleinhoff
  * Rights to this code are as documented in doc/LICENSE.
  *
  * This file contains code for the CService SENDPASS function.
