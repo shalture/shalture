@@ -29,6 +29,9 @@ E unsigned int arc4random(void);
 E void arc4random_buf(void *buf, size_t n);
 #endif /* !HAVE_ARC4RANDOM_BUF */
 #endif /* !HAVE_ARC4RANDOM */
+#ifndef HAVE_ARC4RANDOM_UNIFORM
+E u_int32_t arc4random_uniform(u_int32_t upper_bound);
+#endif /* !HAVE_ARC4RANDOM_UNIFORM */
 
 /* explicit_bzero.c */
 #ifndef HAVE_EXPLICIT_BZERO

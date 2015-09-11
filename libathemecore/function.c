@@ -23,7 +23,7 @@
 
 #include "atheme.h"
 
-char ch[] = "abcdefghijklmnopqrstuvwxyz";
+char ch[26] = "abcdefghijklmnopqrstuvwxyz";
 
 /* This function uses smalloc() to allocate memory.
  * You MUST free the result when you are done with it!
@@ -35,7 +35,7 @@ char *random_string(int sz)
 
 	for (i = 0; i < sz; i++)
 	{
-		buf[i] = ch[arc4random() % 26];
+		buf[i] = ch[arc4random_uniform(sizeof ch)];
 	}
 
 	buf[sz] = 0;
