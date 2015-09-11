@@ -61,12 +61,12 @@ static void command_namegen(sourceinfo_t *si, int parc, char *parv[])
 		unsigned int medial_iter;
 
 		/* Here we generate the name. */
-		mowgli_strlcpy(namebuf, begin_sym[rand() % BEGIN_SYM_SZ], BUFSIZE);
+		mowgli_strlcpy(namebuf, begin_sym[arc4random_uniform(BEGIN_SYM_SZ)], BUFSIZE);
 
-		for (medial_iter = rand() % 3; medial_iter > 0; medial_iter--)
-			mowgli_strlcat(namebuf, medial_sym[rand() % MEDIAL_SYM_SZ], BUFSIZE);
+		for (medial_iter = arc4random_uniform(3); medial_iter > 0; medial_iter--)
+			mowgli_strlcat(namebuf, medial_sym[arc4random_uniform(MEDIAL_SYM_SZ)], BUFSIZE);
 
-		mowgli_strlcat(namebuf, end_sym[rand() % END_SYM_SZ], BUFSIZE);
+		mowgli_strlcat(namebuf, end_sym[arc4random_uniform(END_SYM_SZ)], BUFSIZE);
 
 		if (iter == 0)
 			mowgli_strlcpy(buf, namebuf, BUFSIZE);

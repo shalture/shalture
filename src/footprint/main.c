@@ -15,16 +15,13 @@ int main(int argc, char *argv[])
 		servercount = 0, regusercount = 0;
 	unsigned int i;
 
-	/* make up some statistics */
-	srand(time(NULL));
-
-	servercount = (rand() % 30) + 1;
+	servercount = arc4random_uniform(30) + 1;
 
 	for (i = 0; i < servercount; i++)
-		usercount += ((rand() % 6000) + 1);
+		usercount += arc4random_uniform(6000) + 1;
 
 	channelcount = usercount / servercount;
-	membercount = (usercount + channelcount) * ((rand() % 3) + 1);
+	membercount = (usercount + channelcount) * (arc4random_uniform(3) + 1);
 	regchannelcount = channelcount * 0.65;
 	regusercount = usercount * 0.65;
 
