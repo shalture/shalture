@@ -304,6 +304,11 @@ static void ns_cmd_regain(sourceinfo_t *si, int parc, char *parv[])
 		command_fail(si, fault_needmoreparams, _("Syntax: REGAIN <nick> [password]"));
 		return;
 	}
+	if (!is_valid_nick(target))
+	{
+		command_fail(si, fault_badparams, _("\2%s\2 is not a valid nickname."), target);
+		return;
+	}
 
 	u = user_find_named(target);
 	mn = mynick_find(target);
@@ -329,12 +334,6 @@ static void ns_cmd_regain(sourceinfo_t *si, int parc, char *parv[])
 	{
 		command_fail(si, fault_authfail, _("Password authentication is disabled for this account."));
 		logcommand(si, CMDLOG_DO, "failed REGAIN \2%s\2 (password authentication disabled)", target);
-		return;
-	}
-	if (!is_valid_nick(target))
-	{
-		command_fail(si, fault_badparams, "\2%s\2 is not a valid nick.", target);
-		logcommand(si, CMDLOG_DO, "failed REGAIN \2%s\2 (not a valid nickname)", target);
 		return;
 	}
 	if ((si->smu == mn->owner) || verify_password(mn->owner, password))
