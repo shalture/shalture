@@ -94,6 +94,31 @@ static void ns_cmd_sendpass(sourceinfo_t *si, int parc, char *parv[])
 		return;
 	}
 
+	if (mu->flags & MU_WAITAUTH)
+	{
+		command_fail(si, fault_badparams, _("\2%s\2 is not verified."), entity(mu)->name);
+		return;
+	}
+
+	if (metadata_find(mu, "private:freeze:freezer"))
+	{
+		command_fail(si, fault_noprivs, _("%s has been frozen by the %s administration."), entity(mu)->name, me.netname);
+		return;
+	}
+
+	if (MOWGLI_LIST_LENGTH(&mu->logins) > 0)
+	{
+		command_fail(si, fault_noprivs, _("This operation cannot be performed on %s, because someone is logged in to it."), entity(mu)->name);
+		return;
+	}
+
+	if (leaky_checks && is_soper(mu) && !has_priv(si, PRIV_ADMIN))
+	{
+		logcommand(si, CMDLOG_ADMIN, "failed SENDPASS \2%s\2 (is SOPER)", entity(mu)->name);
+		command_fail(si, fault_badparams, _("\2%s\2 belongs to a services operator; you need %s privilege to send the password."), name, PRIV_ADMIN);
+		return;
+	}
+
 	/* no point hiding the email if we don't normally do that anyway */
 	if (mu != NULL && !(mu->flags & MU_HIDEMAIL))
 		email_visible = true;
@@ -139,11 +164,7 @@ static void ns_cmd_sendpass(sourceinfo_t *si, int parc, char *parv[])
 		return;
 	}
 
-	if (mu->flags & MU_WAITAUTH)
-	{
-		command_fail(si, fault_badparams, _("\2%s\2 is not verified."), entity(mu)->name);
-		return;
-	}
+	/* From here on, normal users in paranoid mode will only ever see the paranoid success message. */
 
 	if (mode == op_clear)
 	{
@@ -157,13 +178,6 @@ static void ns_cmd_sendpass(sourceinfo_t *si, int parc, char *parv[])
 		}
 		else
 			command_fail(si, fault_nochange, _("\2%s\2 did not have a password change key outstanding."), entity(mu)->name);
-		return;
-	}
-
-	if (leaky_checks && is_soper(mu) && !has_priv(si, PRIV_ADMIN))
-	{
-		logcommand(si, CMDLOG_ADMIN, "failed SENDPASS \2%s\2 (is SOPER)", entity(mu)->name);
-		command_fail(si, fault_badparams, _("\2%s\2 belongs to a services operator; you need %s privilege to send the password."), name, PRIV_ADMIN);
 		return;
 	}
 
@@ -197,18 +211,6 @@ static void ns_cmd_sendpass(sourceinfo_t *si, int parc, char *parv[])
 				return;
 			}
 		}
-	}
-
-	if (metadata_find(mu, "private:freeze:freezer"))
-	{
-		command_fail(si, fault_noprivs, _("%s has been frozen by the %s administration."), entity(mu)->name, me.netname);
-		return;
-	}
-
-	if (MOWGLI_LIST_LENGTH(&mu->logins) > 0)
-	{
-		command_fail(si, fault_noprivs, _("This operation cannot be performed on %s, because someone is logged in to it."), entity(mu)->name);
-		return;
 	}
 
 	if (metadata_find(mu, "private:setpass:key"))
