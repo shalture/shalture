@@ -1,28 +1,25 @@
 Help for SENDPASS:
 
-#if !module nickserv/setpass
-SENDPASS emails the password for the specified
-nickname to the corresponding email address.
-#else
 SENDPASS emails a key to the email address
 corresponding to the specified nickname
 that can be used to set a new password
 using SETPASS.
-#endif
 
 Syntax: SENDPASS <nickname>
 
+#if priv user:sendpass
+#if priv user:mark
 If the nickname is marked, you can override this
 using the FORCE keyword.
 
 Syntax: SENDPASS <nickname> FORCE
-#if module nickserv/setpass
 
+#endif
 If a key has been emailed but not yet used,
 you can clear it using the CLEAR keyword.
 
 Syntax: SENDPASS <nickname> CLEAR
-#endif
 
+#endif
 Examples:
     /msg &nick& SENDPASS foo

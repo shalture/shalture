@@ -293,16 +293,19 @@ static int c_ci_sendpass_access(mowgli_config_file_entry_t *ce)
 	{
 		sendpass_access = SENDPASS_ACCESS_STAFF;
 		ns_sendpass.access = PRIV_USER_SENDPASS;
+		ns_sendpass.help.path = "nickserv/sendpass";
 	}
 	else if (!strcasecmp(ce->vardata, "USER"))
 	{
 		sendpass_access = SENDPASS_ACCESS_USER;
 		ns_sendpass.access = AC_NONE;
+		ns_sendpass.help.path = "nickserv/sendpass";
 	}
 	else if (!strcasecmp(ce->vardata, "USER_PARANOID"))
 	{
 		sendpass_access = SENDPASS_ACCESS_USER_PARANOID;
 		ns_sendpass.access = AC_NONE;
+		ns_sendpass.help.path = "nickserv/sendpass_paranoid";
 	}
 
 	return 0;

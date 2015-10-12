@@ -1,0 +1,33 @@
+Help for SENDPASS:
+
+SENDPASS emails a key to the email address
+corresponding to the specified nickname
+that can be used to set a new password
+using SETPASS.
+
+#if !priv user:sendpass
+You need to provide the matching email
+address or this command will silently fail.
+#if anyprivs
+Network staff with the user:sendpass privilege
+are not subject to this limitation.
+#else
+Contact network staff if you require assistance.
+#endif
+
+Syntax: SENDPASS <nickname> <email>
+
+Examples:
+    /msg &nick& SENDPASS foo foobar@example.net
+#else
+Users need to specify the correct email address;
+network staff with the user:sendpass privilege
+are not subject to this limitation.
+
+Syntax: SENDPASS <nickname>
+
+If a key has been emailed but not yet used,
+you can clear it using the CLEAR keyword.
+
+Syntax: SENDPASS <nickname> CLEAR
+#endif
