@@ -39,7 +39,6 @@ BASE_SRCS =			\
 	restrict.c	\
 	return.c	\
 	sendpass.c	\
-	sendpass_user.c \
 	set.c		\
 	set_core.c	\
 	set_accountname.c \
@@ -59,7 +58,6 @@ BASE_SRCS =			\
 	set_private.c	\
 	set_property.c	\
 	set_quietchg.c	\
-	setpass.c	\
 	status.c	\
 	taxonomy.c	\
 	vacation.c	\
