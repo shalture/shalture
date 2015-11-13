@@ -1,0 +1,8 @@
+Help for LISTINVITES:
+
+LISTINVITES displays all groups you are invited to.
+
+Syntax: LISTINVITES
+
+Examples:
+    /msg &nick& LISTINVITES
