@@ -27,6 +27,7 @@ struct mygroup_ {
 	myentity_t ent;
 
 	mowgli_list_t acs;
+	mowgli_list_t invites;
 	time_t regtime;
 
 	unsigned int flags;
@@ -62,4 +63,15 @@ struct groupacs_ {
 	mowgli_node_t unode;
 };
 
+typedef struct groupinvite_ groupinvite_t;
+
+struct groupinvite_ {
+	object_t parent;
+
+	mygroup_t *mg;
+	myentity_t *mt;
+	stringref inviter;
+	time_t invite_ts;
+	mowgli_node_t node;
+};
 #endif /* !GROUPSERV_H */

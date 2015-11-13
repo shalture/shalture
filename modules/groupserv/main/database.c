@@ -53,6 +53,18 @@ static void write_groupdb(database_handle_t *db)
 			db_commit_row(db);
 		}
 
+		MOWGLI_ITER_FOREACH(n, mg->invites.head)
+		{
+			groupinvite_t *gi = n->data;
+
+			db_start_row(db, "GRPI");
+			db_start_row(db, entity(mg)->name);
+			db_start_row(db, gi->mt->name);
+			db_write_word(db, gi->inviter);
+			db_write_time(db, gi->invite_ts);
+			db_commit_row(db);
+		}
+
 		if (object(mg)->metadata)
 		{
 			MOWGLI_PATRICIA_FOREACH(md, &state2, object(mg)->metadata)
@@ -189,6 +201,34 @@ static void db_h_mdg(database_handle_t *db, const char *type)
 	metadata_add(obj, prop, value);
 }
 
+static void db_h_grpi(database_handle_t *db, const char *type)
+{
+	mygroup_t *mg;
+	myentity_t *mt;
+
+	const char *name = db_sread_word(db);
+	const char *entity = db_sread_word(db);
+	const char *inviter = db_sread_word(db);
+	time_t invitets = db_sread_time(db);
+
+	mg = mygroup_find(name);
+	mt = myentity_find(entity);
+
+	if (mg == NULL)
+	{
+		slog(LG_INFO, "db-h-grpi: line %d: groupinvite for nonexistent group %s", db->line, name);
+		return;
+	}
+
+	if (mt == NULL)
+	{
+		slog(LG_INFO, "db-h-grpi: line %d: groupinvite for nonexistent entity %s", db->line, entity);
+		return;
+	}
+
+	groupinvite_add(mg, mt, strshare_get(inviter), invitets);
+}
+
 void gs_db_init(void)
 {
 	hook_add_db_write_pre_ca(write_groupdb);
@@ -198,6 +238,7 @@ void gs_db_init(void)
 	db_register_type_handler("GACL", db_h_gacl);
 	db_register_type_handler("MDG", db_h_mdg);
 	db_register_type_handler("GFA", db_h_gfa);
+	db_register_type_handler("GRPI", db_h_grpi);
 }
 
 void gs_db_deinit(void)
@@ -209,4 +250,5 @@ void gs_db_deinit(void)
 	db_unregister_type_handler("GACL");
 	db_unregister_type_handler("MDG");
 	db_unregister_type_handler("GFA");
+	db_unregister_type_handler("GRPI");
 }

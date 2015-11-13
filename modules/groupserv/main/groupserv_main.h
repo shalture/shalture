@@ -22,6 +22,10 @@ E void groupacs_delete(mygroup_t *mg, myentity_t *mt);
 
 E bool groupacs_sourceinfo_has_flag(mygroup_t *mg, sourceinfo_t *si, unsigned int flag);
 
+E groupinvite_t *groupinvite_add(mygroup_t *mg, myentity_t *mt, const char *inviter, time_t invite_ts);
+E groupinvite_t *groupinvite_find(mygroup_t *mg, myentity_t *mt);
+E void groupinvite_delete(mygroup_t *mg, myentity_t *mt);
+
 E void gs_db_init(void);
 E void gs_db_deinit(void);
 

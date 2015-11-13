@@ -27,6 +27,7 @@ static void gs_cmd_join(sourceinfo_t *si, int parc, char *parv[])
 	metadata_t *md, *md2;
 	unsigned int flags = 0;
 	bool invited = false;
+	groupinvite_t *gi;
 
 	if (!parv[0])
 	{
@@ -41,12 +42,20 @@ static void gs_cmd_join(sourceinfo_t *si, int parc, char *parv[])
 		return;
 	}
 
-	if ((md2 = metadata_find(si->smu, "private:groupinvite")))
+	if ((gi = groupinvite_find(mg, entity(si->smu))) != NULL)
 	{
-		if (!strcasecmp(md2->value, parv[0]))
-			invited = true;
-		else
-			invited = false;
+		invited = true;
+	}
+	else
+	{
+		/* Legacy code -  Search old invite and delete it */
+		if ((md2 = metadata_find(si->smu, "private:groupinvite")))
+		{
+			if (!strcasecmp(md2->value, parv[0])) {
+				invited = true;
+				metadata_delete(si->smu, "private:groupinvite");
+			}
+		}
 	}
 
 	if (!(mg->flags & MG_OPEN) && !invited)
@@ -81,7 +90,7 @@ static void gs_cmd_join(sourceinfo_t *si, int parc, char *parv[])
 	ga = groupacs_add(mg, entity(si->smu), flags);
 
 	if (invited)
-		metadata_delete(si->smu, "private:groupinvite");
+		groupinvite_delete(mg, entity(si->smu));
 
 	command_success_nodata(si, _("You are now a member of \2%s\2."), entity(mg)->name);
 }

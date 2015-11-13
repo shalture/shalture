@@ -28,18 +28,20 @@ gflags_t mg_flags[] = {
 
 groupserv_config_t gs_config;
 
-mowgli_heap_t *mygroup_heap, *groupacs_heap;
+mowgli_heap_t *mygroup_heap, *groupacs_heap, *groupinvite_heap;
 
 void mygroups_init(void)
 {
 	mygroup_heap = mowgli_heap_create(sizeof(mygroup_t), HEAP_USER, BH_NOW);
 	groupacs_heap = mowgli_heap_create(sizeof(groupacs_t), HEAP_CHANACS, BH_NOW);
+	groupinvite_heap = mowgli_heap_create(sizeof(groupinvite_t), HEAP_CHANACS, BH_NOW);
 }
 
 void mygroups_deinit(void)
 {
 	mowgli_heap_destroy(mygroup_heap);
 	mowgli_heap_destroy(groupacs_heap);
+	mowgli_heap_destroy(groupinvite_heap);
 }
 
 static void mygroup_delete(mygroup_t *mg)
@@ -55,6 +57,14 @@ static void mygroup_delete(mygroup_t *mg)
 		mowgli_node_delete(&ga->gnode, &mg->acs);
 		mowgli_node_delete(&ga->unode, myentity_get_membership_list(ga->mt));
 		object_unref(ga);
+	}
+
+	MOWGLI_ITER_FOREACH_SAFE(n, tn, mg->invites.head)
+	{
+		groupinvite_t *gi = n->data;
+
+		mowgli_node_delete(&gi->node, &mg->invites);
+		object_unref(gi);
 	}
 
 	metadata_delete_all(mg);
@@ -205,6 +215,63 @@ unsigned int groupacs_sourceinfo_flags(mygroup_t *mg, sourceinfo_t *si)
 		return 0;
 
 	return ga->flags;
+}
+
+static void groupinvite_des(groupinvite_t *gi)
+{
+	metadata_delete_all(gi);
+	strshare_unref(gi->inviter);
+	mowgli_heap_free(groupinvite_heap, gi);
+}
+
+groupinvite_t *groupinvite_add(mygroup_t *mg, myentity_t *mt, const char *inviter, time_t invite_ts)
+{
+	groupinvite_t *gi;
+
+	return_val_if_fail(mg != NULL, NULL);
+	return_val_if_fail(mt != NULL, NULL);
+
+	gi = mowgli_heap_alloc(groupinvite_heap);
+	object_init(object(gi), NULL, (destructor_t) groupinvite_des);
+
+	gi->mg = mg;
+	gi->mt = mt;
+	gi->inviter = inviter;
+	gi->invite_ts = invite_ts;
+
+	mowgli_node_add(gi, &gi->node, &mg->invites);
+
+	return gi;
+}
+
+groupinvite_t *groupinvite_find(mygroup_t *mg, myentity_t *mt)
+{
+	mowgli_node_t *n;
+
+	return_val_if_fail(mg != NULL, NULL);
+	return_val_if_fail(mt != NULL, NULL);
+
+	MOWGLI_ITER_FOREACH(n, mg->invites.head)
+	{
+		groupinvite_t *gi = n->data;
+
+		if (gi->mg == mg && gi->mt == mt)
+			return gi;
+	}
+
+	return NULL;
+}
+
+void groupinvite_delete(mygroup_t *mg, myentity_t *mt)
+{
+	groupinvite_t *gi;
+
+	gi = groupinvite_find(mg, mt);
+	if (gi != NULL)
+	{
+		mowgli_node_delete(&gi->node, &mg->invites);
+		object_unref(gi);
+	}
 }
 
 unsigned int mygroup_count_flag(mygroup_t *mg, unsigned int flag)

@@ -26,9 +26,12 @@ command_t gs_invite = { "INVITE", N_("Invites a user to a group."), AC_AUTHENTIC
 
 static void gs_cmd_invite(sourceinfo_t *si, int parc, char *parv[])
 {
+	user_t *tu;
 	mygroup_t *mg;
 	myuser_t *mu;
 	groupacs_t *ga;
+	groupinvite_t *gi;
+	metadata_t *md;
 	char *group = parv[0];
 	char *user = parv[1];
 	char buf[BUFSIZE];
@@ -65,30 +68,45 @@ static void gs_cmd_invite(sourceinfo_t *si, int parc, char *parv[])
 		return;
 	}
 
-	if (metadata_find(mu, "private:groupinvite"))
-	{
-		command_fail(si, fault_badparams, _("\2%s\2 can not be invited to a group currently because they already \
-					have another invitation pending."), user);
-		return;
-	}
-
 	if (MU_NEVERGROUP & mu->flags)
 	{
 		command_fail(si, fault_noprivs, _("\2%s\2 does not wish to belong to any groups."), user);
 		return;
 	}
 
-	metadata_add(mu, "private:groupinvite", group);
-
-	if ((svs = service_find("memoserv")) != NULL)
+	/* Legacy code -  Search old invite, delete it and create a new one */
+	if ((md = metadata_find(mu, "private:groupinvite")))
 	{
-		snprintf(buf, BUFSIZE, "%s [auto memo] You have been invited to the group \2%s\2.", user, group);
-
-		command_exec_split(svs, si, "SEND", buf, svs->commands);
+		if (!strcasecmp(md->value, group)) {
+			slog(LG_INFO, "groupserv: invite convert.");
+			metadata_delete(mu, "private:groupinvite");
+			groupinvite_add(mg, entity(mu), strshare_ref(entity(si->smu)->name), CURRTIME);
+		}
 	}
-	else
+
+	if ((gi = groupinvite_find(mg, entity(mu))) != NULL)
 	{
+		command_fail(si, fault_badparams, _("\2%s\2 is already invited to this group."), user);
+		return;
+	}
+
+	gi = groupinvite_add(mg, entity(mu), strshare_ref(entity(si->smu)->name), CURRTIME);
+
+	tu = user_find_named(user);
+	if (tu != NULL && tu->myuser == mu) {
 		myuser_notice(si->service->nick, mu, "You have been invited to the group \2%s\2.", group);
+	}
+	else {
+		if ((svs = service_find("memoserv")) != NULL)
+		{
+			snprintf(buf, BUFSIZE, "%s [auto memo] You have been invited to the group \2%s\2.", user, group);
+
+			command_exec_split(svs, si, "SEND", buf, svs->commands);
+		}
+		else
+		{
+			myuser_notice(si->service->nick, mu, "You have been invited to the group \2%s\2.", group);
+		}
 	}
 
 	logcommand(si, CMDLOG_SET, "INVITE: \2%s\2 \2%s\2", group, user);
