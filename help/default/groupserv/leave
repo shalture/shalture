@@ -1,0 +1,8 @@
+Help for LEAVE:
+
+LEAVE allows you to leave a group you are a member of
+
+Syntax: LEAVE <group>
+
+Example:
+    /msg &nick& LEAVE !foo

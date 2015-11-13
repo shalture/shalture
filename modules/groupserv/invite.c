@@ -78,7 +78,8 @@ static void gs_cmd_invite(sourceinfo_t *si, int parc, char *parv[])
 	if ((md = metadata_find(mu, "private:groupinvite")))
 	{
 		if (!strcasecmp(md->value, group)) {
-			slog(LG_INFO, "groupserv: invite convert.");
+			slog(LG_DEBUG, "groupserv: Converting legacy invite: \2%s\2 \2%s\2",
+					 entity(si->smu)->name, md->value);
 			metadata_delete(mu, "private:groupinvite");
 			groupinvite_add(mg, entity(mu), strshare_ref(entity(si->smu)->name), CURRTIME);
 		}

@@ -19,6 +19,7 @@ BASE_SRCS =			\
 	info.c			\
 	invite.c		\
 	join.c			\
+	leave.c			\
 	list.c			\
 	listchans.c		\
 	register.c		\
