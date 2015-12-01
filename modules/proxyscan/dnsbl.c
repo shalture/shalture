@@ -391,7 +391,7 @@ static struct Blacklist *new_blacklist(char *name)
 	{
 		blptr = malloc(sizeof(struct Blacklist));
 		object_init(object(blptr), "proxyscan dnsbl", NULL);
-		mowgli_node_add(blptr, &blptr->node, &blacklist_list);
+		mowgli_node_add(object_ref(blptr), &blptr->node, &blacklist_list);
 	}
 
 	mowgli_strlcpy(blptr->host, name, IRCD_RES_HOSTLEN + 1);
