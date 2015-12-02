@@ -58,6 +58,12 @@ static void gs_cmd_join(sourceinfo_t *si, int parc, char *parv[])
 		}
 	}
 
+	if (groupacs_sourceinfo_has_flag(mg, si, 0))
+	{
+		command_fail(si, fault_nochange, _("You are already a member of group \2%s\2."), parv[0]);
+		return;
+	}
+
 	if (!(mg->flags & MG_OPEN) && !invited)
 	{
 		command_fail(si, fault_noprivs, _("Group \2%s\2 is not open to anyone joining."), parv[0]);
@@ -67,12 +73,6 @@ static void gs_cmd_join(sourceinfo_t *si, int parc, char *parv[])
 	if (groupacs_sourceinfo_has_flag(mg, si, GA_BAN))
 	{
 		command_fail(si, fault_noprivs, STR_NOT_AUTHORIZED);
-		return;
-	}
-
-	if (groupacs_sourceinfo_has_flag(mg, si, 0))
-	{
-		command_fail(si, fault_nochange, _("You are already a member of group \2%s\2."), parv[0]);
 		return;
 	}
 
