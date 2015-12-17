@@ -74,16 +74,8 @@ static void gs_cmd_invite(sourceinfo_t *si, int parc, char *parv[])
 		return;
 	}
 
-	/* Legacy code -  Search old invite, delete it and create a new one */
-	if ((md = metadata_find(mu, "private:groupinvite")))
-	{
-		if (!strcasecmp(md->value, group)) {
-			slog(LG_DEBUG, "groupserv: Converting legacy invite: \2%s\2 \2%s\2",
-					 entity(si->smu)->name, md->value);
-			metadata_delete(mu, "private:groupinvite");
-			groupinvite_add(mg, entity(mu), strshare_ref(entity(si->smu)->name), CURRTIME);
-		}
-	}
+	/* Convert legacy invites */
+	groupinvite_convert(mu, strshare_ref(entity(si->smu)->name), CURRTIME);
 
 	if ((gi = groupinvite_find(mg, entity(mu))) != NULL)
 	{

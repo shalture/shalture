@@ -31,6 +31,9 @@ static void gs_cmd_listinvites(sourceinfo_t *si, int parc, char *parv[])
 	metadata_t *md;
 	groupinvite_t *gi;
 
+	/* Convert legacy invites */
+	groupinvite_convert(si->smu, strshare_get(si->service->nick), 0);
+
 	command_success_nodata(si, _("Groups you are invited to:"));
 
 	MYENTITY_FOREACH_T(mt, &state, ENT_GROUP)
@@ -51,22 +54,6 @@ static void gs_cmd_listinvites(sourceinfo_t *si, int parc, char *parv[])
 						entity(gi->mg)->name, gi->inviter, buf);
 			}
 		}
-	}
-
-	/* Legacy code -  Search old invite, delete it and create a new one */
-	if ((md = metadata_find(si->smu, "private:groupinvite")))
-	{
-			if ((mg = mygroup_find(md->value))) {
-				slog(LG_DEBUG, "groupserv: Converting legacy invite: \2%s\2 \2%s\2",
-						 entity(si->smu)->name, md->value);
-				metadata_delete(si->smu, "private:groupinvite");
-				gi = groupinvite_add(mg, entity(si->smu), strshare_get(si->service->nick), CURRTIME);
-
-				tm = *localtime(&CURRTIME);
-				strftime(buf, BUFSIZE, TIME_FORMAT, &tm);
-				command_success_nodata(si, "group:\2%s\2 inviter:\2%s\2 (%s)",
-						entity(gi->mg)->name, gi->inviter, buf);
-			}
 	}
 
 	command_success_nodata(si, "End of list.");

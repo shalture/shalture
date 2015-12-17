@@ -24,6 +24,7 @@ E bool groupacs_sourceinfo_has_flag(mygroup_t *mg, sourceinfo_t *si, unsigned in
 
 E groupinvite_t *groupinvite_add(mygroup_t *mg, myentity_t *mt, const char *inviter, time_t invite_ts);
 E groupinvite_t *groupinvite_find(mygroup_t *mg, myentity_t *mt);
+E groupinvite_t *groupinvite_convert(myuser_t *mu, const char *inviter, time_t invite_ts);
 E void groupinvite_delete(mygroup_t *mg, myentity_t *mt);
 
 E void gs_db_init(void);

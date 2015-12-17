@@ -36,6 +36,7 @@ groupserv_config_t *gs_config;
 groupinvite_t * (*groupinvite_add)(mygroup_t *mg, myentity_t *mt, const char *inviter, time_t invite_ts);
 groupinvite_t * (*groupinvite_find)(mygroup_t *mg, myentity_t *mt);
 void (*groupinvite_delete)(mygroup_t *mg, myentity_t *mt);
+groupinvite_t * (*groupinvite_convert)(myuser_t *mu, const char *inviter, time_t invite_ts);
 
 static inline void use_groupserv_main_symbols(module_t *m)
 {
@@ -62,6 +63,7 @@ static inline void use_groupserv_main_symbols(module_t *m)
     MODULE_TRY_REQUEST_SYMBOL(m, groupinvite_add, "groupserv/main", "groupinvite_add");
     MODULE_TRY_REQUEST_SYMBOL(m, groupinvite_find, "groupserv/main", "groupinvite_find");
     MODULE_TRY_REQUEST_SYMBOL(m, groupinvite_delete, "groupserv/main", "groupinvite_delete");
+    MODULE_TRY_REQUEST_SYMBOL(m, groupinvite_convert, "groupserv/main", "groupinvite_convert");
 }
 
 #ifndef IN_GROUPSERV_SET

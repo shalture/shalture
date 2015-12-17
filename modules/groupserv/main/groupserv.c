@@ -262,6 +262,31 @@ groupinvite_t *groupinvite_find(mygroup_t *mg, myentity_t *mt)
 	return NULL;
 }
 
+groupinvite_t *groupinvite_convert(myuser_t *mu, const char *inviter, time_t invite_ts)
+{
+	metadata_t *md;
+	mygroup_t *mg;
+	groupinvite_t *gi = NULL;
+
+	if ((md = metadata_find(mu, "private:groupinvite")))
+	{
+		if ((mg = mygroup_find(md->value)) != NULL)
+		{
+			if (groupacs_find(mg, entity(mu), 0, false) == NULL &&
+					groupinvite_find(mg, entity(mu)) == NULL)
+			{
+				gi = groupinvite_add(mg, entity(mu), inviter, invite_ts);
+
+				slog(LG_DEBUG, "groupserv: Converting legacy invite: \2%s\2 \2%s\2",
+						 inviter, entity(mg)->name);
+			}
+		}
+		metadata_delete(mu, "private:groupinvite");
+	}
+
+	return gi;
+}
+
 void groupinvite_delete(mygroup_t *mg, myentity_t *mt)
 {
 	groupinvite_t *gi;
