@@ -168,6 +168,10 @@ static void myuser_delete_hook(myuser_t *mu)
 {
 	mowgli_node_t *n, *tn;
 	mowgli_list_t *l;
+	myentity_iteration_state_t state;
+	myentity_t *mt;
+	mygroup_t *mg;
+	groupinvite_t *gi;
 
 	l = myentity_get_membership_list(entity(mu));
 
@@ -179,6 +183,22 @@ static void myuser_delete_hook(myuser_t *mu)
 	}
 
 	mowgli_list_free(l);
+
+	MYENTITY_FOREACH_T(mt, &state, ENT_GROUP)
+	{
+		mg = group(mt);
+		continue_if_fail(mt != NULL);
+		continue_if_fail(mg != NULL);
+
+		MOWGLI_ITER_FOREACH(n, mg->invites.head)
+		{
+			gi = n->data;
+
+			if (gi->mg == mg && gi->mt == entity(mu)) {
+				groupinvite_delete(mg, entity(mu));
+			}
+		}
+	}
 }
 
 static void osinfo_hook(sourceinfo_t *si)
