@@ -1,3 +1,10 @@
+**Development of Shaltúre has been discontinued and we recommend that you use
+[Atheme](https://github.com/atheme/atheme) instead, which is under active
+development again.** This repository is preserved for historical reasons. There
+may be code or proposed features that have not been ported over to Atheme yet.
+
+---
+
 ## Shaltúre
 
 Shaltúre is a set of services for IRC networks designed for large IRC networks 
